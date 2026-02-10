@@ -1,0 +1,34 @@
+// NeuroSphere Smart Contract v1.0
+// Language: Auralang (Interpreter & Compiler)
+// Purpose: Locking Founder Allocation & AI Guard Monitoring
+
+contract FounderLock {
+    // Definisi Aset Utama (Dialek TM)
+    let founder_id = "INDIE-Founder"; 
+    let total_enpe = 100_000_000_000_000; // 100T E Coin
+    let total_luv  = 100_000_000_000_000; // 100T Lovely Coin
+
+    // Aturan Penguncian Sesuai Tokenomy
+    let lock_duration_founder = 3_years; //
+    let lock_duration_others  = 2_years; //
+
+    function initialize_locking() {
+        // Mengunci Alokasi Founder selama 3 tahun
+        lock_assets(founder_id, {
+            enpe_allocation: 20_percent, //
+            luv_allocation: 20_percent,  //
+            status: "IMMUTABLE_UNTIL_2029"
+        });
+
+        // Alokasi 1% LUV untuk 1 juta orang (diambil dari alokasi Founder)
+        distribute_from_founder(1_percent, 1_000_000_people, 1_000_000_luv_each);
+    }
+
+    function ai_guard_monitor() {
+        // AI Guard mengambil kontrol penuh setelah 3 tahun
+        if (current_time >= 3_years) {
+            transition_control("AI_GUARD", 1.0); // Kontrol 100%
+            decrease_yield_gradually(); // Menurunkan yield untuk independensi
+        }
+    }
+}
