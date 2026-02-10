@@ -4,7 +4,7 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "framework": null,
-  "rewrites": [
+  "rewrites": [ { "source": "/scan", "destination": "/public/scan.html" },
     { "source": "/", "destination": "/public/index.html" },
     { "source": "/market", "destination": "/public/market.html" },
     { "source": "/auth", "destination": "/public/auth.html" },
