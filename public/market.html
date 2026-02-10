@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Marketplace Rakyat - IndieNation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { background: #000; color: #00ff41; font-family: 'JetBrains Mono', monospace; }
+        .item-card { border: 1px solid #00ff41; padding: 15px; margin-bottom: 10px; }
+        .locked { opacity: 0.3; pointer-events: none; }
+    </style>
+</head>
+<body class="p-6">
+    <h1 class="text-xl mb-4">🛒 MARKETPLACE RAKYAT</h1>
+    <div id="market-status" class="mb-6 text-xs p-2 border border-yellow-500">
+        SCANNING IDENTITY...
+    </div>
+
+    <div id="market-items" class="hidden">
+        <div class="item-card">
+            <p>Sembako Paket A</p>
+            <p class="text-white">Price: €50</p>
+            <button onclick="buy(50)" class="bg-green-600 text-black px-4 py-1 mt-2 text-xs">BUY NOW</button>
+        </div>
+        <div class="item-card">
+            <p>Alat Produksi UKM</p>
+            <p class="text-white">Price: €200</p>
+            <button onclick="buy(200)" class="bg-green-600 text-black px-4 py-1 mt-2 text-xs">BUY NOW</button>
+        </div>
+    </div>
+
+    <div id="age-denied" class="hidden text-red-500 text-center mt-20">
+        <p>⚠️ ACCESS DENIED</p>
+        <p class="text-[10px] mt-2">Marketplace only available for citizens 17+ years old.</p>
+    </div>
+
+    <script>
+        const user = JSON.parse(localStorage.getItem('neuro_identity'));
+        
+        if (!user) {
+            window.location.href = "/auth";
+        } else if (user.age < 17) {
+            document.getElementById('age-denied').classList.remove('hidden');
+            document.getElementById('market-status').innerText = "STATUS: RESTRICTED (UNDERAGE)";
+        } else {
+            document.getElementById('market-items').classList.remove('hidden');
+            document.getElementById('market-status').innerText = "WELCOME, " + user.username + " | Balance: €" + user.balance;
+        }
+
+        function buy(price) {
+            alert("Transaction processing via AI Guard...");
+            // Logika pemotongan saldo 15% donasi otomatis di sini [cite: 2025-12-20]
+        }
+    </script>
+</body>
+</html>

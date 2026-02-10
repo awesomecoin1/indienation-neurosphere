@@ -2,7 +2,11 @@
   "version": 2,
   "public": true,
   "cleanUrls": true,
+  "trailingSlash": false,
   "rewrites": [
-    { "source": "/(.*)", "destination": "/public/$1" }
+    { "source": "/market", "destination": "/public/market.html" },
+    { "source": "/auth", "destination": "/public/auth.html" },
+    { "source": "/vault", "destination": "/public/vault.html" },
+    { "source": "/certificate", "destination": "/public/certificate.html" }
   ]
 }
