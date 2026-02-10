@@ -1,8 +1,8 @@
 {
-  "version": 2,
-  "name": "indienation-neurosphere",
-  "builds": [
-    { "src": "**/*", "use": "@vercel/static" }
-  ],
-  "cleanUrls": true
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "rewrites": [
+    { "source": "/monitor", "destination": "/public/monitor/index.html" }
+  ]
 }
+
