@@ -1,0 +1,3 @@
+"scripts": {
+  "vercel-build": "echo 'Bypassing build step for static files'"
+}
