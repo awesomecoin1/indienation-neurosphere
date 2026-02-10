@@ -2,9 +2,7 @@
   "version": 2,
   "public": true,
   "cleanUrls": true,
-  "framework": null,
   "rewrites": [
-    { "source": "/monitor", "destination": "/public/monitor/index.html" },
-    { "source": "/", "destination": "/index.html" }
+    { "source": "/(.*)", "destination": "/public/$1" }
   ]
 }
