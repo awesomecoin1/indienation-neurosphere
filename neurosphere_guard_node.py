@@ -1,66 +1,76 @@
-#!/usr/bin/env python3
-from flask import Flask, jsonify, request
-import os
-from difflib import get_close_matches
+from flask import Flask, request, jsonify
+import datetime
 
 app = Flask(__name__)
 
-# --- Users database ---
-users_db = {"NeuroID#001":{"name":"Alice"}, "NeuroID#002":{"name":"Bob"}, "NeuroID#003":{"name":"Charlie"}}
+# --- KONFIGURASI CORE NEUROSPHERE ---
+# Menambahkan gateway_btc ke whitelist identitas
+AUTHORIZED_SENDERS = ["INDIE-Founder", "gateway_btc", "neurosphere_core"]
+TOTAL_ENPE_SUPPLY = 100_000_000_000_000  # 100 Triliun
+DONATION_POOL_PERCENT = 0.15  # Alokasi 15% untuk bencana
 
-# --- Guard validation ---
-def validate_intent(payload):
-    max_attempts = 5
-    attempt = 0
-    valid = False
-    while attempt < max_attempts and not valid:
-        sender = payload.get("sender")
-        recipient = payload.get("recipient")
-        asset = payload.get("asset")
-        network = payload.get("network")
+# State sederhana (Dalam produksi, ini terhubung ke database Auralang)
+stats = {
+    "total_distributed": 0,
+    "donation_pool": 0,
+    "active_citizens": 0
+}
 
-        if sender not in users_db:
-            return False, f"Sender {sender} not recognized."
-
-        if recipient not in users_db:
-            attempt += 1
-            suggestions = get_close_matches(recipient, users_db.keys(), n=1, cutoff=0.5)
-            suggestion_msg = f" Did you mean '{suggestions[0]}'?" if suggestions else ""
-            return False, f"Recipient {recipient} invalid. Attempt {attempt}/{max_attempts}.{suggestion_msg}"
-
-        if asset not in ["USDT","ENPE","LovelyCoin"]:
-            return False, f"Asset {asset} unsupported."
-
-        if network not in ["BSC","ETH","TRON"]:
-            return False, f"Network {network} incompatible."
-
-        valid = True
-
-    if not valid:
-        return False, "Maximum attempts reached. STOP."
-
-    return True, "Intent validated successfully."
-
-# --- Routes ---
 @app.route("/")
 def root():
-    return jsonify({"status":"ONLINE","entity":"NeuroSphere Guard Node","version":"1.0.0-ADVANCED"})
+    return jsonify({
+        "status": "ONLINE",
+        "entity": "NeuroSphere Guard Node",
+        "founder": "INDIE-Founder",
+        "version": "1.0.0-Auralang-Integrated"
+    })
 
 @app.route("/transfer", methods=["POST"])
 def transfer():
     payload = request.get_json()
-    valid, message = validate_intent(payload)
-    if not valid:
-        return jsonify({"status":"FAILED","reason":message}), 400
+    
+    if not payload:
+        return jsonify({"status": "FAILED", "reason": "No payload"}), 400
+
+    sender = payload.get("sender")
+    amount = payload.get("amount", 0)
+
+    # 1. Validasi Identitas Pengirim
+    if sender not in AUTHORIZED_SENDERS:
+        return jsonify({
+            "status": "FAILED", 
+            "reason": f"Sender {sender} not recognized.",
+            "action": "Identity must be registered in NeuroSphere whitelist"
+        }), 403
+
+    # 2. Logika Alokasi 15% Donasi Bencana
+    donation_amount = amount * DONATION_POOL_PERCENT
+    net_distribution = amount - donation_amount
+    
+    # 3. Update State (Simulasi Teknologi Money / TM)
+    stats["total_distributed"] += net_distribution
+    stats["donation_pool"] += donation_amount
+    stats["active_citizens"] += 1
+
     return jsonify({
-        "status":"SUCCESS",
-        "sender":payload["sender"],
-        "recipient":payload["recipient"],
-        "asset":payload["asset"],
-        "network":payload["network"],
-        "message":message
+        "status": "SUCCESS",
+        "transaction_id": payload.get("id"),
+        "analysis": {
+            "sender": sender,
+            "gross_amount": amount,
+            "donation_allocated_15pct": donation_amount,
+            "net_to_citizen": net_distribution,
+            "tm_identity": "Living Value Identity"
+        },
+        "timestamp": datetime.datetime.now().isoformat()
     })
 
-PORT = int(os.environ.get("PORT", 5000))
-if __name__=="__main__":
-    app.run(host="0.0.0.0", port=PORT, debug=True)
+@app.route("/stats")
+def get_stats():
+    # Menampilkan data untuk Monitor Dashboard
+    return jsonify(stats)
+
+if __name__ == "__main__":
+    # Menjalankan di port 5000 sesuai konfigurasi Termux
+    app.run(host="127.0.0.1", port=5000, debug=False)
+
