@@ -24,7 +24,7 @@
             <p>HOLDER: <span id="disp-name" class="text-white font-bold">...</span></p>
             <p>IID: <span id="disp-iid" class="text-yellow-500 font-bold">...</span></p>
             <hr class="border-green-900">
-            <p class="text-[9px]">TOTAL GRANT: <span class="text-white">€100.000,00</span></p>
+            <p class="text-[9px]">GRANT STATUS: <span class="text-white">€100.000,00</span></p>
             <p class="text-[9px]">ACCUMULATED: <span class="text-white">€1.540,00</span></p>
         </div>
     </div>
@@ -40,3 +40,14 @@
     </script>
 </body>
 </html>
+<script>
+function applyAgePolicy(userData) {
+    if(userData.age < 17) {
+        document.getElementById('cert-container').style.borderColor = "#ff3e3e";
+        document.getElementById('disp-status').innerHTML = "STATUS: <span class='text-red-500'>VIRTUAL HOLD (Under 17)</span>";
+        document.getElementById('disp-note').innerText = "Funds will unlock automatically on your 17th birthday.";
+    } else {
+        document.getElementById('disp-status').innerHTML = "STATUS: <span class='text-green-500'>ACTIVE SOVEREIGN</span>";
+    }
+}
+</script>
