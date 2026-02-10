@@ -1,8 +1,8 @@
 {
+  "version": 2,
   "cleanUrls": true,
   "trailingSlash": false,
   "rewrites": [
     { "source": "/monitor", "destination": "/public/monitor/index.html" }
   ]
 }
-
