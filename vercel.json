@@ -4,8 +4,7 @@
   "cleanUrls": true,
   "framework": null,
   "rewrites": [
-    { "source": "/monitor", "destination": "/public/monitor/index.html" },
-    { "source": "/(.*)", "destination": "/$1" }
+    { "source": "/monitor", "destination": "/public/monitor/index.html" }
   ]
 }
 
