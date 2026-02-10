@@ -54,3 +54,33 @@
     </script>
 </body>
 </html>
+<div id="user-manual" class="fixed inset-0 bg-black bg-opacity-90 z-50 hidden flex items-center justify-center p-6">
+    <div class="border-2 border-green-500 p-8 max-w-md bg-black">
+        <h2 class="text-xl font-bold mb-4 text-white underline">PANDUAN KEDAULATAN EKONOMI</h2>
+        <ul class="text-xs space-y-3 mb-6">
+            <li>🔹 <span class="text-white">VERIFIKASI USIA:</span> Marketplace hanya terbuka untuk warga 17+. Saldo awal Anda adalah bagian dari jatah €100.000.</li>
+            <li>🔹 <span class="text-white">PAJAK DONASI 15%:</span> Setiap pembelian otomatis mendonasikan 15% untuk Pool Bencana & Kebaikan.</li>
+            <li>🔹 <span class="text-white">LOVELY REWARDS:</span> Transaksi yang jujur akan meningkatkan skor reputasi LUV Anda.</li>
+            <li>🔹 <span class="text-white">KEDAULATAN DATA:</span> Setiap transaksi memicu Auto-Backup JSON ke perangkat Anda.</li>
+        </ul>
+        <button onclick="closeManual()" class="w-full bg-green-500 text-black font-bold py-2">SAYA MENGERTI</button>
+    </div>
+</div>
+
+<script>
+function checkFirstVisit() {
+    if (!localStorage.getItem('manual_seen')) {
+        document.getElementById('user-manual').classList.remove('hidden');
+    }
+}
+
+function closeManual() {
+    localStorage.setItem('manual_seen', 'true');
+    document.getElementById('user-manual').classList.add('hidden');
+}
+
+// Jalankan pengecekan saat scan IID berhasil
+if (user && user.age >= 17) {
+    checkFirstVisit();
+}
+</script>
