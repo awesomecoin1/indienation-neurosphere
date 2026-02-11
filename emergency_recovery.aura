@@ -1,0 +1,31 @@
+// emergency_recovery.aura
+// NeuroSphere Safety Protocol
+
+contract EmergencyRecovery {
+    founder: "FOUNDER-01" // IID-M30LX5ED2
+    
+    // Fungsi untuk membatalkan kunci yang hilang/bermasalah
+    function revoke_and_rebind(old_iid: string, new_iid: string, community_slot: string) {
+        // 1. Validasi Otoritas Tertinggi
+        require(caller == founder, "CRITICAL: Unauthorized recovery attempt!");
+
+        // 2. Verifikasi status saat ini
+        require(get_status(community_slot) == "BOUND", "Error: Slot is not bound.");
+        require(get_holder(community_slot) == old_iid, "Error: IID mismatch.");
+
+        // 3. Eksekusi Pencabutan (Revoke)
+        update_status(community_slot, "REVOKED", old_iid);
+        
+        // 4. Pengikatan Ulang ke Identitas Baru
+        set_identity(community_slot, new_iid);
+        update_status(community_slot, "BOUND");
+
+        // 5. Audit Trail yang Tidak Bisa Dihapus
+        log_emergency_event("KEY_RECOVERY_EXECUTED", {
+            slot: community_slot,
+            from: old_iid,
+            to: new_iid,
+            timestamp: now()
+        });
+    }
+}
