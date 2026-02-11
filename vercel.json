@@ -3,13 +3,12 @@
   "public": true,
   "cleanUrls": true,
   "trailingSlash": false,
-  "framework": null,
-  "rewrites": [ { "source": "/scan", "destination": "/public/scan.html" },
-    { "source": "/", "destination": "/public/index.html" },
+  "rewrites": [
+    { "source": "/scan", "destination": "/public/scan.html" },
     { "source": "/market", "destination": "/public/market.html" },
-    { "source": "/auth", "destination": "/public/auth.html" },
     { "source": "/vault", "destination": "/public/vault.html" },
-    { "source": "/certificate", "destination": "/public/certificate.html" },
-    { "source": "/admin", "destination": "/public/admin/dashboard.html" }
+    { "source": "/auth", "destination": "/public/auth.html" },
+    { "source": "/admin", "destination": "/public/admin/dashboard.html" },
+    { "source": "/", "destination": "/public/index.html" }
   ]
 }
