@@ -1,14 +1,14 @@
 {
   "version": 2,
-  "public": true,
   "cleanUrls": true,
+  "trailingSlash": false,
   "framework": null,
   "rewrites": [
+    { "source": "/", "destination": "/index.html" },
     { "source": "/scan", "destination": "/public/scan.html" },
     { "source": "/market", "destination": "/public/market.html" },
     { "source": "/vault", "destination": "/public/vault.html" },
     { "source": "/auth", "destination": "/public/auth.html" },
-    { "source": "/admin", "destination": "/public/admin/dashboard.html" },
-    { "source": "/", "destination": "/public/index.html" }
+    { "source": "/admin", "destination": "/public/admin/dashboard.html" }
   ]
 }
