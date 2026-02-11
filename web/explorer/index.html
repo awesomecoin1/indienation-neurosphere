@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeuroSphere Explorer | Audit Publik</title>
+    <style>
+        :root { --primary: #00bcd4; --bg: #0a0a0a; --text: #e0e0e0; --bound: #4caf50; --unbound: #444; }
+        body { font-family: -apple-system, system-ui, sans-serif; background: var(--bg); color: var(--text); margin: 0; padding: 20px; }
+        .container { max-width: 800px; margin: auto; }
+        h1 { color: var(--primary); text-align: center; }
+        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; margin-bottom: 30px; }
+        .stat-card { background: #1a1a1a; padding: 15px; border-radius: 10px; border: 1px solid #333; text-align: center; }
+        .stat-card h2 { margin: 0; color: var(--primary); font-size: 1.5rem; }
+        .stat-card p { margin: 5px 0 0; font-size: 0.8rem; color: #888; }
+        .vault-section { background: #1a1a1a; padding: 20px; border-radius: 15px; border: 1px solid #333; margin-bottom: 20px; }
+        .vault-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #333; padding-bottom: 10px; margin-bottom: 15px; }
+        .slot-grid { display: grid; grid-template-columns: repeat(9, 1fr); gap: 5px; }
+        .slot { height: 30px; border-radius: 4px; background: var(--unbound); display: flex; align-items: center; justify-content: center; font-size: 10px; color: #222; font-weight: bold; }
+        .slot.bound { background: var(--bound); box-shadow: 0 0 10px var(--bound); color: white; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Transparency Explorer</h1>
+        <div class="stats-grid">
+            <div class="stat-card"><h2>4/36</h2><p>Slots Bound</p></div>
+            <div class="stat-card"><h2>€4.0M</h2><p>Total Asset</p></div>
+            <div class="stat-card"><h2>Active</h2><p>System Status</p></div>
+        </div>
+        <div class="vault-section">
+            <div class="vault-header">
+                <h3>NTT_VAULT</h3>
+                <span style="color: var(--bound)">4/9 Bound</span>
+            </div>
+            <div class="slot-grid">
+                <div class="slot bound">01</div><div class="slot bound">02</div>
+                <div class="slot bound">03</div><div class="slot bound">04</div>
+                <div class="slot">05</div><div class="slot">06</div>
+                <div class="slot">07</div><div class="slot">08</div><div class="slot">09</div>
+            </div>
+        </div>
+        <p style="text-align: center; font-size: 0.7rem; color: #444; margin-top: 30px;">
+            NeuroSphere SSOT Verified | Founder: INDIE-Founder
+        </p>
+    </div>
+</body>
+</html>
