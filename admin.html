@@ -2,28 +2,52 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Founder Admin - NeuroSphere</title>
+    <title>Founder Admin Panel - NeuroSphere</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>body { background: #050505; color: #00ff41; font-family: 'JetBrains Mono'; }</style>
+    <script src="https://cdn.jsdelivr.net/npm/qrcode@1.4.4/build/qrcode.min.js"></script>
+    <style>
+        body { background: #050505; color: #00ff41; font-family: 'Courier New', Courier, monospace; }
+        .founder-border { border: 2px solid #00ff41; box-shadow: 0 0 15px #00ff41; }
+    </style>
 </head>
-<body class="p-6">
-    <h1 class="text-xs font-bold mb-6">FOUNDER CONTROL PANEL: INDIE-Founder</h1>
-    <div class="grid grid-cols-2 gap-4 text-[10px]">
-        <div class="border border-green-900 p-4">
-            <p>TOTAL ENPE SUPPLY</p>
-            <p class="text-lg">100T</p>
-            <p class="opacity-50">80% SWF | 20% Staking</p>
-        </div>
-        <div class="border border-green-900 p-4">
-            <p>TOTAL LUV SUPPLY</p>
-            <p class="text-lg">100T</p>
-            <p class="opacity-50">15% Disaster Pool (Open)</p>
+<body class="p-8">
+    <div class="max-w-4xl mx-auto">
+        <h1 class="text-2xl font-bold mb-4">NEUROSPHERE CONTROL CENTER</h1>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="founder-border p-6 rounded-lg bg-black">
+                <h2 class="text-xs uppercase tracking-widest mb-4">Founder Master Identity</h2>
+                <canvas id="founder-qr" class="mx-auto bg-white p-2"></canvas>
+                <p class="text-center mt-4 text-sm font-bold">IID-GHYT3EPKB</p>
+                <p class="text-[10px] text-center opacity-50">INDIE-FOUNDER AUTHENTICATED</p>
+            </div>
+
+            <div class="border border-green-900 p-6 rounded-lg">
+                <h2 class="text-xs mb-4">LIVE TRANSACTION FEED</h2>
+                <div class="text-[10px] space-y-2">
+                    <p class="text-green-400">[20:05:23] TX-TEST-001: SUCCESS</p>
+                    <p class="text-white">NET: €850.0 | DONATION: €150.0</p>
+                    <hr class="border-green-900">
+                    <p class="animate-pulse">_WAITING FOR NEXT SCAN...</p>
+                </div>
+            </div>
         </div>
     </div>
-    <div class="mt-6 border border-yellow-900 p-4 text-[10px]">
-        <p>RESERVE + DAILY OPS (10%)</p>
-        <p class="text-green-500">STATUS: OPEN FOR USE</p>
-    </div>
-    <p class="mt-10 text-[8px] opacity-30 text-center uppercase tracking-widest">Founder Lock: 3 Years Remaining</p>
+
+    <script>
+        // Generate Founder Master QR on Load
+        window.onload = function() {
+            const qrCanvas = document.getElementById('founder-qr');
+            QRCode.toCanvas(qrCanvas, "https://indienation-neurosphere.vercel.app/admin/verify?id=IID-GHYT3EPKB", { width: 180 });
+        }
+    </script>
 </body>
 </html>
+<script>
+function triggerEmergency() {
+    const confirmation = confirm("WARNING: This will freeze the ENTIRE NeuroSphere ecosystem. Only INDIE-Founder can undo this. Proceed?");
+    if(confirmation) {
+        alert("PROTOKOL OMEGA ACTIVATED. All assets locked.");
+        // Logika AI Guard Shutdown akan diproses di sini
+    }
+}
+</script>
