@@ -2,7 +2,7 @@
   "version": 2,
   "public": true,
   "cleanUrls": true,
-  "trailingSlash": false,
+  "framework": null,
   "rewrites": [
     { "source": "/scan", "destination": "/public/scan.html" },
     { "source": "/market", "destination": "/public/market.html" },
