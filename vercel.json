@@ -5,7 +5,7 @@
   "framework": null,
   "rewrites": [
     { "source": "/admin", "destination": "/admin.html" },
-    { "source": "/scan", "destination": "/public/scan.html" },
+    { "source": "/scan", "destination": "/scan.html" },
     { "source": "/market", "destination": "/public/market.html" },
     { "source": "/vault", "destination": "/public/vault.html" },
     { "source": "/auth", "destination": "/public/auth.html" },

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>IndieScan - NeuroSphere Explorer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { background: #0a0a0a; color: #00ff41; font-family: 'JetBrains Mono', monospace; }
+        .stat-card { border-left: 4px solid #00ff41; background: #111; padding: 15px; }
+    </style>
+</head>
+<body class="p-6">
+    <header class="mb-10 border-b border-green-900 pb-4">
+        <h1 class="text-2xl font-bold italic">IndieScan Explorer</h1>
+        <p class="text-[10px] opacity-50">NeuroSphere Value Identity Language [TM]</p>
+    </header>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10">
+        <div class="stat-card">
+            <p class="text-[10px]">TOTAL ENPE SUPPLY</p>
+            <p class="text-xl font-bold text-white">100,000,000,000,000</p>
+        </div>
+        <div class="stat-card">
+            <p class="text-[10px]">DONATION POOL (15%)</p>
+            <p id="pool-donasi" class="text-xl font-bold text-blue-400">LOADING...</p>
+        </div>
+        <div class="stat-card">
+            <p class="text-[10px]">ACTIVE IND-EUR ANCHOR</p>
+            <p class="text-xl font-bold text-yellow-500">€100,000 / Person</p>
+        </div>
+    </div>
+
+    <div class="border border-green-900 rounded-lg overflow-hidden">
+        <table class="w-full text-left text-xs">
+            <thead class="bg-green-900 text-black">
+                <tr>
+                    <th class="p-3">TRANSACTION HASH</th>
+                    <th class="p-3">IID IDENTITY</th>
+                    <th class="p-3">TYPE</th>
+                    <th class="p-3">AMOUNT</th>
+                </tr>
+            </thead>
+            <tbody id="tx-list">
+                <tr class="border-b border-green-900 opacity-50">
+                    <td class="p-3 italic font-mono">GENESIS-BLOCK</td>
+                    <td class="p-3">IID-GHYT3EPKB</td>
+                    <td class="p-3">FOUNDER SETUP</td>
+                    <td class="p-3 text-white">MASTER</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        // Simulasi pembacaan Ledger dari LocalStorage
+        const user = JSON.parse(localStorage.getItem('neuro_identity'));
+        if(user) {
+            const list = document.getElementById('tx-list');
+            const row = `<tr>
+                <td class="p-3">TX-${Math.random().toString(36).substring(7).toUpperCase()}</td>
+                <td class="p-3">${user.iid}</td>
+                <td class="p-3 text-green-400">INITIAL GRANT</td>
+                <td class="p-3 text-white">€1.540 / 100K</td>
+            </tr>`;
+            list.innerHTML += row;
+            document.getElementById('pool-donasi').innerText = "€" + (1540 * 0.15).toFixed(2);
+        }
+    </script>
+</body>
+</html>
