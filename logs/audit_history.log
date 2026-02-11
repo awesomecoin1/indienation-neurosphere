@@ -1,0 +1,437 @@
+===========================================
+   NEUROSPHERE FOUNDER COMMAND CENTER
+===========================================
+Waktu Audit: Fri Feb  6 11:03:32 WIB 2026
+
+[1] INTEGRITAS REPOSITORI
+Commit Terakhir: d275100d8 - docs: formalize security protocol v1.0 (57 minutes ago)
+?? audit-all.sh
+?? scripts/daily-audit.js
+
+[2] KESEHATAN PENYIMPANAN (Max 10GB)
+1.9G	.
+
+[3] VERIFIKASI FILE KRITIS
+✅ Protokol Keamanan: ADA
+✅ Enkripsi SHA256: AKTIF
+✅ Sesi Cleanup: SIAP
+
+[4] SIMULASI KONEKSI DB (READ-ONLY)
+--- NEUROSPHERE FOUNDER AUDIT MODE ---
+Audit Complete: System is Secure. No changes made.
+
+[5] DETECTION: IDENTITY COLLISIONS
+🔍 Scanning for unauthorized duplicate attempts...
+✅ Result: 0 Collisions Detected. Integrity 100%.
+
+===========================================
+STATUS: AUDIT SELESAI. SISTEM TERKUNCI AMAN.
+===========================================
+
+--- END OF LOG ENTRY ---
+
+===========================================
+   NEUROSPHERE FOUNDER COMMAND CENTER
+===========================================
+Waktu Audit: Fri Feb  6 11:23:03 WIB 2026
+
+[1] INTEGRITAS REPOSITORI
+Commit Terakhir: 5f84fa540 - security: ignore env file to protect credentials (14 seconds ago)
+?? audit-all.sh
+?? lib/supabase-client.js
+?? scripts/daily-audit.js
+?? scripts/list-citizens.js
+
+[2] KESEHATAN PENYIMPANAN (Max 10GB)
+1.9G	.
+
+[3] VERIFIKASI FILE KRITIS
+✅ Protokol Keamanan: ADA
+✅ Enkripsi SHA256: AKTIF
+✅ Sesi Cleanup: SIAP
+
+[4] SIMULASI KONEKSI DB (READ-ONLY)
+--- NEUROSPHERE FOUNDER AUDIT MODE ---
+Audit Complete: System is Secure. No changes made.
+
+[5] DETECTION: IDENTITY COLLISIONS
+🔍 Scanning for unauthorized duplicate attempts...
+✅ Result: 0 Collisions Detected. Integrity 100%.
+
+===========================================
+STATUS: AUDIT SELESAI. SISTEM TERKUNCI AMAN.
+===========================================
+
+--- END OF LOG ENTRY ---
+
+===========================================
+   NEUROSPHERE FOUNDER COMMAND CENTER
+===========================================
+Waktu Audit: Fri Feb  6 11:24:12 WIB 2026
+
+[1] INTEGRITAS REPOSITORI
+Commit Terakhir: 5f84fa540 - security: ignore env file to protect credentials (83 seconds ago)
+?? audit-all.sh
+?? lib/supabase-client.js
+?? scripts/daily-audit.js
+?? scripts/list-citizens.js
+
+[2] KESEHATAN PENYIMPANAN (Max 10GB)
+1.9G	.
+
+[3] VERIFIKASI FILE KRITIS
+✅ Protokol Keamanan: ADA
+✅ Enkripsi SHA256: AKTIF
+✅ Sesi Cleanup: SIAP
+
+[4] SIMULASI KONEKSI DB (READ-ONLY)
+--- NEUROSPHERE FOUNDER AUDIT MODE ---
+Audit Complete: System is Secure. No changes made.
+
+[5] DETECTION: IDENTITY COLLISIONS
+🔍 Scanning for unauthorized duplicate attempts...
+✅ Result: 0 Collisions Detected. Integrity 100%.
+
+[6] LIVE DATA: WARGA & KLAIM
+
+
+===========================================
+STATUS: AUDIT SELESAI. SISTEM TERKUNCI AMAN.
+===========================================
+
+--- END OF LOG ENTRY ---
+
+===========================================
+   NEUROSPHERE FOUNDER COMMAND CENTER
+===========================================
+Waktu Audit: Fri Feb  6 11:44:46 WIB 2026
+
+[1] INTEGRITAS REPOSITORI
+Commit Terakhir: 5f84fa540 - security: ignore env file to protect credentials (22 minutes ago)
+?? audit-all.sh
+?? lib/supabase-client.js
+?? scripts/daily-audit.js
+?? scripts/list-citizens.js
+
+[2] KESEHATAN PENYIMPANAN (Max 10GB)
+1.9G	.
+
+[3] VERIFIKASI FILE KRITIS
+✅ Protokol Keamanan: ADA
+✅ Enkripsi SHA256: AKTIF
+✅ Sesi Cleanup: SIAP
+
+[4] SIMULASI KONEKSI DB (READ-ONLY)
+--- NEUROSPHERE FOUNDER AUDIT MODE ---
+Audit Complete: System is Secure. No changes made.
+
+[5] DETECTION: IDENTITY COLLISIONS
+🔍 Scanning for unauthorized duplicate attempts...
+✅ Result: 0 Collisions Detected. Integrity 100%.
+
+[6] LIVE DATA: WARGA & KLAIM
+[dotenv@17.2.4] injecting env (2) from .env -- tip: 📡 add observability to secrets: https://dotenvx.com/ops
+===========================================
+   LIVE AUDIT: DAFTAR WARGA NEUROSPHERE    
+===========================================
+
+===========================================
+STATUS: AUDIT SELESAI. SISTEM TERKUNCI AMAN.
+===========================================
+
+--- END OF LOG ENTRY ---
+
+===========================================
+   NEUROSPHERE FOUNDER COMMAND CENTER
+===========================================
+Waktu Audit: Fri Feb  6 13:52:15 WIB 2026
+
+[1] INTEGRITAS REPOSITORI
+Commit Terakhir: 5f84fa540 - security: ignore env file to protect credentials (2 hours ago)
+?? audit-all.sh
+?? lib/supabase-client.js
+?? scripts/daily-audit.js
+?? scripts/list-citizens.js
+
+[2] KESEHATAN PENYIMPANAN (Max 10GB)
+1.9G	.
+
+[3] VERIFIKASI FILE KRITIS
+✅ Protokol Keamanan: ADA
+✅ Enkripsi SHA256: AKTIF
+✅ Sesi Cleanup: SIAP
+
+[4] SIMULASI KONEKSI DB (READ-ONLY)
+--- NEUROSPHERE FOUNDER AUDIT MODE ---
+Audit Complete: System is Secure. No changes made.
+
+[5] DETECTION: IDENTITY COLLISIONS
+🔍 Scanning for unauthorized duplicate attempts...
+✅ Result: 0 Collisions Detected. Integrity 100%.
+
+[6] LIVE DATA: WARGA & KLAIM
+[dotenv@17.2.4] injecting env (2) from .env -- tip: 📡 add observability to secrets: https://dotenvx.com/ops
+===========================================
+   LIVE AUDIT: DISTRIBUSI IND-EUR (€)    
+===========================================
+===========================================
+
+===========================================
+STATUS: AUDIT SELESAI. SISTEM TERKUNCI AMAN.
+===========================================
+
+--- END OF LOG ENTRY ---
+
+===========================================
+   NEUROSPHERE FOUNDER COMMAND CENTER
+===========================================
+Waktu Audit: Fri Feb  6 13:53:25 WIB 2026
+
+[1] INTEGRITAS REPOSITORI
+Commit Terakhir: 5f84fa540 - security: ignore env file to protect credentials (3 hours ago)
+?? audit-all.sh
+?? lib/supabase-client.js
+?? scripts/daily-audit.js
+?? scripts/list-citizens.js
+
+[2] KESEHATAN PENYIMPANAN (Max 10GB)
+1.9G	.
+
+[3] VERIFIKASI FILE KRITIS
+✅ Protokol Keamanan: ADA
+✅ Enkripsi SHA256: AKTIF
+✅ Sesi Cleanup: SIAP
+
+[4] SIMULASI KONEKSI DB (READ-ONLY)
+--- NEUROSPHERE FOUNDER AUDIT MODE ---
+Audit Complete: System is Secure. No changes made.
+
+[5] DETECTION: IDENTITY COLLISIONS
+🔍 Scanning for unauthorized duplicate attempts...
+✅ Result: 0 Collisions Detected. Integrity 100%.
+
+[6] LIVE DATA: WARGA & KLAIM
+[dotenv@17.2.4] injecting env (2) from .env -- tip: 🗂️ backup and recover secrets: https://dotenvx.com/ops
+===========================================
+   LIVE AUDIT: DISTRIBUSI IND-EUR (€)    
+===========================================
+Belum ada data warga yang melakukan klaim €100.000.
+===========================================
+
+===========================================
+STATUS: AUDIT SELESAI. SISTEM TERKUNCI AMAN.
+===========================================
+
+--- END OF LOG ENTRY ---
+
+===========================================
+   NEUROSPHERE FOUNDER COMMAND CENTER
+===========================================
+Waktu Audit: Fri Feb  6 13:55:03 WIB 2026
+
+[1] INTEGRITAS REPOSITORI
+Commit Terakhir: 5f84fa540 - security: ignore env file to protect credentials (3 hours ago)
+?? audit-all.sh
+?? lib/supabase-client.js
+?? scripts/daily-audit.js
+?? scripts/list-citizens.js
+
+[2] KESEHATAN PENYIMPANAN (Max 10GB)
+1.9G	.
+
+[3] VERIFIKASI FILE KRITIS
+✅ Protokol Keamanan: ADA
+✅ Enkripsi SHA256: AKTIF
+✅ Sesi Cleanup: SIAP
+
+[4] SIMULASI KONEKSI DB (READ-ONLY)
+--- NEUROSPHERE FOUNDER AUDIT MODE ---
+Audit Complete: System is Secure. No changes made.
+
+[5] DETECTION: IDENTITY COLLISIONS
+🔍 Scanning for unauthorized duplicate attempts...
+✅ Result: 0 Collisions Detected. Integrity 100%.
+
+[6] LIVE DATA: WARGA & KLAIM
+[dotenv@17.2.4] injecting env (2) from .env -- tip: 🔐 encrypt with Dotenvx: https://dotenvx.com
+===========================================
+   LIVE AUDIT: DISTRIBUSI IND-EUR (€)    
+===========================================
+Belum ada data warga yang melakukan klaim €100.000.
+===========================================
+
+===========================================
+STATUS: AUDIT SELESAI. SISTEM TERKUNCI AMAN.
+===========================================
+
+--- END OF LOG ENTRY ---
+
+===========================================
+   NEUROSPHERE FOUNDER COMMAND CENTER
+===========================================
+Waktu Audit: Fri Feb  6 13:55:52 WIB 2026
+
+[1] INTEGRITAS REPOSITORI
+Commit Terakhir: 5f84fa540 - security: ignore env file to protect credentials (3 hours ago)
+?? audit-all.sh
+?? lib/supabase-client.js
+?? scripts/daily-audit.js
+?? scripts/list-citizens.js
+
+[2] KESEHATAN PENYIMPANAN (Max 10GB)
+1.9G	.
+
+[3] VERIFIKASI FILE KRITIS
+✅ Protokol Keamanan: ADA
+✅ Enkripsi SHA256: AKTIF
+✅ Sesi Cleanup: SIAP
+
+[4] SIMULASI KONEKSI DB (READ-ONLY)
+--- NEUROSPHERE FOUNDER AUDIT MODE ---
+Audit Complete: System is Secure. No changes made.
+
+[5] DETECTION: IDENTITY COLLISIONS
+🔍 Scanning for unauthorized duplicate attempts...
+✅ Result: 0 Collisions Detected. Integrity 100%.
+
+[6] LIVE DATA: WARGA & KLAIM
+[dotenv@17.2.4] injecting env (2) from .env -- tip: 🛠️  run anywhere with `dotenvx run -- yourcommand`
+===========================================
+   LIVE AUDIT: DISTRIBUSI IND-EUR (€)    
+===========================================
+Belum ada data warga yang melakukan klaim €100.000.
+===========================================
+
+===========================================
+STATUS: AUDIT SELESAI. SISTEM TERKUNCI AMAN.
+===========================================
+
+--- END OF LOG ENTRY ---
+
+===========================================
+   NEUROSPHERE FOUNDER COMMAND CENTER
+===========================================
+Waktu Audit: Fri Feb  6 13:57:04 WIB 2026
+
+[1] INTEGRITAS REPOSITORI
+Commit Terakhir: 5f84fa540 - security: ignore env file to protect credentials (3 hours ago)
+?? audit-all.sh
+?? lib/supabase-client.js
+?? scripts/daily-audit.js
+?? scripts/list-citizens.js
+
+[2] KESEHATAN PENYIMPANAN (Max 10GB)
+1.9G	.
+
+[3] VERIFIKASI FILE KRITIS
+✅ Protokol Keamanan: ADA
+✅ Enkripsi SHA256: AKTIF
+✅ Sesi Cleanup: SIAP
+
+[4] SIMULASI KONEKSI DB (READ-ONLY)
+--- NEUROSPHERE FOUNDER AUDIT MODE ---
+Audit Complete: System is Secure. No changes made.
+
+[5] DETECTION: IDENTITY COLLISIONS
+🔍 Scanning for unauthorized duplicate attempts...
+✅ Result: 0 Collisions Detected. Integrity 100%.
+
+[6] LIVE DATA: WARGA & KLAIM
+[dotenv@17.2.4] injecting env (2) from .env -- tip: 🔐 prevent committing .env to code: https://dotenvx.com/precommit
+===========================================
+   LIVE AUDIT: DISTRIBUSI IND-EUR (€)    
+===========================================
+Belum ada data warga yang melakukan klaim €100.000.
+===========================================
+
+===========================================
+STATUS: AUDIT SELESAI. SISTEM TERKUNCI AMAN.
+===========================================
+
+--- END OF LOG ENTRY ---
+
+===========================================
+   NEUROSPHERE FOUNDER COMMAND CENTER
+===========================================
+Waktu Audit: Fri Feb  6 17:07:42 WIB 2026
+
+[1] INTEGRITAS REPOSITORI
+Commit Terakhir: 5f84fa540 - security: ignore env file to protect credentials (6 hours ago)
+?? audit-all.sh
+?? lib/supabase-client.js
+?? scripts/daily-audit.js
+?? scripts/list-citizens.js
+
+[2] KESEHATAN PENYIMPANAN (Max 10GB)
+1.9G	.
+
+[3] VERIFIKASI FILE KRITIS
+✅ Protokol Keamanan: ADA
+✅ Enkripsi SHA256: AKTIF
+✅ Sesi Cleanup: SIAP
+
+[4] SIMULASI KONEKSI DB (READ-ONLY)
+--- NEUROSPHERE FOUNDER AUDIT MODE ---
+Audit Complete: System is Secure. No changes made.
+
+[5] DETECTION: IDENTITY COLLISIONS
+🔍 Scanning for unauthorized duplicate attempts...
+✅ Result: 0 Collisions Detected. Integrity 100%.
+
+[6] LIVE DATA: WARGA & KLAIM
+[dotenv@17.2.4] injecting env (2) from .env -- tip: ⚙️  specify custom .env file path with { path: '/custom/path/.env' }
+===========================================
+   LIVE AUDIT: DISTRIBUSI IND-EUR (€)    
+===========================================
+Belum ada data warga yang melakukan klaim €100.000.
+===========================================
+
+===========================================
+STATUS: AUDIT SELESAI. SISTEM TERKUNCI AMAN.
+===========================================
+
+--- END OF LOG ENTRY ---
+
+===========================================
+   NEUROSPHERE FOUNDER COMMAND CENTER
+===========================================
+Waktu Audit: Tue Feb 10 18:54:59 WIB 2026
+
+[1] INTEGRITAS REPOSITORI
+Commit Terakhir: cc29b3b65 - update: sync core Auralang logics and scripts for daily audit (20 minutes ago)
+ D scripts/auralang-run.js
+?? ACCESS_KEY_NTT.txt
+?? backup_neuro.sh
+?? backups/logic_backup_20260210_1639.aura
+?? lib/supabase-client.js
+
+[2] KESEHATAN PENYIMPANAN (Max 10GB)
+1.9G	.
+
+[3] VERIFIKASI FILE KRITIS
+✅ Protokol Keamanan: ADA
+✅ Enkripsi SHA256: AKTIF
+✅ Sesi Cleanup: SIAP
+
+[4] SIMULASI KONEKSI DB (READ-ONLY)
+--- NEUROSPHERE FOUNDER AUDIT MODE ---
+Audit Complete: System is Secure. No changes made.
+
+[5] DETECTION: IDENTITY COLLISIONS
+🔍 Scanning for unauthorized duplicate attempts...
+✅ Result: 0 Collisions Detected. Integrity 100%.
+
+[6] LIVE DATA: WARGA & KLAIM
+[dotenv@17.2.4] injecting env (3) from .env -- tip: 🔐 encrypt with Dotenvx: https://dotenvx.com
+===========================================
+   LIVE AUDIT: DISTRIBUSI IND-EUR (€)    
+===========================================
+Belum ada data warga yang melakukan klaim €100.000.
+===========================================
+
+===========================================
+STATUS: AUDIT SELESAI. SISTEM TERKUNCI AMAN.
+===========================================
+
+--- END OF LOG ENTRY ---
+

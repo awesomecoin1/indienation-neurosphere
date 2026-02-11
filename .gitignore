@@ -1,9 +1,5 @@
-node_modules/
-pgdata/
-logfile
-*.log
-.next/
-node_modules/
-.vercel
-.env*.local
 .env
+.env.local
+node_modules/
+*.json.backup
+ACCESS_KEY_NTT.txt
