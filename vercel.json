@@ -4,19 +4,13 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "framework": null,
-  "headers": [
-    {
-      "source": "/(.*)",
-      "headers": [
-        { "key": "Cache-Control", "value": "no-cache, no-store, must-revalidate" }
-      ]
-    }
-  ],
+  "outputDirectory": ".",
+  "buildCommand": null,
+  "installCommand": null,
   "rewrites": [
     { "source": "/admin", "destination": "/admin.html" },
     { "source": "/scan", "destination": "/scan.html" },
     { "source": "/verify", "destination": "/verify.html" },
-    { "source": "/certificate", "destination": "/index.html" },
     { "source": "/", "destination": "/index.html" }
   ]
 }
