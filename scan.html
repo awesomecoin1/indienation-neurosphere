@@ -66,5 +66,6 @@
             document.getElementById('pool-donasi').innerText = "€" + (1540 * 0.15).toFixed(2);
         }
     </script>
+<script>function syncLedger(){ const logs = JSON.parse(localStorage.getItem("ns_logs") || "[]"); const container = document.getElementById("log-container"); container.innerHTML = logs.map(l => `<div>[${l.time}] ${l.type}: ${l.amt} IND-EUR (Hash: ${l.hash})</div>`).join(""); } setInterval(syncLedger, 2000);</script>
 </body>
 </html>
