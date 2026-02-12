@@ -1,10 +1,9 @@
 {
   "version": 2,
-  "public": true,
   "cleanUrls": false,
   "framework": null,
   "rewrites": [
-    { "source": "/admin", "destination": "/admin.html" },
-    { "source": "/scan", "destination": "/scan.html" }
+    { "source": "/admin", "destination": "/dashboard-founder.html" },
+    { "source": "/scan", "destination": "/explorer-neurosphere.html" }
   ]
 }
