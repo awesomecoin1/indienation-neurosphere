@@ -67,5 +67,6 @@
         }
     </script>
 <script>function syncLedger(){ const logs = JSON.parse(localStorage.getItem("ns_logs") || "[]"); const container = document.getElementById("log-container"); container.innerHTML = logs.map(l => `<div>[${l.time}] ${l.type}: ${l.amt} IND-EUR (Hash: ${l.hash})</div>`).join(""); } setInterval(syncLedger, 2000);</script>
+<div id="log-container" style="color:#22c55e; font-family:monospace; padding:20px;"></div>
 </body>
 </html>
