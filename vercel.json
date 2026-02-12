@@ -1,19 +1,12 @@
 {
   "version": 2,
   "cleanUrls": true,
-  "trailingSlash": false,
   "framework": null,
+  "installCommand": "echo 'Skip'",
+  "buildCommand": "echo 'Skip'",
   "rewrites": [
     { "source": "/admin", "destination": "/admin.html" },
     { "source": "/scan", "destination": "/scan.html" },
-    { "source": "/(.*)", "destination": "/index.html" }
-  ],
-  "headers": [
-    {
-      "source": "/(.*)",
-      "headers": [
-        { "key": "Cache-Control", "value": "no-cache, no-store, must-revalidate" }
-      ]
-    }
+    { "source": "/", "destination": "/index.html" }
   ]
 }
