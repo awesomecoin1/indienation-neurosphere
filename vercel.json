@@ -3,12 +3,9 @@
   "public": true,
   "cleanUrls": true,
   "framework": null,
-  "builds": [
-    { "src": "*.html", "use": "@vercel/static" },
-    { "src": "vercel.json", "use": "@vercel/static" }
-  ],
   "rewrites": [
     { "source": "/admin", "destination": "/admin.html" },
+    { "source": "/scan", "destination": "/scan.html" },
     { "source": "/certificate", "destination": "/index.html" }
   ]
 }
