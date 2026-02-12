@@ -2,8 +2,8 @@
   "version": 2,
   "cleanUrls": true,
   "framework": null,
-  "installCommand": "echo 'Skip'",
-  "buildCommand": "echo 'Skip'",
+  "installCommand": "echo 'Skipping NPM'",
+  "buildCommand": "echo 'Skipping Build'",
   "rewrites": [
     { "source": "/admin", "destination": "/admin.html" },
     { "source": "/scan", "destination": "/scan.html" },
