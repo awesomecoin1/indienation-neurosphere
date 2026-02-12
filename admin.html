@@ -3,91 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NeuroSphere | Founder Admin</title>
+    <title>NeuroSphere | Transaction Engine</title>
     <style>
-        body { background: #0a0a0a; color: #00ff00; font-family: monospace; padding: 20px; }
-        .vault-card { border: 1px solid #00ff00; padding: 20px; margin-bottom: 20px; border-radius: 5px; }
-        input { background: #1a1a1a; border: 1px solid #00ff00; color: #00ff00; padding: 10px; width: 100%; margin: 10px 0; }
-        button { background: #00ff00; color: #000; border: none; padding: 10px 20px; cursor: pointer; font-weight: bold; width: 100%; }
-        .log-box { background: #000; border: 1px solid #333; padding: 10px; height: 150px; overflow-y: auto; font-size: 12px; color: #888; }
+        body { background: #050505; color: #00ff41; font-family: 'Courier New', monospace; padding: 20px; }
+        .vault-box { border: 2px solid #00ff41; padding: 15px; border-radius: 8px; margin-bottom: 20px; box-shadow: 0 0 10px #00ff41; }
+        input { background: #111; border: 1px solid #00ff41; color: #00ff41; padding: 12px; width: 90%; margin: 10px 0; border-radius: 4px; }
+        button { background: #00ff41; color: #000; border: none; padding: 12px; width: 95%; font-weight: bold; cursor: pointer; text-transform: uppercase; }
+        .ledger-log { background: #000; border: 1px solid #222; padding: 10px; height: 120px; overflow-y: auto; font-size: 11px; color: #008f11; margin-top: 15px; }
     </style>
 </head>
 <body>
-    <h2># NEUROSPHERE_FOUNDER_PORTAL</h2>
-    
-    <div class="vault-card">
-        <div>MY_IDENTITY: <span id="display-iid">LOADING...</span></div>
-        <div style="font-size: 0.8em; color: #888;">STATUS: IDENTITY_LOCKED_CONSISTENT</div>
+    <h2># NEUROSPHERE_IID_VAULT</h2>
+    <div class="vault-box">
+        <div>CURRENT_IID: <strong id="user-iid">GENERATING...</strong></div>
+        <div style="font-size: 10px; opacity: 0.7;">STATUS: SOVEREIGN_IDENTITY_LOCKED</div>
     </div>
 
-    <div class="vault-card">
-        <h3>SEND_TECHNOLOGY_MONEY (TM)</h3>
-        <input type="text" id="target-iid" placeholder="RECIPIENT_IID (e.g. IID-GHYT3EPKB)">
-        <input type="number" id="tx-amount" placeholder="AMOUNT (0 - 1000 EUR)" min="0" max="1000">
-        <button onclick="processTransfer()">EXECUTE_TRANSFER</button>
+    <div class="vault-box">
+        <h3>TRANSACTION_ENGINE (0-1000 EUR)</h3>
+        <input type="text" id="target-id" placeholder="RECIPIENT_IID (e.g. IID-XXXX)">
+        <input type="number" id="tx-amount" placeholder="AMOUNT IND-EUR (Max 1000)" step="0.01">
+        <button onclick="sendFunds()">EXECUTE_SIGNED_TRANSFER</button>
     </div>
 
-    <h4>TRANSACTION_LOG</h4>
-    <div id="tx-log" class="log-box">Waiting for transaction...</div>
+    <div id="tx-ledger" class="ledger-log">Awaiting first transaction...</div>
 
     <script>
-        // 1. IDENTITY LOCK: Konsistensi IID
-        const getIdentity = () => {
-            let savedIID = localStorage.getItem('neurosphere_iid');
-            let savedSecret = localStorage.getItem('neurosphere_secret');
-            if (!savedIID) {
-                const seed = 'INDIE-' + Math.random().toString(36).substr(2, 9).toUpperCase();
-                savedIID = 'IID-' + btoa(seed).substr(0, 12).toUpperCase();
-                savedSecret = 'SEC-' + btoa(Math.random().toString()).substr(0, 32);
-                localStorage.setItem('neurosphere_iid', savedIID);
-                localStorage.setItem('neurosphere_secret', savedSecret);
+        // IDENTITY_LOCK Logic: Memastikan ID tetap konsisten
+        const initIdentity = () => {
+            let iid = localStorage.getItem('ns_iid');
+            if (!iid) {
+                iid = 'IID-' + Math.random().toString(36).substr(2, 9).toUpperCase();
+                localStorage.setItem('ns_iid', iid);
             }
-            return { iid: savedIID, secret: savedSecret };
+            document.getElementById('user-iid').innerText = iid;
+            return iid;
         };
 
-        // 2. TRANSACTION ENGINE: 0 - 1000 EUR
-        async function executeTransaction(recipientIID, amount) {
-            const auth = getIdentity();
-            const timestamp = new Date().toISOString();
-            
-            if (amount < 0 || amount > 1000) {
-                alert("ERR: LIMIT_EXCEEDED (0-1000 IND-EUR)");
+        // TRANSACTION_ENGINE: Validasi & Signing (Auralang Protocol)
+        function sendFunds() {
+            const myIid = initIdentity();
+            const target = document.getElementById('target-id').value;
+            const amt = parseFloat(document.getElementById('tx-amount').value);
+            const ts = new Date().toISOString();
+
+            if (!target || isNaN(amt) || amt < 0 || amt > 1000) {
+                alert("ERR: INVALID_AMOUNT_OR_IID (Range 0-1000)");
                 return;
             }
 
-            // HASH & SIGNATURE (Auralang Protocol)
-            const rawData = `${auth.iid}${recipientIID}${amount}${timestamp}${auth.secret}`;
-            const txHash = btoa(rawData).substr(0, 32); // Simplified SHA-256 for browser
-            const signature = "SIG-" + btoa(txHash).substr(0, 16);
+            // Generate Proof of Transaction (TXID & SIG)
+            const hashData = btoa(`${myIid}${target}${amt}${ts}`);
+            const txid = "0x" + hashData.substr(0, 16);
+            const sig = "SIG-" + hashData.substr(16, 24);
 
-            const record = {
-                txid: txHash,
-                from: auth.iid,
-                to: recipientIID,
-                val: amount,
-                ts: timestamp,
-                sig: signature
-            };
-
-            updateLog(record);
-            alert(`SUCCESS!\nTXID: ${txHash}\nSIG: ${signature}`);
+            const record = `<div>[${ts}] TX: ${txid} | SENT: €${amt} TO: ${target} | SIG: ${sig}</div>`;
+            document.getElementById('tx-ledger').innerHTML = record + document.getElementById('tx-ledger').innerHTML;
+            
+            alert(`TRANSACTION_SUCCESS!\nTXID: ${txid}\nSIGNATURE: ${sig}`);
         }
 
-        function processTransfer() {
-            const target = document.getElementById('target-iid').value;
-            const amt = document.getElementById('tx-amount').value;
-            if (target && amt) executeTransaction(target, parseFloat(amt));
-            else alert("ERR: EMPTY_FIELDS");
-        }
-
-        function updateLog(data) {
-            const log = document.getElementById('tx-log');
-            log.innerHTML = `<div>[${data.ts}] TX: ${data.txid.substr(0,8)}... SENT €${data.val} TO ${data.to}</div>` + log.innerHTML;
-        }
-
-        document.addEventListener('DOMContentLoaded', () => {
-            document.getElementById('display-iid').innerText = getIdentity().iid;
-        });
+        window.onload = initIdentity;
     </script>
 </body>
 </html>
