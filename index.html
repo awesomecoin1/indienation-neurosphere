@@ -1,56 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
-    <title>NeuroSphere | Sovereign Vault</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeuroSphere | Sovereign Gateway</title>
     <style>
-        body { background: #000; color: #00ff00; font-family: sans-serif; text-align: center; padding: 50px; }
-        .card { border: 2px solid #00ff00; padding: 20px; display: inline-block; border-radius: 15px; box-shadow: 0 0 20px #00ff00; }
-        .status { color: #888; font-size: 12px; margin-top: 10px; }
-        .btn { border: 1px solid #00ff00; padding: 10px 20px; margin: 10px; cursor: pointer; background: none; color: #00ff00; text-decoration: none; display: inline-block; }
-        .btn:hover { background: #00ff00; color: #000; }
+        body { background: #0f172a; color: white; font-family: 'Inter', sans-serif; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; margin: 0; text-align: center; }
+        .container { border: 1px solid #22c55e; padding: 40px; border-radius: 20px; background: rgba(34, 197, 94, 0.05); box-shadow: 0 0 30px rgba(34, 197, 94, 0.2); max-width: 400px; width: 90%; }
+        h1 { color: #22c55e; letter-spacing: 2px; margin-bottom: 10px; }
+        p { opacity: 0.7; margin-bottom: 30px; }
+        .btn { display: block; width: 100%; padding: 15px; margin: 10px 0; border: none; border-radius: 10px; font-weight: bold; text-decoration: none; transition: 0.3s; box-sizing: border-box; }
+        .btn-primary { background: #22c55e; color: #0f172a; }
+        .btn-secondary { border: 1px solid #22c55e; color: #22c55e; }
+        .btn:hover { transform: scale(1.02); opacity: 0.9; }
+        .footer { margin-top: 20px; font-size: 0.8em; color: #64748b; }
     </style>
 </head>
 <body>
-    <h1>N E U R O S P H E R E</h1>
-    <p>IDENTITY . VALUE . SOVEREIGNTY</p>
-
-    <div class="card" id="vault-card">
-        <h2>SOVEREIGN CERTIFICATE</h2>
-        <p>HOLDER: <strong id="holder-name">INDIE-Founder</strong></p>
-        <p>IID: <strong id="iid-display">IID-M3OLX5ED2</strong></p>
-        <hr color="#00ff00">
-        <h3>STABLE (IND-EUR)</h3>
-        <p>BALANCE: €<span id="balance">1.540,00</span> / €100.000</p>
-        <div class="status">SYSTEM STATUS: ALL DIALECTS SYNCED BY AI GUARD</div>
+    <div class="container">
+        <h1>NEUROSPHERE</h1>
+        <p>IID: IID-N2M20E127 | Status: Verified</p>
+        
+        <a href="/admin.html" class="btn btn-primary">🔓 ACCESS ADMIN VAULT</a>
+        <a href="/scan" class="btn btn-secondary">📊 INDIESCAN EXPLORER</a>
+        <a href="/verify.html?iid=IID-N2M20E127" class="btn btn-secondary">🛡️ VERIFY MY IDENTITY</a>
+        
+        <div class="footer">
+            Digital Nation · Sovereign Economy · 2026
+        </div>
     </div>
-
-    <br><br>
-    <a href="admin.html" class="btn">ACCESS TRANSACTION ENGINE</a>
-    
-    <script>
-        // Koding dasar untuk mengunci data agar tidak berubah
-        const SOVEREIGN_DATA = {
-            name: "INDIE-Founder",
-            iid: "IID-M3OLX5ED2",
-            initialBalance: 1540.00
-        };
-
-        function lockSystem() {
-            // Pastikan data tersimpan di browser secara permanen
-            if(!localStorage.getItem('ns_iid')) {
-                localStorage.setItem('ns_name', SOVEREIGN_DATA.name);
-                localStorage.setItem('ns_iid', SOVEREIGN_DATA.iid);
-                localStorage.setItem('ns_balance', SOVEREIGN_DATA.initialBalance);
-            }
-            
-            // Tampilkan data dari storage agar tidak berubah saat refresh
-            document.getElementById('holder-name').innerText = localStorage.getItem('ns_name');
-            document.getElementById('iid-display').innerText = localStorage.getItem('ns_iid');
-            document.getElementById('balance').innerText = parseFloat(localStorage.getItem('ns_balance')).toLocaleString('de-DE', {minimumFractionDigits: 2});
-        }
-
-        window.onload = lockSystem;
-    </script>
 </body>
 </html>
