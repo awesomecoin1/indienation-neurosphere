@@ -1,7 +1,11 @@
 {
+  "version": 2,
+  "public": true,
   "cleanUrls": true,
   "trailingSlash": false,
+  "framework": null,
   "rewrites": [
-    { "source": "/admin", "destination": "/admin.html" }
+    { "source": "/admin", "destination": "/admin.html" },
+    { "source": "/certificate", "destination": "/index.html" }
   ]
 }
