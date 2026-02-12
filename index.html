@@ -1,22 +1,81 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
-    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NeuroSphere Gateway</title>
+    <meta charset="UTF-8">
+    <title>Founder Admin Panel - NeuroSphere</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/qrcode@1.4.4/build/qrcode.min.js"></script>
     <style>
-        body { background: #000; color: #22c55e; font-family: monospace; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; margin: 0; }
-        .nav-box { border: 2px solid #22c55e; padding: 40px; border-radius: 15px; text-align: center; box-shadow: 0 0 20px #22c55e; }
-        .btn { display: block; width: 250px; padding: 15px; margin: 15px 0; border: 1px solid #22c55e; background: #000; color: #22c55e; text-decoration: none; font-weight: bold; cursor: pointer; }
-        .btn:hover { background: #22c55e; color: #000; }
+        body { background: #050505; color: #00ff41; font-family: 'Courier New', Courier, monospace; }
+        .founder-border { border: 2px solid #00ff41; box-shadow: 0 0 15px #00ff41; }
     </style>
+<script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
 </head>
-<body>
-    <div class="nav-box">
-        <h1 style="letter-spacing: 8px;">NEUROSPHERE</h1>
-        <p>STABLE INFRASTRUCTURE 2026</p>
-        <hr>
-        <a href="/dashboard.html" class="btn">🔓 ENTER SOVEREIGN VAULT</a>
-        <a href="/scan.html" class="btn">📊 VIEW INDIESCAN</a>
+<body class="p-8">
+    <div class="max-w-4xl mx-auto">
+        <h1 class="text-2xl font-bold mb-4">NEUROSPHERE CONTROL CENTER</h1>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="founder-border p-6 rounded-lg bg-black">
+                <h2 class="text-xs uppercase tracking-widest mb-4">Founder Master Identity</h2>
+                <canvas id="founder-qr" class="mx-auto bg-white p-2"></canvas>
+                <p class="text-center mt-4 text-sm font-bold">IID-GHYT3EPKB</p>
+                <p class="text-[10px] text-center opacity-50">INDIE-FOUNDER AUTHENTICATED</p>
+            </div>
+
+            <div class="border border-green-900 p-6 rounded-lg">
+                <h2 class="text-xs mb-4">LIVE TRANSACTION FEED</h2>
+                <div class="text-[10px] space-y-2">
+                    <p class="text-green-400">[20:05:23] TX-TEST-001: SUCCESS</p>
+                    <p class="text-white">NET: €850.0 | DONATION: €150.0</p>
+                    <hr class="border-green-900">
+                    <p class="animate-pulse">_WAITING FOR NEXT SCAN...</p>
+                </div>
+            </div>
+        </div>
     </div>
+
+    <script>
+        // Generate Founder Master QR on Load
+        window.onload = function() {
+            const qrCanvas = document.getElementById('founder-qr');
+            QRCode.toCanvas(qrCanvas, "https://indienation-neurosphere.vercel.app/admin/verify?id=IID-GHYT3EPKB", { width: 180 });
+        }
+    </script>
+<div style="display:flex; gap:10px; padding:20px; justify-content:center;"><button onclick="alert("Deposit Feature Coming Soon")" style="background:#22c55e; color:#000; padding:10px; border:none; border-radius:5px;">📥 RECEIVE / DEPOSIT</button><button onclick="alert("Scan Destination QR to Send")" style="background:transparent; color:#22c55e; border:1px solid #22c55e; padding:10px; border-radius:5px;">📤 SEND IND-EUR</button></div>
 </body>
 </html>
+<script>
+function triggerEmergency() {
+    const confirmation = confirm("WARNING: This will freeze the ENTIRE NeuroSphere ecosystem. Only INDIE-Founder can undo this. Proceed?");
+    if(confirmation) {
+        alert("PROTOKOL OMEGA ACTIVATED. All assets locked.");
+        // Logika AI Guard Shutdown akan diproses di sini
+    }
+}
+</script>
+<div id="qr-modal" style="display:none; position:fixed; top:50%; left:50%; transform:translate(-50%,-50%); background:white; padding:20px; border:2px solid #00ff00; z-index:1000; text-align:center; color:#000;">
+    <h3>SOVEREIGN QR</h3>
+    <div id="identity-qr" style="margin:10px auto; display:inline-block;"></div>
+    <br><button onclick="closeQR()" style="padding:5px 20px; cursor:pointer;">CLOSE</button>
+</div>
+<div id="qr-overlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); z-index:999;" onclick="closeQR()"></div>
+
+<script>
+function showQR() {
+    const identity = {
+        name: localStorage.getItem('ns_name') || "INDIE-Founder",
+        iid: localStorage.getItem('ns_iid') || "IID-M3OLX5ED2",
+        balance: localStorage.getItem('ns_balance') || "1540",
+        status: "ACTIVE_SOVEREIGN"
+    };
+    document.getElementById('identity-qr').innerHTML = "";
+    new QRCode(document.getElementById('identity-qr'), JSON.stringify(identity));
+    document.getElementById('qr-modal').style.display = 'block';
+    document.getElementById('qr-overlay').style.display = 'block';
+}
+function closeQR() {
+    document.getElementById('qr-modal').style.display = 'none';
+    document.getElementById('qr-overlay').style.display = 'none';
+}
+</script>
+
