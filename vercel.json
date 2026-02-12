@@ -1,5 +1,9 @@
 {
   "version": 2,
   "framework": null,
-  "cleanUrls": true
+  "rewrites": [
+    { "source": "/", "destination": "/dashboard.html" },
+    { "source": "/scan", "destination": "/scan.html" }
+  ],
+  "cleanUrls": false
 }
