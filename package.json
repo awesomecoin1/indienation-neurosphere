@@ -1,0 +1,12 @@
+{
+  "name": "indienation-neurosphere",
+  "version": "1.0.0",
+  "description": "NeuroSphere Ecosystem - Auralang Based",
+  "scripts": {
+    "build": "auralang build --target=wasm --optimize",
+    "start": "auralang serve"
+  },
+  "dependencies": {
+    "auralang": "latest"
+  }
+}
