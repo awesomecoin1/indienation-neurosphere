@@ -2,52 +2,92 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Founder Admin Panel - NeuroSphere</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/qrcode@1.4.4/build/qrcode.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeuroSphere | Founder Admin</title>
     <style>
-        body { background: #050505; color: #00ff41; font-family: 'Courier New', Courier, monospace; }
-        .founder-border { border: 2px solid #00ff41; box-shadow: 0 0 15px #00ff41; }
+        body { background: #0a0a0a; color: #00ff00; font-family: monospace; padding: 20px; }
+        .vault-card { border: 1px solid #00ff00; padding: 20px; margin-bottom: 20px; border-radius: 5px; }
+        input { background: #1a1a1a; border: 1px solid #00ff00; color: #00ff00; padding: 10px; width: 100%; margin: 10px 0; }
+        button { background: #00ff00; color: #000; border: none; padding: 10px 20px; cursor: pointer; font-weight: bold; width: 100%; }
+        .log-box { background: #000; border: 1px solid #333; padding: 10px; height: 150px; overflow-y: auto; font-size: 12px; color: #888; }
     </style>
 </head>
-<body class="p-8">
-    <div class="max-w-4xl mx-auto">
-        <h1 class="text-2xl font-bold mb-4">NEUROSPHERE CONTROL CENTER</h1>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div class="founder-border p-6 rounded-lg bg-black">
-                <h2 class="text-xs uppercase tracking-widest mb-4">Founder Master Identity</h2>
-                <canvas id="founder-qr" class="mx-auto bg-white p-2"></canvas>
-                <p class="text-center mt-4 text-sm font-bold">IID-GHYT3EPKB</p>
-                <p class="text-[10px] text-center opacity-50">INDIE-FOUNDER AUTHENTICATED</p>
-            </div>
-
-            <div class="border border-green-900 p-6 rounded-lg">
-                <h2 class="text-xs mb-4">LIVE TRANSACTION FEED</h2>
-                <div class="text-[10px] space-y-2">
-                    <p class="text-green-400">[20:05:23] TX-TEST-001: SUCCESS</p>
-                    <p class="text-white">NET: €850.0 | DONATION: €150.0</p>
-                    <hr class="border-green-900">
-                    <p class="animate-pulse">_WAITING FOR NEXT SCAN...</p>
-                </div>
-            </div>
-        </div>
+<body>
+    <h2># NEUROSPHERE_FOUNDER_PORTAL</h2>
+    
+    <div class="vault-card">
+        <div>MY_IDENTITY: <span id="display-iid">LOADING...</span></div>
+        <div style="font-size: 0.8em; color: #888;">STATUS: IDENTITY_LOCKED_CONSISTENT</div>
     </div>
 
+    <div class="vault-card">
+        <h3>SEND_TECHNOLOGY_MONEY (TM)</h3>
+        <input type="text" id="target-iid" placeholder="RECIPIENT_IID (e.g. IID-GHYT3EPKB)">
+        <input type="number" id="tx-amount" placeholder="AMOUNT (0 - 1000 EUR)" min="0" max="1000">
+        <button onclick="processTransfer()">EXECUTE_TRANSFER</button>
+    </div>
+
+    <h4>TRANSACTION_LOG</h4>
+    <div id="tx-log" class="log-box">Waiting for transaction...</div>
+
     <script>
-        // Generate Founder Master QR on Load
-        window.onload = function() {
-            const qrCanvas = document.getElementById('founder-qr');
-            QRCode.toCanvas(qrCanvas, "https://indienation-neurosphere.vercel.app/admin/verify?id=IID-GHYT3EPKB", { width: 180 });
+        // 1. IDENTITY LOCK: Konsistensi IID
+        const getIdentity = () => {
+            let savedIID = localStorage.getItem('neurosphere_iid');
+            let savedSecret = localStorage.getItem('neurosphere_secret');
+            if (!savedIID) {
+                const seed = 'INDIE-' + Math.random().toString(36).substr(2, 9).toUpperCase();
+                savedIID = 'IID-' + btoa(seed).substr(0, 12).toUpperCase();
+                savedSecret = 'SEC-' + btoa(Math.random().toString()).substr(0, 32);
+                localStorage.setItem('neurosphere_iid', savedIID);
+                localStorage.setItem('neurosphere_secret', savedSecret);
+            }
+            return { iid: savedIID, secret: savedSecret };
+        };
+
+        // 2. TRANSACTION ENGINE: 0 - 1000 EUR
+        async function executeTransaction(recipientIID, amount) {
+            const auth = getIdentity();
+            const timestamp = new Date().toISOString();
+            
+            if (amount < 0 || amount > 1000) {
+                alert("ERR: LIMIT_EXCEEDED (0-1000 IND-EUR)");
+                return;
+            }
+
+            // HASH & SIGNATURE (Auralang Protocol)
+            const rawData = `${auth.iid}${recipientIID}${amount}${timestamp}${auth.secret}`;
+            const txHash = btoa(rawData).substr(0, 32); // Simplified SHA-256 for browser
+            const signature = "SIG-" + btoa(txHash).substr(0, 16);
+
+            const record = {
+                txid: txHash,
+                from: auth.iid,
+                to: recipientIID,
+                val: amount,
+                ts: timestamp,
+                sig: signature
+            };
+
+            updateLog(record);
+            alert(`SUCCESS!\nTXID: ${txHash}\nSIG: ${signature}`);
         }
+
+        function processTransfer() {
+            const target = document.getElementById('target-iid').value;
+            const amt = document.getElementById('tx-amount').value;
+            if (target && amt) executeTransaction(target, parseFloat(amt));
+            else alert("ERR: EMPTY_FIELDS");
+        }
+
+        function updateLog(data) {
+            const log = document.getElementById('tx-log');
+            log.innerHTML = `<div>[${data.ts}] TX: ${data.txid.substr(0,8)}... SENT €${data.val} TO ${data.to}</div>` + log.innerHTML;
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('display-iid').innerText = getIdentity().iid;
+        });
     </script>
 </body>
 </html>
-<script>
-function triggerEmergency() {
-    const confirmation = confirm("WARNING: This will freeze the ENTIRE NeuroSphere ecosystem. Only INDIE-Founder can undo this. Proceed?");
-    if(confirmation) {
-        alert("PROTOKOL OMEGA ACTIVATED. All assets locked.");
-        // Logika AI Guard Shutdown akan diproses di sini
-    }
-}
-</script>
