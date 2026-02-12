@@ -1,9 +1,5 @@
 {
   "version": 2,
   "cleanUrls": false,
-  "trailingSlash": false,
-  "framework": null,
-  "rewrites": [
-    { "source": "/admin", "destination": "/admin.html" }
-  ]
+  "framework": null
 }
