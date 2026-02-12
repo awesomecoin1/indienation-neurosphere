@@ -2,13 +2,5 @@
   "version": 2,
   "cleanUrls": true,
   "trailingSlash": false,
-  "framework": null,
-  "headers": [
-    {
-      "source": "/(.*)",
-      "headers": [
-        { "key": "Cache-Control", "value": "no-cache, no-store, must-revalidate" }
-      ]
-    }
-  ]
+  "framework": null
 }
