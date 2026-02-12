@@ -5,7 +5,7 @@
   "trailingSlash": false,
   "framework": null,
   "rewrites": [
-    { "source": "/admin", "destination": "/admin.html" },
+    { "source": "/admin", "destination": "/index.html" },
     { "source": "/scan", "destination": "/scan.html" },
     { "source": "/", "destination": "/index.html" }
   ]
