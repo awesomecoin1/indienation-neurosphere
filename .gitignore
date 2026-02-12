@@ -3,3 +3,5 @@
 node_modules/
 *.json.backup
 ACCESS_KEY_NTT.txt
+.vercel
+.env*.local

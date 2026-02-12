@@ -2,52 +2,55 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Founder Admin Panel - NeuroSphere</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/qrcode@1.4.4/build/qrcode.min.js"></script>
+    <title>NeuroSphere | Sovereign Vault</title>
     <style>
-        body { background: #050505; color: #00ff41; font-family: 'Courier New', Courier, monospace; }
-        .founder-border { border: 2px solid #00ff41; box-shadow: 0 0 15px #00ff41; }
+        body { background: #000; color: #00ff00; font-family: sans-serif; text-align: center; padding: 50px; }
+        .card { border: 2px solid #00ff00; padding: 20px; display: inline-block; border-radius: 15px; box-shadow: 0 0 20px #00ff00; }
+        .status { color: #888; font-size: 12px; margin-top: 10px; }
+        .btn { border: 1px solid #00ff00; padding: 10px 20px; margin: 10px; cursor: pointer; background: none; color: #00ff00; text-decoration: none; display: inline-block; }
+        .btn:hover { background: #00ff00; color: #000; }
     </style>
 </head>
-<body class="p-8">
-    <div class="max-w-4xl mx-auto">
-        <h1 class="text-2xl font-bold mb-4">NEUROSPHERE CONTROL CENTER</h1>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div class="founder-border p-6 rounded-lg bg-black">
-                <h2 class="text-xs uppercase tracking-widest mb-4">Founder Master Identity</h2>
-                <canvas id="founder-qr" class="mx-auto bg-white p-2"></canvas>
-                <p class="text-center mt-4 text-sm font-bold">IID-GHYT3EPKB</p>
-                <p class="text-[10px] text-center opacity-50">INDIE-FOUNDER AUTHENTICATED</p>
-            </div>
+<body>
+    <h1>N E U R O S P H E R E</h1>
+    <p>IDENTITY . VALUE . SOVEREIGNTY</p>
 
-            <div class="border border-green-900 p-6 rounded-lg">
-                <h2 class="text-xs mb-4">LIVE TRANSACTION FEED</h2>
-                <div class="text-[10px] space-y-2">
-                    <p class="text-green-400">[20:05:23] TX-TEST-001: SUCCESS</p>
-                    <p class="text-white">NET: €850.0 | DONATION: €150.0</p>
-                    <hr class="border-green-900">
-                    <p class="animate-pulse">_WAITING FOR NEXT SCAN...</p>
-                </div>
-            </div>
-        </div>
+    <div class="card" id="vault-card">
+        <h2>SOVEREIGN CERTIFICATE</h2>
+        <p>HOLDER: <strong id="holder-name">INDIE-Founder</strong></p>
+        <p>IID: <strong id="iid-display">IID-M3OLX5ED2</strong></p>
+        <hr color="#00ff00">
+        <h3>STABLE (IND-EUR)</h3>
+        <p>BALANCE: €<span id="balance">1.540,00</span> / €100.000</p>
+        <div class="status">SYSTEM STATUS: ALL DIALECTS SYNCED BY AI GUARD</div>
     </div>
 
+    <br><br>
+    <a href="admin.html" class="btn">ACCESS TRANSACTION ENGINE</a>
+    
     <script>
-        // Generate Founder Master QR on Load
-        window.onload = function() {
-            const qrCanvas = document.getElementById('founder-qr');
-            QRCode.toCanvas(qrCanvas, "https://indienation-neurosphere.vercel.app/admin/verify?id=IID-GHYT3EPKB", { width: 180 });
+        // Koding dasar untuk mengunci data agar tidak berubah
+        const SOVEREIGN_DATA = {
+            name: "INDIE-Founder",
+            iid: "IID-M3OLX5ED2",
+            initialBalance: 1540.00
+        };
+
+        function lockSystem() {
+            // Pastikan data tersimpan di browser secara permanen
+            if(!localStorage.getItem('ns_iid')) {
+                localStorage.setItem('ns_name', SOVEREIGN_DATA.name);
+                localStorage.setItem('ns_iid', SOVEREIGN_DATA.iid);
+                localStorage.setItem('ns_balance', SOVEREIGN_DATA.initialBalance);
+            }
+            
+            // Tampilkan data dari storage agar tidak berubah saat refresh
+            document.getElementById('holder-name').innerText = localStorage.getItem('ns_name');
+            document.getElementById('iid-display').innerText = localStorage.getItem('ns_iid');
+            document.getElementById('balance').innerText = parseFloat(localStorage.getItem('ns_balance')).toLocaleString('de-DE', {minimumFractionDigits: 2});
         }
+
+        window.onload = lockSystem;
     </script>
 </body>
 </html>
-<script>
-function triggerEmergency() {
-    const confirmation = confirm("WARNING: This will freeze the ENTIRE NeuroSphere ecosystem. Only INDIE-Founder can undo this. Proceed?");
-    if(confirmation) {
-        alert("PROTOKOL OMEGA ACTIVATED. All assets locked.");
-        // Logika AI Guard Shutdown akan diproses di sini
-    }
-}
-</script>
