@@ -2,8 +2,11 @@
   "version": 2,
   "public": true,
   "cleanUrls": true,
-  "trailingSlash": false,
   "framework": null,
+  "builds": [
+    { "src": "*.html", "use": "@vercel/static" },
+    { "src": "vercel.json", "use": "@vercel/static" }
+  ],
   "rewrites": [
     { "source": "/admin", "destination": "/admin.html" },
     { "source": "/certificate", "destination": "/index.html" }
