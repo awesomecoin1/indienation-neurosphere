@@ -1,13 +1,12 @@
 {
   "version": 2,
+  "public": true,
   "cleanUrls": true,
   "trailingSlash": false,
   "framework": null,
   "rewrites": [
     { "source": "/admin", "destination": "/admin.html" },
     { "source": "/scan", "destination": "/scan.html" },
-    { "source": "/market", "destination": "/public/market.html" },
-    { "source": "/auth", "destination": "/public/auth.html" },
     { "source": "/", "destination": "/index.html" }
   ]
 }
