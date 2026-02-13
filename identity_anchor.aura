@@ -1,0 +1,14 @@
+// NEUROSPHERE IDENTITY ANCHOR - DO NOT MODIFY
+// Locked on: 2026-02-14
+
+module IdentityAnchor {
+    const FOUNDER_PERSONAL_IID = "IID-M30LX5ED2"
+    const FOUNDER_AUTHORITY_ID = "FOUNDER-01"
+    
+    // Status Invariant (Tidak Boleh Berubah)
+    identity Active_Founder {
+        string current_iid = FOUNDER_PERSONAL_IID;
+        float64 initial_test_balance = 4510.00;
+        string status = "SSOT_ACTIVE";
+    }
+}
