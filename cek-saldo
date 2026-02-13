@@ -1,0 +1,3 @@
+URL="https://xfbrylmubflgsxyoixpu.supabase.co/rest/v1/wallets?iid=eq.IID-M30LX5ED2"
+MASTER_TOKEN="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InhmYnJ5bG11YmZsZ3N4eW9peHB1Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3MDk2NDMyMiwiZXhwIjoyMDg2NTQwMzIyfQ.DJmmZTzdVVzMo8v2SP1DCLoLstWvVATIIE4vnvDqi9c"
+curl -s -X GET "$URL" -H "apikey: $MASTER_TOKEN" -H "Authorization: Bearer $MASTER_TOKEN" | jq .

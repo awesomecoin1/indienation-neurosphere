@@ -1,0 +1,11 @@
+#!/bin/bash
+while true; do
+    WAKTU_SEKARANG=$(date +%H:%M)
+    if [ "$WAKTU_SEKARANG" == "00:00" ]; then
+        echo "🛡️ AI Guard: Waktunya distribusi harian (24.00 WIB)..."
+        ./kirim-luv 10
+        echo "✅ Distribusi berhasil. Menunggu siklus berikutnya..."
+        sleep 60 # Tidur 1 menit agar tidak eksekusi berulang di menit yang sama
+    fi
+    sleep 30 # Cek waktu setiap 30 detik
+done

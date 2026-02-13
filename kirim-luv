@@ -1,0 +1,18 @@
+URL="https://xfbrylmubflgsxyoixpu.supabase.co/rest/v1/transactions"
+MASTER_TOKEN="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InhmYnJ5bG11YmZsZ3N4eW9peHB1Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3MDk2NDMyMiwiZXhwIjoyMDg2NTQwMzIyfQ.DJmmZTzdVVzMo8v2SP1DCLoLstWvVATIIE4vnvDqi9c"
+
+JUMLAH=${1:-10}
+
+echo "🛡️ AI Guard: Mencatat Transaksi Aura Rewards ($JUMLAH LUV)..."
+
+curl -s -X POST "$URL" \
+-H "apikey: $MASTER_TOKEN" \
+-H "Authorization: Bearer $MASTER_TOKEN" \
+-H "Content-Type: application/json" \
+-d "{
+  \"wallet_iid\": \"IID-M30LX5ED2\",
+  \"type\": \"LUV_REWARD\",
+  \"amount\": $JUMLAH,
+  \"currency\": \"LUV\",
+  \"description\": \"Daily E-KINDNESS Distribution\"
+}" | jq .

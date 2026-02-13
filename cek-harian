@@ -1,0 +1,13 @@
+# Parameter Filter Tanggal Hari Ini
+TGL=$(date +%Y-%m-%d)
+URL="https://xfbrylmubflgsxyoixpu.supabase.co/rest/v1/transactions?reference_date=eq.$TGL"
+MASTER_TOKEN="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InhmYnJ5bG11YmZsZ3N4eW9peHB1Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3MDk2NDMyMiwiZXhwIjoyMDg2NTQwMzIyfQ.DJmmZTzdVVzMo8v2SP1DCLoLstWvVATIIE4vnvDqi9c"
+
+echo "🛡️ AI Guard: Audit Transaksi Masuk Tanggal $TGL"
+echo "------------------------------------------------"
+curl -s -X GET "$URL" \
+-H "apikey: $MASTER_TOKEN" \
+-H "Authorization: Bearer $MASTER_TOKEN" | jq -r '.[] | "[\(.created_at)] \(.type): +\(.amount) \(.currency) (\(.description))"'
+
+echo "------------------------------------------------"
+echo "✅ Audit Selesai."
