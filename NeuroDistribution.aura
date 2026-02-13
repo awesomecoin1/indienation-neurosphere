@@ -1,0 +1,36 @@
+// NeuroSphere Distribution Logic - Auralang Compiler
+// Founder: INDIE-Founder
+// Purpose: Human-Centric Value Distribution
+
+contract NeuroDistribution {
+    identity UserID;
+    
+    // Aliran Air (TM Manifestation)
+    const FIRST_DAY_DROP = 1000;    // €1.000 (Sustansi)
+    const DAILY_FLOW     = 270;     // €270 (Stabilitas)
+    const FINAL_DECISION = 990;     // €990 (Keputusan Final)
+
+    function checkAura(UserID user) -> bool {
+        // AI Guard memvalidasi rekam jejak kebaikan
+        if (AI_Guard.verifyKindness(user) == true) {
+            return true;
+        } else {
+            system.block(user); // Sanksi jika melakukan hal tidak baik
+            return false;
+        }
+    }
+
+    function executeDistribution(UserID user, int dayCount) {
+        if (checkAura(user)) {
+            if (dayCount == 1) {
+                distribute(user, FIRST_DAY_DROP, "IND-EUR");
+            } else if (dayCount > 1 && dayCount < 365) {
+                distribute(user, DAILY_FLOW, "IND-EUR");
+            } else if (dayCount == 365) {
+                distribute(user, FINAL_DECISION, "IND-EUR");
+            }
+        }
+    }
+}
+
+// Peradaban Kebaikan: Uang melayani Manusia.
