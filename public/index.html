@@ -11,7 +11,12 @@
         .aura-pulse { width: 200px; height: 200px; background: radial-gradient(circle, rgba(0,255,65,0.4) 0%, transparent 70%); animation: pulse 4s infinite; border-radius: 50%; }
         @keyframes pulse { 0% { transform: scale(0.8); opacity: 0.5; } 50% { transform: scale(1.2); opacity: 0.8; } 100% { transform: scale(0.8); opacity: 0.5; } }
     </style>
-</head>
+
+    <style>
+        .qr-mask { filter: contrast(150%) brightness(120%) hue-rotate(90deg); transition: 0.3s; }
+        .qr-mask:hover { filter: none; }
+    </style>
+    </head>
 <body class="flex flex-col items-center justify-center h-screen text-center">
     <div class="aura-pulse absolute"></div>
     <div class="z-10">
