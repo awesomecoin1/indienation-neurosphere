@@ -17,3 +17,5 @@ const VAULT = {
     }
 };
 window.onload = () => VAULT.init();
+import { syncToCloud } from './supabase_bridge.js';
+setInterval(() => syncToCloud('IID-M30LX5ED2', localStorage.getItem('ns_balance')), 60000);
