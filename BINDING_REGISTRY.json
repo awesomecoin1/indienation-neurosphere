@@ -1,16 +1,17 @@
 {
   "mappings": [
     {
-      "iid": "IID-M30LX5ED2",
+      "iid": "IID-2026-0000001",
       "alias": "INDIE-FOUNDER",
-      "role": "Founder",
-      "status": "SSOT_ACTIVE"
+      "role": "Sovereign-Founder",
+      "allocation": "Founder-1%",
+      "status": "LOCKED_3_YEARS"
     },
     {
-      "iid": "IID-2026-0000001",
+      "iid": "IID-2026-0000011",
       "alias": "Purwantoro",
       "legacy_id": "NS-USER-7438-X",
-      "role": "Citizen",
+      "role": "Citizen-Pioneer",
       "status": "SSOT_ACTIVE"
     }
   ]
