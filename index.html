@@ -1,106 +1,23 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sovereign Vault | NeuroSphere</title>
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        body { background: #000; color: #0f0; font-family: 'Courier New', monospace; }
-        .neon-border { border: 2px solid #0f0; box-shadow: 0 0 15px #0f0; }
-        .btn-action { border: 2px solid #0f0; transition: 0.3s; }
-        .btn-action:hover { background: #0f0; color: #000; box-shadow: 0 0 20px #0f0; }
-    </style>
-</head>
-<body class="p-6">
-    <div class="max-w-xl mx-auto neon-border p-8 rounded-3xl bg-zinc-900/50">
-        <header class="text-center mb-8 border-b border-green-900 pb-4">
-            <h1 class="text-2xl font-black italic">🛡️ SOVEREIGN VAULT</h1>
-            <p class="text-[10px] text-gray-400 uppercase tracking-[0.3em]">Living Value Identity System</p>
-        </header>
-
-        <div class="bg-black p-4 mb-6 border border-green-500/30 rounded-lg">
-            <div class="flex justify-between text-[10px] mb-2">
-                <span>HOLDER: <b id="display-name">INDIE-Founder</b></span>
-                <span>IID: <b id="display-iid">IID-M30LX5ED2</b></span>
-            </div>
-            <div class="text-center py-6">
-                <p class="text-[10px] text-gray-500">STABLE BALANCE (IND-EUR)</p>
-                <h2 class="text-5xl font-bold text-white tracking-tighter" id="balance">€1.540,00</h2>
-            </div>
-        </div>
-
-        <div class="grid grid-cols-2 gap-4 mb-8">
-            <button onclick="handleTransaction('RECEIVE')" class="btn-action py-4 font-bold text-xs rounded-xl uppercase">📥 Terima</button>
-            <button onclick="handleTransaction('SEND')" class="btn-action py-4 font-bold text-xs rounded-xl uppercase">📤 Kirim</button>
-        </div>
-
-        <div class="grid grid-cols-3 gap-2 text-center text-[8px] mb-6">
-            <div class="p-2 border border-green-900 rounded">LUV: <span id="luv-bal">0.00</span></div>
-            <div class="p-2 border border-green-900 rounded text-blue-400 font-bold">STABLE: ACTIVE</div>
-            <div class="p-2 border border-green-900 rounded">ENPE: <span id="enpe-bal">0.00</span></div>
-        </div>
-
-        <footer class="text-[8px] text-center text-gray-600">
-            ✅ SSOT ACTIVE | AI GUARD SYNCED BY AURALANG | 2026-02-13
-        </footer>
-    </div>
-
-    <script>
-        // Auralang-to-JS Bridge
-        const supabaseUrl = "PASTE_YOUR_SUPABASE_URL";
-        const supabaseKey = "PASTE_YOUR_ANON_KEY";
-        const supabase = supabasejs.createClient(supabaseUrl, supabaseKey);
-
-        async function syncLedger() {
-            // Logika AI Guard: Mengambil data saldo asli dari Supabase
-            console.log("AI Guard: Syncing with Ledger...");
-            // Di sini nanti kita panggil table 'wallets'
-        }
-
-        function handleTransaction(type) {
-            if(type === 'SEND') {
-                const target = prompt("Masukkan IID Tujuan:");
-                const amount = prompt("Jumlah (EUR):");
-                alert(`AI Guard memvalidasi... \nTransfer €${amount} ke ${target} BERHASIL!\nTX-ID: ${Math.random().toString(36).toUpperCase()}`);
-            } else {
-                alert("Scan IID Anda untuk menerima transfer.");
-            }
-        }
-    </script>
-<script src="vault_logic.js"></script>
-</body>
-</html>
-<div id="app-container" style="background: #000; color: #00ff00; padding: 20px; font-family: monospace;">
-    <h2 style="text-shadow: 0 0 10px #00ff00;">🏛️ NEUROSPHERE VAULT</h2>
+<div class="sovereign-card" style="background: rgba(255,255,255,0.05); border-radius: 20px; padding: 40px; text-align: center; border: 1px solid #ffcc00; box-shadow: 0 0 30px rgba(255,204,0,0.2);">
+    <p style="color: #888; letter-spacing: 2px;">TOTAL IND-EUR SOVEREIGN ASSET</p>
     
-    <div class="balance-card" style="border: 1px solid #00ff00; padding: 15px; margin-bottom: 20px;">
-        <p>SALDO STABLE (IND-EUR)</p>
-        <h1 id="eur-display" style="font-size: 2.5em; margin: 0;">€100.000,00</h1>
-        <p id="idr-display" style="color: #ffcc00;">Rp 1.995.000.000</p>
-        <small id="kurs-display">Kurs: 1 EUR = Rp 19.950</small>
-    </div>
+    <h1 id="eur-display" style="font-size: 4em; color: #ffcc00; font-family: 'Courier New', monospace; margin: 10px 0;">
+        €100.000,0000
+    </h1>
 
-    <div class="action-buttons" style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
-        <button onclick="handleAction('SEND')" style="background: #004400; color: #fff; border: 1px solid #00ff00; padding: 15px;">📤 KIRIM</button>
-        <button onclick="handleAction('RECEIVE')" style="background: #000044; color: #fff; border: 1px solid #0000ff; padding: 15px;">📥 TERIMA</button>
-        <button onclick="handleAction('DEPOSIT')" style="background: #444400; color: #fff; border: 1px solid #ffff00; padding: 15px;">💰 DEPOSIT</button>
-        <button onclick="handleAction('EXCHANGE')" style="background: #440044; color: #fff; border: 1px solid #ff00ff; padding: 15px;">💱 EXCHANGE</button>
-    </div>
+    <h2 id="idr-display" style="color: #ffffff; font-weight: 300; margin-bottom: 30px;">
+        Rp 1.995.000.000
+    </h2>
 
-    <div id="lock-status" style="margin-top: 20px; color: #ff0000;"></div>
+    <div style="display: flex; justify-content: space-around; border-top: 1px solid #333; padding-top: 20px;">
+        <div>
+            <small style="display: block; color: #555;">HAK HARI INI</small>
+            <span style="color: #00ff00;">€1.000,00</span>
+        </div>
+        <div>
+            <small style="display: block; color: #555;">STATUS</small>
+            <span style="color: #00ff00;">ACTIVE</span>
+        </div>
+    </div>
 </div>
 
-<script src="guard_api_enforcer.js"></script>
-<script src="pulsating_vault.js"></script>
-<script>
-    function handleAction(type) {
-        const status = checkLockStatus();
-        if (status.status === "LOCKED") {
-            alert("🛑 AKSES DITUTUP: " + status.message);
-        } else {
-            alert("✅ Fitur " + type + " Aktif untuk 3 Hari ke Depan!");
-        }
-    }
-</script>
