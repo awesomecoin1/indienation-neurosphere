@@ -1,7 +1,9 @@
 {
   "version": 2,
+  "public": true,
   "cleanUrls": true,
-  "rewrites": [
-    { "source": "/", "destination": "/vault.html" }
-  ]
+  "framework": null,
+  "buildCommand": null,
+  "installCommand": null,
+  "outputDirectory": "."
 }
