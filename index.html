@@ -1,23 +1,30 @@
-<div class="sovereign-card" style="background: rgba(255,255,255,0.05); border-radius: 20px; padding: 40px; text-align: center; border: 1px solid #ffcc00; box-shadow: 0 0 30px rgba(255,204,0,0.2);">
-    <p style="color: #888; letter-spacing: 2px;">TOTAL IND-EUR SOVEREIGN ASSET</p>
-    
-    <h1 id="eur-display" style="font-size: 4em; color: #ffcc00; font-family: 'Courier New', monospace; margin: 10px 0;">
-        €100.000,0000
-    </h1>
-
-    <h2 id="idr-display" style="color: #ffffff; font-weight: 300; margin-bottom: 30px;">
-        Rp 1.995.000.000
-    </h2>
-
-    <div style="display: flex; justify-content: space-around; border-top: 1px solid #333; padding-top: 20px;">
-        <div>
-            <small style="display: block; color: #555;">HAK HARI INI</small>
-            <span style="color: #00ff00;">€1.000,00</span>
-        </div>
-        <div>
-            <small style="display: block; color: #555;">STATUS</small>
-            <span style="color: #00ff00;">ACTIVE</span>
-        </div>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeuroSphere Sovereign Vault</title>
+    <style>
+        body { background: #000; color: #00ff00; font-family: monospace; text-align: center; padding: 20px; }
+        .vault-card { border: 2px solid #00ff00; padding: 30px; border-radius: 15px; box-shadow: 0 0 20px #00ff00; max-width: 500px; margin: auto; }
+        h1 { font-size: 3em; margin: 10px 0; text-shadow: 0 0 10px #00ff00; }
+        .idr-val { color: #ffcc00; font-size: 1.5em; }
+        .btn-test { background: #ff0000; color: white; border: none; padding: 15px; cursor: pointer; font-weight: bold; margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <div class="vault-card">
+        <h3>SOVEREIGN IDENTITY LEDGER</h3>
+        <p>IID: IID-2026-0000001</p>
+        <hr border="1" color="#00ff00">
+        <p>STABLE (IND-EUR) ASSET</p>
+        <h1 id="eur-display">€100.000,0000</h1>
+        <p id="idr-display" class="idr-val">Rp 1.995.000.000</p>
+        <small id="kurs-display">Kurs Real-Time: Loading...</small>
+        <br>
+        <button class="btn-test" onclick="processTransfer(1)">⚡ TEST KIRIM €1 (REDUKSI REAL-TIME)</button>
     </div>
-</div>
 
+    <script src="pulsating_vault.js"></script>
+</body>
+</html>
