@@ -1,10 +1,15 @@
-# 📑 NEUROSPHERE GENESIS LEDGER
-# Kesepakatan: €1.000 (Day 1) + €270/day
+# 💎 NEUROSPHERE GENESIS LEDGER
+**Hash Anchor:** `1a94c8f40ac08e512dfe9513ce11c37406234b8df7990c306eaca89bae688f1c`
 
-| IID | Profile Alias | Initial Balance | Current Balance (Day 14) |
+## LUV TOKEN DISTRIBUTION (Total: 100T LUV)
+| IID | Holder | Balance | Status |
 | :--- | :--- | :--- | :--- |
-| IID-2026-0000001 | FOUNDER-PERSONAL | € 1.000 | € 1.540 |
-| IID-2026-0000001 | NS-USER-7438-X | € 1.000 | € 1.540 |
+| IID-2026-0000001 | INDIE-Founder | 19,000,000,000,000 LUV | **LOCKED (2029)** |
+| IID-2026-0000002 | Adoption Pool | 1,000,000,000,000 LUV | OPEN |
+| IID-2026-0000005 | Disaster Pool | 15,000,000,000,000 LUV | OPEN |
+| IID-2026-0000004 | Operational | 10,000,000,000,000 LUV | OPEN |
+| IID-CITIZEN-POOL | Community | 55,000,000,000,000 LUV | **LOCKED (2028)** |
 
-## 💸 TRANSACTION LOG
-- [2026-02-14] IID-2026-0000001 -> NS-USER-7438-X | AMT: 5 IND-EUR | STATUS: SUCCESS
+## ENPE TOKEN (Value Anchor)
+- **Staking Pool (20%):** IID-2026-0000006
+- **SWF Reserve (80%):** IID-2026-0000007
