@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://indienation-neurosphere.vercel.app/sitemap.xml
+Sitemap: https://neurosphere-v2.vercel.app/sitemap.xml
