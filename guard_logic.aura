@@ -1,0 +1,6 @@
+if (sender == "IID-2026-0000001" && current_date < "2029-02-14") {
+    reject_transaction("REASON: FOUNDER_LOCKED_3_YEARS");
+}
+if (total_payout > 100000000000000) {
+    reject_transaction("REASON: SUPPLY_CAP_BREACH");
+}

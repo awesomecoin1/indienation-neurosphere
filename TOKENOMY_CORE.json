@@ -1,0 +1,8 @@
+{
+  "core_vaults": [
+    {"iid": "IID-2026-0000002", "name": "Disaster Donation Pool", "access": "Open"},
+    {"iid": "IID-2026-0000003", "name": "Daily Operational", "access": "Open"},
+    {"iid": "IID-2026-0000004", "name": "ENPE Staking Pool", "access": "Locked_2Y"},
+    {"iid": "IID-2026-0000005", "name": "ENPE SWF Reserve", "access": "Locked_2Y"}
+  ]
+}
