@@ -1,40 +1,27 @@
-// 🛡️ NEUROSPHERE PULSATING VAULT ENGINE
-const KURS_IDR = 19950; // Kita kunci di angka pasar atau ambil via API
+let KURS_IDR = 19950;
 
-function updateDisplay(eurBalance) {
-    // 1. Hitung Konversi Rupiah
-    const idrBalance = eurBalance * KURS_IDR;
-    
-    // 2. Format Mata Uang
-    const formattedEUR = new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR' }).format(eurBalance);
-    const formattedIDR = new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR' }).format(idrBalance);
-
-    // 3. Efek Berdenyut (Logika)
-    // Angka akan berdenyut +- 0.01% untuk sensasi "hidup"
-    const pulse = Math.sin(Date.now() / 1000) * 0.0001;
-    const pulsatingEUR = eurBalance * (1 + pulse);
-
-    console.log(`💶 ${formattedEUR} | 🇮🇩 ${formattedIDR}`);
-    return { pulsatingEUR, formattedIDR };
+async function fetchRealRate() {
+    try {
+        const res = await fetch('https://api.exchangerate-api.com/v4/latest/EUR');
+        const data = await res.json();
+        KURS_IDR = data.rates.IDR;
+        console.log("✅ Kurs Real-Time Updated: " + KURS_IDR);
+    } catch (e) {
+        console.log("⚠️ Gagal ambil kurs, pakai fallback.");
+    }
 }
 
-// 4. Timer 3 Hari (72 Jam)
-const startTime = new Date("2026-02-14T15:00:00").getTime();
-const endTime = startTime + (3 * 24 * 60 * 60 * 1000);
+function updateUI() {
+    const eurBalance = 100000; // Saldo Anchor
+    const pulse = Math.sin(Date.now() / 500) * 0.5; // Denyut halus
+    const currentEur = eurBalance + pulse;
+    const currentIdr = currentEur * KURS_IDR;
 
-function checkLockStatus() {
-    const now = new Date().getTime();
-    if (now > endTime) {
-        return "LOCKED_BY_GUARD"; // Tombol akan otomatis mati
-    }
-    return "ACTIVE";
+    document.getElementById('eur-display').innerText = '€' + currentEur.toLocaleString('de-DE', {minimumFractionDigits: 2});
+    document.getElementById('idr-display').innerText = 'Rp ' + currentIdr.toLocaleString('id-ID');
+    document.getElementById('kurs-display').innerText = 'Kurs Live: 1 EUR = Rp ' + KURS_IDR.toLocaleString('id-ID');
 }
 
-setInterval(() => {
-    const status = checkLockStatus();
-    if (status === "ACTIVE") {
-        updateDisplay(100000); // Demo €100k
-    } else {
-        console.log("🛑 3-DAY PERIOD ENDED. BUTTONS DISABLED.");
-    }
-}, 1000);
+fetchRealRate();
+setInterval(fetchRealRate, 60000); // Update kurs tiap menit
+setInterval(updateUI, 100); // Update denyut tiap 100ms

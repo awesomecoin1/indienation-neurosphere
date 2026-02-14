@@ -1,0 +1,32 @@
+<div id="app-container" style="background: #000; color: #00ff00; padding: 20px; font-family: monospace;">
+    <h2 style="text-shadow: 0 0 10px #00ff00;">🏛️ NEUROSPHERE VAULT</h2>
+    
+    <div class="balance-card" style="border: 1px solid #00ff00; padding: 15px; margin-bottom: 20px;">
+        <p>SALDO STABLE (IND-EUR)</p>
+        <h1 id="eur-display" style="font-size: 2.5em; margin: 0;">€100.000,00</h1>
+        <p id="idr-display" style="color: #ffcc00;">Rp 1.995.000.000</p>
+        <small id="kurs-display">Kurs: 1 EUR = Rp 19.950</small>
+    </div>
+
+    <div class="action-buttons" style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+        <button onclick="handleAction('SEND')" style="background: #004400; color: #fff; border: 1px solid #00ff00; padding: 15px;">📤 KIRIM</button>
+        <button onclick="handleAction('RECEIVE')" style="background: #000044; color: #fff; border: 1px solid #0000ff; padding: 15px;">📥 TERIMA</button>
+        <button onclick="handleAction('DEPOSIT')" style="background: #444400; color: #fff; border: 1px solid #ffff00; padding: 15px;">💰 DEPOSIT</button>
+        <button onclick="handleAction('EXCHANGE')" style="background: #440044; color: #fff; border: 1px solid #ff00ff; padding: 15px;">💱 EXCHANGE</button>
+    </div>
+
+    <div id="lock-status" style="margin-top: 20px; color: #ff0000;"></div>
+</div>
+
+<script src="guard_api_enforcer.js"></script>
+<script src="pulsating_vault.js"></script>
+<script>
+    function handleAction(type) {
+        const status = checkLockStatus();
+        if (status.status === "LOCKED") {
+            alert("🛑 AKSES DITUTUP: " + status.message);
+        } else {
+            alert("✅ Fitur " + type + " Aktif untuk 3 Hari ke Depan!");
+        }
+    }
+</script>
