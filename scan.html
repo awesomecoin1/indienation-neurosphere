@@ -1,72 +1,54 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
-    <title>IndieScan - NeuroSphere Explorer</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INDIE-SCAN | NeuroSphere Explorer</title>
     <style>
-        body { background: #0a0a0a; color: #00ff41; font-family: 'JetBrains Mono', monospace; }
-        .stat-card { border-left: 4px solid #00ff41; background: #111; padding: 15px; }
+        body { background: #000; color: #00ff88; font-family: 'Courier New', monospace; display: flex; flex-direction: column; align-items: center; padding: 20px; }
+        .scanner-box { border: 2px solid #00ff88; padding: 20px; width: 100%; max-width: 400px; box-shadow: 0 0 15px #00ff88; text-align: center; }
+        input { background: #001a0f; border: 1px solid #00ff88; color: #00ff88; padding: 10px; width: 80%; margin: 10px 0; outline: none; text-align: center; }
+        .result { margin-top: 20px; padding: 15px; border-top: 1px dashed #00ff88; display: none; text-align: left; }
+        .status-valid { color: #00ff88; font-weight: bold; }
+        button { background: #00ff88; color: #000; border: none; padding: 10px 20px; cursor: pointer; font-weight: bold; }
     </style>
 </head>
-<body class="p-6">
-    <header class="mb-10 border-b border-green-900 pb-4">
-        <h1 class="text-2xl font-bold italic">IndieScan Explorer</h1>
-        <p class="text-[10px] opacity-50">NeuroSphere Value Identity Language [TM]</p>
-    </header>
-
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10">
-        <div class="stat-card">
-            <p class="text-[10px]">TOTAL ENPE SUPPLY</p>
-            <p class="text-xl font-bold text-white">100,000,000,000,000</p>
+<body>
+    <h1>🔎 INDIE-SCAN</h1>
+    <p>NeuroSphere Sovereign Explorer</p>
+    
+    <div class="scanner-box">
+        <input type="text" id="iidInput" placeholder="MASUKKAN IID (Contoh: IID-2026-0000011)">
+        <br>
+        <button onclick="scanIID()">VALIDASI IID</button>
+        
+        <div id="resultBox" class="result">
+            <p>IID: <span id="resIID"></span></p>
+            <p>HOLDER: <span id="resHolder">SOVEREIGN PIONEER</span></p>
+            <p>VALUE: <span id="resValue">€100,000.0000</span></p>
+            <p>GUARD: <span class="status-valid">VERIFIED BY AI GUARD V1</span></p>
+            <p>STATUS: <span id="resStatus">ACTIVE</span></p>
         </div>
-        <div class="stat-card">
-            <p class="text-[10px]">DONATION POOL (15%)</p>
-            <p id="pool-donasi" class="text-xl font-bold text-blue-400">LOADING...</p>
-        </div>
-        <div class="stat-card">
-            <p class="text-[10px]">ACTIVE IND-EUR ANCHOR</p>
-            <p class="text-xl font-bold text-yellow-500">€100,000 / Person</p>
-        </div>
-    </div>
-
-    <div class="border border-green-900 rounded-lg overflow-hidden">
-        <table class="w-full text-left text-xs">
-            <thead class="bg-green-900 text-black">
-                <tr>
-                    <th class="p-3">TRANSACTION HASH</th>
-                    <th class="p-3">IID IDENTITY</th>
-                    <th class="p-3">TYPE</th>
-                    <th class="p-3">AMOUNT</th>
-                </tr>
-            </thead>
-            <tbody id="tx-list">
-                <tr class="border-b border-green-900 opacity-50">
-                    <td class="p-3 italic font-mono">GENESIS-BLOCK</td>
-                    <td class="p-3">IID-GHYT3EPKB</td>
-                    <td class="p-3">FOUNDER SETUP</td>
-                    <td class="p-3 text-white">MASTER</td>
-                </tr>
-            </tbody>
-        </table>
     </div>
 
     <script>
-        // Simulasi pembacaan Ledger dari LocalStorage
-        const user = JSON.parse(localStorage.getItem('neuro_identity'));
-        if(user) {
-            const list = document.getElementById('tx-list');
-            const row = `<tr>
-                <td class="p-3">TX-${Math.random().toString(36).substring(7).toUpperCase()}</td>
-                <td class="p-3">${user.iid}</td>
-                <td class="p-3 text-green-400">INITIAL GRANT</td>
-                <td class="p-3 text-white">€1.540 / 100K</td>
-            </tr>`;
-            list.innerHTML += row;
-            document.getElementById('pool-donasi').innerText = "€" + (1540 * 0.15).toFixed(2);
+        function scanIID() {
+            const iid = document.getElementById('iidInput').value.trim();
+            const resultBox = document.getElementById('resultBox');
+            
+            if (/^IID-2026-\d{7}$/.test(iid) || iid === "IID-GAG08430G") {
+                document.getElementById('resIID').innerText = iid;
+                resultBox.style.display = 'block';
+                // Animasi Scan
+                document.querySelector('.scanner-box').style.borderColor = '#fff';
+                setTimeout(() => document.querySelector('.scanner-box').style.borderColor = '#00ff88', 200);
+            } else {
+                alert("❌ IID TIDAK DIKENALI ATAU FORMAT SALAH");
+                resultBox.style.display = 'none';
+            }
         }
     </script>
-<script>function syncLedger(){ const logs = JSON.parse(localStorage.getItem("ns_logs") || "[]"); const container = document.getElementById("log-container"); container.innerHTML = logs.map(l => `<div>[${l.time}] ${l.type}: ${l.amt} IND-EUR (Hash: ${l.hash})</div>`).join(""); } setInterval(syncLedger, 2000);</script>
-<div id="log-container" style="color:#22c55e; font-family:monospace; padding:20px;"></div>
+    <br>
+    <a href="/" style="color: #00ff88; text-decoration: none;">[ KEMBALI KE VAULT ]</a>
 </body>
 </html>

@@ -1,0 +1,218 @@
+[
+    {
+        "iid": "IID-2026-0000011",
+        "type": "PIONEER_ACTIVATION",
+        "value": "100000_EUR",
+        "guard": "AI_GUARD_V1"
+    },
+    {
+        "iid": "IID-2026-0000012",
+        "type": "PIONEER_ACTIVATION",
+        "value": "100000_EUR",
+        "guard": "AI_GUARD_V1"
+    },
+    {
+        "iid": "IID-2026-0000013",
+        "type": "PIONEER_ACTIVATION",
+        "value": "100000_EUR",
+        "guard": "AI_GUARD_V1"
+    },
+    {
+        "iid": "IID-2026-0000014",
+        "type": "PIONEER_ACTIVATION",
+        "value": "100000_EUR",
+        "guard": "AI_GUARD_V1"
+    },
+    {
+        "iid": "IID-2026-0000015",
+        "type": "PIONEER_ACTIVATION",
+        "value": "100000_EUR",
+        "guard": "AI_GUARD_V1"
+    },
+    {
+        "iid": "IID-2026-0000016",
+        "type": "PIONEER_ACTIVATION",
+        "value": "100000_EUR",
+        "guard": "AI_GUARD_V1"
+    },
+    {
+        "iid": "IID-2026-0000017",
+        "type": "PIONEER_ACTIVATION",
+        "value": "100000_EUR",
+        "guard": "AI_GUARD_V1"
+    },
+    {
+        "iid": "IID-2026-0000018",
+        "type": "PIONEER_ACTIVATION",
+        "value": "100000_EUR",
+        "guard": "AI_GUARD_V1"
+    },
+    {
+        "iid": "IID-2026-0000019",
+        "type": "PIONEER_ACTIVATION",
+        "value": "100000_EUR",
+        "guard": "AI_GUARD_V1"
+    },
+    {
+        "iid": "IID-2026-0000020",
+        "type": "PIONEER_ACTIVATION",
+        "value": "100000_EUR",
+        "guard": "AI_GUARD_V1"
+    },
+    {
+        "iid": "IID-2026-0000021",
+        "type": "PIONEER_ACTIVATION",
+        "value": "100000_EUR",
+        "guard": "AI_GUARD_V1"
+    },
+    {
+        "iid": "IID-2026-0000022",
+        "type": "PIONEER_ACTIVATION",
+        "value": "100000_EUR",
+        "guard": "AI_GUARD_V1"
+    },
+    {
+        "iid": "IID-2026-0000023",
+        "type": "PIONEER_ACTIVATION",
+        "value": "100000_EUR",
+        "guard": "AI_GUARD_V1"
+    },
+    {
+        "iid": "IID-2026-0000024",
+        "type": "PIONEER_ACTIVATION",
+        "value": "100000_EUR",
+        "guard": "AI_GUARD_V1"
+    },
+    {
+        "iid": "IID-2026-0000025",
+        "type": "PIONEER_ACTIVATION",
+        "value": "100000_EUR",
+        "guard": "AI_GUARD_V1"
+    },
+    {
+        "iid": "IID-2026-0000026",
+        "type": "PIONEER_ACTIVATION",
+        "value": "100000_EUR",
+        "guard": "AI_GUARD_V1"
+    },
+    {
+        "iid": "IID-2026-0000027",
+        "type": "PIONEER_ACTIVATION",
+        "value": "100000_EUR",
+        "guard": "AI_GUARD_V1"
+    },
+    {
+        "iid": "IID-2026-0000028",
+        "type": "PIONEER_ACTIVATION",
+        "value": "100000_EUR",
+        "guard": "AI_GUARD_V1"
+    },
+    {
+        "iid": "IID-2026-0000029",
+        "type": "PIONEER_ACTIVATION",
+        "value": "100000_EUR",
+        "guard": "AI_GUARD_V1"
+    },
+    {
+        "iid": "IID-2026-0000030",
+        "type": "PIONEER_ACTIVATION",
+        "value": "100000_EUR",
+        "guard": "AI_GUARD_V1"
+    },
+    {
+        "iid": "IID-2026-0000031",
+        "type": "PIONEER_ACTIVATION",
+        "value": "100000_EUR",
+        "guard": "AI_GUARD_V1"
+    },
+    {
+        "iid": "IID-2026-0000032",
+        "type": "PIONEER_ACTIVATION",
+        "value": "100000_EUR",
+        "guard": "AI_GUARD_V1"
+    },
+    {
+        "iid": "IID-2026-0000033",
+        "type": "PIONEER_ACTIVATION",
+        "value": "100000_EUR",
+        "guard": "AI_GUARD_V1"
+    },
+    {
+        "iid": "IID-2026-0000034",
+        "type": "PIONEER_ACTIVATION",
+        "value": "100000_EUR",
+        "guard": "AI_GUARD_V1"
+    },
+    {
+        "iid": "IID-2026-0000035",
+        "type": "PIONEER_ACTIVATION",
+        "value": "100000_EUR",
+        "guard": "AI_GUARD_V1"
+    },
+    {
+        "iid": "IID-2026-0000036",
+        "type": "PIONEER_ACTIVATION",
+        "value": "100000_EUR",
+        "guard": "AI_GUARD_V1"
+    },
+    {
+        "iid": "IID-2026-0000037",
+        "type": "PIONEER_ACTIVATION",
+        "value": "100000_EUR",
+        "guard": "AI_GUARD_V1"
+    },
+    {
+        "iid": "IID-2026-0000038",
+        "type": "PIONEER_ACTIVATION",
+        "value": "100000_EUR",
+        "guard": "AI_GUARD_V1"
+    },
+    {
+        "iid": "IID-2026-0000039",
+        "type": "PIONEER_ACTIVATION",
+        "value": "100000_EUR",
+        "guard": "AI_GUARD_V1"
+    },
+    {
+        "iid": "IID-2026-0000040",
+        "type": "PIONEER_ACTIVATION",
+        "value": "100000_EUR",
+        "guard": "AI_GUARD_V1"
+    },
+    {
+        "iid": "IID-2026-0000041",
+        "type": "PIONEER_ACTIVATION",
+        "value": "100000_EUR",
+        "guard": "AI_GUARD_V1"
+    },
+    {
+        "iid": "IID-2026-0000042",
+        "type": "PIONEER_ACTIVATION",
+        "value": "100000_EUR",
+        "guard": "AI_GUARD_V1"
+    },
+    {
+        "iid": "IID-2026-0000043",
+        "type": "PIONEER_ACTIVATION",
+        "value": "100000_EUR",
+        "guard": "AI_GUARD_V1"
+    },
+    {
+        "iid": "IID-2026-0000044",
+        "type": "PIONEER_ACTIVATION",
+        "value": "100000_EUR",
+        "guard": "AI_GUARD_V1"
+    },
+    {
+        "iid": "IID-2026-0000045",
+        "type": "PIONEER_ACTIVATION",
+        "value": "100000_EUR",
+        "guard": "AI_GUARD_V1"
+    },
+    {
+        "iid": "IID-2026-0000046",
+        "type": "PIONEER_ACTIVATION",
+        "value": "100000_EUR",
+        "guard": "AI_GUARD_V1"
+    }
+]

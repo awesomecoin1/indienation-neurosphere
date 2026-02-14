@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pioneer Monitor | NeuroSphere</title>
+    <style>
+        body { background: #000; color: #00ff88; font-family: monospace; padding: 20px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; }
+        .pioneer { border: 1px solid #00ff88; padding: 10px; text-align: center; }
+        .active { background: #003311; }
+    </style>
+</head>
+<body>
+    <h1>👥 36 SOVEREIGN PIONEERS</h1>
+    <div class="grid" id="pioneer-list"></div>
+    <script>
+        const list = document.getElementById('pioneer-list');
+        for(let i=11; i<=46; i++) {
+            const div = document.createElement('div');
+            div.className = 'pioneer';
+            div.innerHTML = `IID-2026-${i.toString().padStart(7, '0')}<br>STATUS: WAITING`;
+            list.appendChild(div);
+        }
+    </script>
+</body>
+</html>
