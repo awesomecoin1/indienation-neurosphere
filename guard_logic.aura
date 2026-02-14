@@ -1,6 +1,15 @@
-if (sender == "IID-2026-0000001" && current_date < "2029-02-14") {
-    reject_transaction("REASON: FOUNDER_LOCKED_3_YEARS");
-}
-if (total_payout > 100000000000000) {
-    reject_transaction("REASON: SUPPLY_CAP_BREACH");
+// Auralang Enforcement Logic
+module TokenomyGuard {
+    const UNLOCK_DATE_FOUNDER = "2029-02-14";
+    const UNLOCK_DATE_SYSTEM = "2028-02-14";
+
+    function can_transfer(sender_iid, current_date) {
+        if (sender_iid == "IID-2026-0000001") {
+            return current_date >= UNLOCK_DATE_FOUNDER;
+        }
+        if (sender_iid == "IID-2026-0000004") {
+            return current_date >= UNLOCK_DATE_SYSTEM;
+        }
+        return true; // Disaster & Op tetap Open
+    }
 }
