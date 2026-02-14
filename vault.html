@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8"><title>Sovereign Vault</title>
+    <style>
+        body { background: #050505; color: #00ff00; font-family: monospace; text-align: center; padding: 20px; }
+        .nav { margin-bottom: 30px; }
+        .nav a { color: #00ff00; border: 1px solid #00ff00; padding: 10px 20px; text-decoration: none; margin: 5px; }
+        .vault-container { border: 3px solid #00ff00; padding: 30px; border-radius: 20px; max-width: 500px; margin: auto; background: #000; box-shadow: 0 0 30px rgba(0,255,0,0.2); }
+        .balance { font-size: 3.5em; color: #fff; margin: 10px 0; }
+        .idr { color: #d4af37; font-size: 1.5em; }
+        .btn-group { display: flex; gap: 10px; margin-top: 20px; }
+        button { flex: 1; padding: 15px; font-weight: bold; border: none; border-radius: 10px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <a href="/">HOME</a>
+        <a href="/vault" style="background:#00ff00; color:#000;">VAULT</a>
+        <a href="/certificate">CERTIFICATE</a>
+    </div>
+    <div class="vault-container">
+        <h3>SOVEREIGN VAULT</h3>
+        <p>HOLDER: INDIE-FOUNDER | IID-GAG08430G</p>
+        <hr border="1" color="#222">
+        <div id="eur-display" class="balance">€100.000,0000</div>
+        <div id="idr-display" class="idr">Rp 1.998.000.000</div>
+        <div class="btn-group">
+            <button style="background:#222; color:#00ff00;">TERIMA</button>
+            <button style="background:#ff0000; color:#fff;" onclick="processTransfer(1)">KIRIM €1</button>
+        </div>
+    </div>
+    <script src="pulsating_vault.js"></script>
+</body>
+</html>

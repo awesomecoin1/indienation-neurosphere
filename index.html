@@ -1,47 +1,26 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NeuroSphere Sovereign Vault</title>
+    <meta charset="UTF-8"><title>NeuroSphere Gateway</title>
     <style>
-        body { background: #000; color: #00ff00; font-family: 'Courier New', monospace; text-align: center; padding: 20px; margin: 0; }
-        .vault-card { 
-            border: 2px solid #00ff00; 
-            padding: 30px; 
-            border-radius: 20px; 
-            background: rgba(0,255,0,0.02);
-            box-shadow: inset 0 0 20px rgba(0,255,0,0.1), 0 0 30px rgba(0,255,0,0.2);
-            max-width: 500px; 
-            margin: 40px auto; 
-        }
-        h1 { font-size: 3.2em; margin: 10px 0; letter-spacing: -2px; }
-        .idr-display { color: #ffcc00; font-size: 1.6em; margin-bottom: 20px; }
-        .btn-simulasi { 
-            background: #ff0000; color: #fff; border: none; padding: 15px 25px; 
-            font-weight: bold; border-radius: 8px; cursor: pointer; text-transform: uppercase;
-        }
-        .info-sub { color: #555; font-size: 0.8em; margin-top: 20px; }
+        body { background: #000; color: #00ff00; font-family: monospace; text-align: center; padding-top: 100px; }
+        .nav { margin-bottom: 50px; }
+        .nav a { color: #00ff00; border: 1px solid #00ff00; padding: 10px 20px; text-decoration: none; margin: 5px; border-radius: 5px; }
+        .nav a.active { background: #00ff00; color: #000; }
+        .gate-card { border: 2px solid #00ff00; display: inline-block; padding: 40px; border-radius: 20px; box-shadow: 0 0 20px #00ff00; }
+        button { background: #00ff00; border: none; padding: 15px; width: 100%; font-weight: bold; cursor: pointer; margin-top: 20px; }
     </style>
 </head>
 <body>
-    <div class="vault-card">
-        <p style="letter-spacing: 5px; color: #d4af37;">SOVEREIGN IDENTITY LEDGER</p>
-        <p style="font-size: 0.9em;">ID: <span id="iid-display">IID-GAG08430G</span></p>
-        <hr border="1" color="#222">
-        
-        <p style="color: #888;">TOTAL IND-EUR VAULT</p>
-        <h1 id="eur-display">€100.000,0000</h1>
-        <div id="idr-display" class="idr-display">Rp 1.998.000.000</div>
-        
-        <button class="btn-simulasi" onclick="processTransfer(1)">⚡ TEST KIRIM €1 (REAL-TIME)</button>
-        
-        <div class="info-sub">
-            <span id="kurs-display">Kurs Live: Menghubungkan...</span><br>
-            STATUS: ALL DIALECTS SYNCED BY AI GUARD
-        </div>
+    <div class="nav">
+        <a href="/" class="active">HOME</a>
+        <a href="/vault">VAULT</a>
+        <a href="/certificate">CERTIFICATE</a>
     </div>
-
-    <script src="pulsating_vault.js?v=2026"></script>
+    <div class="gate-card">
+        <h1>N E U R O S P H E R E</h1>
+        <p>IDENTITY . VALUE . SOVEREIGNTY</p>
+        <button onclick="location.href='/vault'">ACCESS EXISTING VAULT</button>
+    </div>
 </body>
 </html>
