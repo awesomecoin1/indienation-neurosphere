@@ -3,28 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NeuroSphere Sovereign Vault</title>
+    <title>NeuroSphere Sovereign Dashboard</title>
     <style>
-        body { background: #000; color: #00ff00; font-family: monospace; text-align: center; padding: 20px; }
-        .vault-card { border: 2px solid #00ff00; padding: 30px; border-radius: 15px; box-shadow: 0 0 20px #00ff00; max-width: 500px; margin: auto; }
-        h1 { font-size: 3em; margin: 10px 0; text-shadow: 0 0 10px #00ff00; }
-        .idr-val { color: #ffcc00; font-size: 1.5em; }
-        .btn-test { background: #ff0000; color: white; border: none; padding: 15px; cursor: pointer; font-weight: bold; margin-top: 20px; }
+        body { background: #050505; color: #f0f0f0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; text-align: center; padding: 40px; }
+        .vault-card { 
+            background: linear-gradient(145deg, #1a1a1a, #000);
+            border: 2px solid #d4af37; 
+            padding: 40px; 
+            border-radius: 25px; 
+            box-shadow: 0 0 50px rgba(212, 175, 55, 0.2); 
+            max-width: 600px; 
+            margin: auto;
+        }
+        h3 { color: #d4af37; letter-spacing: 3px; font-size: 0.9em; }
+        h1 { font-size: 3.5em; margin: 15px 0; color: #fff; font-family: monospace; }
+        .idr-val { color: #d4af37; font-size: 1.8em; font-weight: bold; margin-bottom: 20px; }
+        .btn-action { 
+            background: transparent; 
+            color: #ff4444; 
+            border: 1px solid #ff4444; 
+            padding: 15px 30px; 
+            cursor: pointer; 
+            font-weight: bold; 
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+        .btn-action:hover { background: #ff4444; color: #fff; }
+        .status-bar { font-size: 0.8em; color: #555; margin-top: 20px; }
     </style>
 </head>
 <body>
     <div class="vault-card">
-        <h3>SOVEREIGN IDENTITY LEDGER</h3>
-        <p>IID: IID-2026-0000001</p>
-        <hr border="1" color="#00ff00">
-        <p>STABLE (IND-EUR) ASSET</p>
+        <h3>SOVEREIGN IDENTITY: IID-2026-0000001</h3>
+        <p style="color: #666;">VAULT TYPE: STABLE ANCHOR (IND-EUR)</p>
+        <hr style="border: 0; border-top: 1px solid #333; margin: 20px 0;">
+        
         <h1 id="eur-display">€100.000,0000</h1>
-        <p id="idr-display" class="idr-val">Rp 1.995.000.000</p>
-        <small id="kurs-display">Kurs Real-Time: Loading...</small>
-        <br>
-        <button class="btn-test" onclick="processTransfer(1)">⚡ TEST KIRIM €1 (REDUKSI REAL-TIME)</button>
+        <div id="idr-display" class="idr-val">Rp 1.998.000.000</div>
+        
+        <div id="kurs-display" style="color: #00ff00; font-size: 0.9em;">📡 Menghubungkan ke Satelit Kurs...</div>
+        
+        <br><br>
+        <button class="btn-action" onclick="processTransfer(1)">⚡ SIMULASI TRANSAKSI €1</button>
+        
+        <div class="status-bar">
+            SECURITY LEVEL: SSOT_ACTIVE | GUARD: ENABLED
+        </div>
     </div>
 
-    <script src="pulsating_vault.js"></script>
+    <script>
+        document.write('<script src="pulsating_vault.js?v=' + Date.now() + '"><\/script>');
+    </script>
 </body>
 </html>
