@@ -1,6 +1,20 @@
 {
   "mappings": [
     {
+      "iid": "IID-2026-0000013",
+      "alias": "Pioneer-03",
+      "legacy_id": "IDNS-003",
+      "role": "Citizen-Pioneer",
+      "status": "SSOT_ACTIVE"
+    },
+    {
+      "iid": "IID-2026-0000012",
+      "alias": "Pioneer-02",
+      "legacy_id": "IDNS-002",
+      "role": "Citizen-Pioneer",
+      "status": "SSOT_ACTIVE"
+    },
+    {
       "iid": "IID-2026-0000001",
       "alias": "INDIE-FOUNDER",
       "role": "Sovereign-Founder",
