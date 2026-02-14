@@ -1,43 +1,49 @@
 /**
  * 🛡️ AURALANG API ENFORCER v1.0
- * Tujuan: Mengunci transaksi Founder & Mengatur Suplai Stable Coin
+ * Logic: Founder Lock Enforcement & Stable Coin Minting Rules
  */
 
 const GUARD_CONFIG = {
     founderIID: "IID-2026-0000001",
     unlockDate: new Date("2029-02-14"),
-    stableAnchor: 100000 // €100.000
+    individualAnchor: 100000 // €100.000
 };
 
-function validateAction(senderIID, actionType, amount) {
+function validateTransaction(senderIID, actionType, amount) {
     const now = new Date();
 
     // 1. Validasi Lock Founder (LUV)
-    if (senderIID === GUARD_CONFIG.founderIID && actionType === "SEND_LUV") {
+    if (senderIID === GUARD_CONFIG.founderIID) {
         if (now < GUARD_CONFIG.unlockDate) {
             return {
                 status: "REJECTED",
-                reason: "FOUNDER_ASSETS_LOCKED_UNTIL_2029"
+                reason: "FOUNDER_ASSETS_LOCKED_UNTIL_2029",
+                protocol: "AURALANG_GUARD_STRICT"
             };
         }
     }
 
-    // 2. Validasi Distribusi Stable Coin (IND-EUR)
+    // 2. Validasi Pencetakan Stable Coin (IND-EUR)
     if (actionType === "MINT_STABLE") {
-        if (amount > GUARD_CONFIG.stableAnchor) {
+        if (amount > GUARD_CONFIG.individualAnchor) {
             return {
                 status: "REJECTED",
-                reason: "EXCEEDS_INDIVIDUAL_ANCHOR_LIMIT"
+                reason: "EXCEEDS_INDIVIDUAL_BASIC_LIVING_VALUE_ANCHOR"
             };
         }
     }
 
-    return { status: "APPROVED", message: "ACTION_VALIDATED_BY_AI_GUARD" };
+    return { 
+        status: "APPROVED", 
+        message: "PROTOCOL_VERIFIED",
+        timestamp: now.toISOString()
+    };
 }
 
-// Contoh Testing Logis
-console.log("--- Test Founder Send LUV ---");
-console.log(validateAction("IID-2026-0000001", "SEND_LUV", 1000000));
+// Simulasi Internal
+console.log("🛡️ GUARD CHECK: Founder Transfer...");
+console.log(validateTransaction("IID-2026-0000001", "SEND_LUV", 1000));
 
-console.log("\n--- Test Minting Stable Coin ---");
-console.log(validateAction("SYSTEM", "MINT_STABLE", 5000)); // Masih dalam batas
+console.log("\n🛡️ GUARD CHECK: Minting IND-EUR...");
+console.log(validateTransaction("SYSTEM", "MINT_STABLE", 5000));
+
