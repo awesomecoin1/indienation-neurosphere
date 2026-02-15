@@ -1,65 +1,64 @@
-// NeuroSphere Secure Logic v1.0
-const SECRET_SALT = "NEURO_2026_FOUNDER";
+const SUPABASE_URL = "https://seytfjndfvjrneaupvry.supabase.co";
+const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNleXRmam5kZnZqcm5lYXVwdnJ5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzEwNTMwMzMsImV4cCI6MjA4NjYyOTAzM30.uEQOi2kJvgm6P94_66yiMmsaB1eBO0tga8CjlaT9bz4";
+const supabase = supabasejs.createClient(SUPABASE_URL, SUPABASE_KEY);
 
-async function syncNeuroSphere() {
-    try {
-        const res = await fetch('https://api.exchangerate-api.com/v4/latest/EUR');
-        const data = await res.json();
-        const kurs = data.rates.IDR || 16500;
-        const eur = 99999.9997 + (Math.sin(Date.now() / 1000) * 0.0003); // Pulsating Real
-        const idr = eur * kurs;
-        
-        if(document.querySelector('.idr-display')) {
-            document.querySelector('.idr-display').innerText = `Rp ${idr.toLocaleString('id-ID')}`;
-            document.querySelector('.eur-display').innerText = `€${eur.toFixed(4).replace('.', ',')}`;
+window.onload = () => {
+    setTimeout(() => {
+        const splash = document.getElementById('splash');
+        if(splash) {
+            splash.style.opacity = '0';
+            setTimeout(() => {
+                splash.style.display = 'none';
+                checkSession();
+            }, 1000);
         }
-    } catch (e) { console.log("Sync Error"); }
-}
+    }, 3000);
+};
 
-function handleKirim() {
-    if (new Date() < new Date('2029-02-14')) {
-        showToast("🛡️ AI GUARD: Wallet LOCKED s/d 14 Feb 2029", "error");
-    }
-}
-
-function showToast(msg, type) {
-    const toast = document.createElement('div');
-    toast.style = "position:fixed; top:20px; right:20px; background:#001a0f; color:#00ff88; border:1px solid #00ff88; padding:15px; z-index:10000; font-family:monospace; box-shadow:0 0 10px #00ff88;";
-    toast.innerText = msg;
-    document.body.appendChild(toast);
-    setTimeout(() => toast.remove(), 3000);
-}
-
-function checkSecureActivation() {
-    const params = new URLSearchParams(window.location.search);
-    const iid = params.get('activate');
-    const key = params.get('key');
-    
-    if (iid && key) {
-        // Simple Hash Verification (Client Side for Simulation)
-        const validKey = btoa(iid + SECRET_SALT).substring(0, 8);
-        if (key === validKey) {
-            localStorage.setItem('NEURO_IID', iid);
-            localStorage.setItem('NEURO_STATUS', 'ACTIVE');
-            showToast("✅ KEDAULATAN DIAKTIFKAN: " + iid, "success");
-            setTimeout(() => window.location.href = "/", 2000);
+async function checkSession() {
+    const iid = localStorage.getItem('NEURO_IID');
+    if (!iid) {
+        document.getElementById('auth-screen').style.display = 'flex';
+    } else {
+        const { data, error } = await supabase.from('citizens').select('*').eq('iid', iid).single();
+        if (error || !data) {
+            localStorage.clear();
+            location.reload();
         } else {
-            showToast("❌ INVALID ACTIVATION KEY", "error");
+            document.getElementById('main-vault').style.display = 'flex';
+            loadVaultData(data);
         }
     }
 }
 
-setInterval(syncNeuroSphere, 1000);
-window.onload = checkSecureActivation;
+function loadVaultData(user) {
+    document.getElementById('display-name').innerText = user.full_name;
+    document.getElementById('display-iid').innerText = user.iid;
 
-// Force Sync untuk Identitas Founder Utama
-if (localStorage.getItem('NEURO_IID') === 'IID-M30LX5ED2' || !localStorage.getItem('NEURO_IID')) {
-    localStorage.setItem('NEURO_IID', 'IID-GAG08430G'); // IID Founder sesuai kesepakatan
-    localStorage.setItem('NEURO_STATUS', 'FOUNDER_LOCKED');
+    const baseVal = 99999.9997;
+    setInterval(() => {
+        const liveVal = baseVal + (Math.random() * 0.0002);
+        document.getElementById('eur-val').innerText = "€" + liveVal.toLocaleString('de-DE', {minimumFractionDigits: 4});
+        document.getElementById('idr-val').innerText = "Rp " + (liveVal * 17250).toLocaleString('id-ID');
+    }, 1000);
 }
 
-// Force Sync untuk Identitas Founder Utama
-if (localStorage.getItem('NEURO_IID') === 'IID-M30LX5ED2' || !localStorage.getItem('NEURO_IID')) {
-    localStorage.setItem('NEURO_IID', 'IID-GAG08430G'); // IID Founder sesuai kesepakatan
-    localStorage.setItem('NEURO_STATUS', 'FOUNDER_LOCKED');
+async function handleRegister() {
+    const name = document.getElementById('reg-name').value;
+    const dob = document.getElementById('reg-dob').value;
+    if(!name || !dob) return alert("Please fill identity!");
+
+    const newIID = "IID-GAG" + Math.floor(100000 + Math.random() * 900000);
+    const { error } = await supabase.from('citizens').insert([{ iid: newIID, full_name: name, birth_date: dob }]);
+
+    if(error) alert("Error: " + error.message);
+    else {
+        localStorage.setItem('NEURO_IID', newIID);
+        location.reload();
+    }
+}
+
+function handleLogout() {
+    localStorage.clear();
+    location.reload();
 }

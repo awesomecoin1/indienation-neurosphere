@@ -1,29 +1,71 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8"><title>Sovereign Certificate</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOVEREIGN CERTIFICATE | NeuroSphere</title>
     <style>
-        body { background: #000; color: #d4af37; font-family: serif; text-align: center; padding: 50px; }
-        .cert { border: 10px double #d4af37; padding: 50px; max-width: 600px; margin: auto; position: relative; }
-        .nav { margin-bottom: 30px; }
-        .nav a { color: #d4af37; border: 1px solid #d4af37; padding: 10px 20px; text-decoration: none; margin: 5px; font-family: monospace; }
+        body { background: #000; color: #00ff88; font-family: 'Courier New', monospace; display: flex; flex-direction: column; align-items: center; padding: 20px; }
+        
+        /* Navigasi */
+        .nav-bar { display: flex; gap: 5px; margin-bottom: 20px; }
+        .nav-bar button { background: #000; border: 1px solid #00ff88; color: #00ff88; padding: 5px 10px; font-size: 10px; cursor: pointer; }
+
+        .cert-border { border: 5px double #00ff88; padding: 30px; width: 90%; max-width: 500px; text-align: center; background: linear-gradient(145deg, #000b05, #000); position: relative; }
+        .watermark { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 60px; opacity: 0.05; pointer-events: none; white-space: nowrap; }
+        
+        h1 { font-size: 20px; text-transform: uppercase; margin-bottom: 5px; }
+        .subtitle { font-size: 10px; margin-bottom: 30px; color: #ffd700; }
+        
+        .content { font-size: 13px; line-height: 1.6; text-align: justify; margin-bottom: 30px; }
+        .iid-box { border: 1px dashed #00ff88; padding: 10px; display: inline-block; margin: 10px 0; font-weight: bold; font-size: 16px; }
+        
+        .signature-area { display: flex; justify-content: space-between; margin-top: 40px; font-size: 10px; }
+        .sig-box { text-align: center; width: 45%; }
+        .line { border-top: 1px solid #00ff88; margin-top: 30px; }
     </style>
 </head>
 <body>
-    <div class="nav">
-        <a href="/">HOME</a>
-        <a href="/vault">VAULT</a>
-        <a href="/certificate" style="background:#d4af37; color:#000;">CERTIFICATE</a>
+
+    <div class="nav-bar">
+        <button onclick="location.href='/'">HOME</button>
+        <button onclick="location.href='/scan.html'">🔍 SCAN</button>
+        <button onclick="location.href='/certificate.html'" style="background:#00ff88; color:#000;">CERTIFICATE</button>
     </div>
-    <div class="cert">
-        <h2>CERTIFICATE OF SOVEREIGNTY</h2>
-        <p>THIS DOCUMENT CERTIFIES THAT</p>
-        <h1 style="color:#fff;">INDIE-FOUNDER</h1>
-        <p>IS THE RIGHTFUL HOLDER OF IID-GAG08430G</p>
-        <div style="margin-top:50px;">
-            <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=IID-GAG08430G" alt="QR">
+
+    <div class="cert-border">
+        <div class="watermark">NEUROSPHERE</div>
+        
+        <h1>Certificate of Sovereignty</h1>
+        <div class="subtitle">ESTAFET KEYS OF KINDNESS - 2026</div>
+
+        <div class="content">
+            Ini adalah pengakuan resmi bahwa pemegang identitas digital di bawah ini adalah <b>SOVEREIGN PIONEER</b> dalam ekosistem NeuroSphere. Diberikan hak penuh atas nilai kedaulatan:
+            <center>
+                <div class="iid-box" id="certIID">LOADING...</div><br>
+                <b style="color:#ffd700;">VALUE: €100,000.0000 (Locked)</b>
+            </center>
+            Segala bentuk kepemilikan ini divalidasi dan dijaga oleh <b>AI GUARD V1</b> melalui protokol <b>AURALANG</b>.
         </div>
-        <p style="font-size:0.8em; margin-top:30px;">SECURED BY AI GUARD & AURALANG</p>
+
+        <div class="signature-area">
+            <div class="sig-box">
+                <div class="line"></div>
+                INDIE-FOUNDER
+                <br>Architect of NeuroSphere
+            </div>
+            <div class="sig-box">
+                <div class="line"></div>
+                AI GUARD V1
+                <br>Digital Constabulary
+            </div>
+        </div>
     </div>
+
+    <script>
+        // Mengambil IID dari localStorage agar sertifikat bersifat personal
+        const userIID = localStorage.getItem('NEURO_IID') || "GUEST-ACCESS";
+        document.getElementById('certIID').innerText = userIID;
+    </script>
 </body>
 </html>
