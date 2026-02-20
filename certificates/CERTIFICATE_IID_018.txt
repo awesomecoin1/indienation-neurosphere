@@ -1,0 +1,34 @@
+=====================================================
+          NEUROSPHERE SOVEREIGN CERTIFICATE
+=====================================================
+IDENTITIES ID : IID-018
+CITIZEN NAME  : Rasheed Abiodun O. Gbaiye
+STATUS        : FOUNDING PIONEER (ANCHORED)
+=====================================================
+
+DENGAN INI DINYATAKAN BAHWA:
+Pemegang sertifikat ini adalah warga negara berdaulat
+NeuroSphere dengan hak akses penuh terhadap ekosistem
+Technology Money (TM).
+
+HAK & KEDAULATAN:
+1. ANCHOR VALUE    : €100,000 (Guaranteed)
+2. REWARD STATUS   : Eligible for 1M LUV (01-02-2027)
+3. SECURITY        : Protected by AI-Guard IID-010
+
+DIKELUARKAN PADA: 21-02-2026
+OTORITAS        : INDIE-Founder
+PROTOKOL        : AURALANG v1.0
+
+-----------------------------------------------------
+      "KEDAULATAN ANDA ADALAH ENERGI KAMI"
+-----------------------------------------------------
+--- CRYPTOGRAPHIC AUTHENTICATION ---
+AUTHORITY ID   : INDIE-FOUNDER-IID-010
+SIGNATURE ALG  : HMAC-SHA256 (Sovereign Standard)
+SIGNATURE      : 68b8ac5a73fbb4a5142800ca22e66602bbc74ae8dc25ddb06270df09cd734dfb
+GIT COMMIT REF : e4afa659d9b0fda232aa10566d52b1892368a8a5
+LEDGER REF     : firestore://ledger/pioneer_018
+Guard IID
+VERIFICATION   : https://awesomecoin1.github.io/indienation-neurosphere/verify.html
+=====================================================
