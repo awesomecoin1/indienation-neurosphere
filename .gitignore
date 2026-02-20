@@ -74,3 +74,4 @@ node_modules/
 !package.json
 !firebase.json
 !.firebaserc
+private_founder.pem
