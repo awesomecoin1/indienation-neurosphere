@@ -1,6 +1,0 @@
-{
-  "action": "PURGE_LEGACY_DATA",
-  "reason": "MIGRATION_TO_SSOT_PHASE_2",
-  "timestamp": "$(date -u)",
-  "authority": "INDIE-FOUNDER"
-}

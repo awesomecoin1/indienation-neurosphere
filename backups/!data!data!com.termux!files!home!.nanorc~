@@ -1,0 +1,7 @@
+set backup
+set backupdir ~/indienation-neurosphere/backups
+set constantshow
+set linenumbers
+set softwrap
+set tabsize 4
+set autoindent

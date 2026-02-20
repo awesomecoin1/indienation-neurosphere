@@ -1,0 +1,21 @@
+const fs = require('fs');
+const path = require('path');
+
+const targetFile = './engine.js';
+const backupDir = './backups';
+
+if (!fs.existsSync(backupDir)) fs.mkdirSync(backupDir);
+
+console.log("🛡️ AI-Guard: Auto-Save Watcher Active...");
+
+fs.watchFile(targetFile, (curr, prev) => {
+    if (curr.mtime !== prev.mtime) {
+        const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
+        const backupPath = path.join(backupDir, `engine_backup_${timestamp}.js`);
+        
+        fs.copyFileSync(targetFile, backupPath);
+        
+        // Jaga agar backup tidak lebih dari 100M (Sesuai SOP)
+        console.log(`✅ Auto-Saved: ${backupPath}`);
+    }
+});

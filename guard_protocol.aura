@@ -1,6 +1,0 @@
-protocol AI_GUARD_V1 {
-    verify_holder("INDIE-FOUNDER");
-    verify_iid("IID-GAG08430G");
-    enforce_supply_cap(100000000000000); // 100 Trillion ENPE
-    set_stability_anchor("IND-EUR", 100000);
-}

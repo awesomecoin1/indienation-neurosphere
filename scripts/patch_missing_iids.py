@@ -2,18 +2,15 @@ import requests, json, time
 
 DB_BASE_URL = "https://indienation-tm-default-rtdb.asia-southeast1.firebasedatabase.app/pioneers/"
 
-pioneers = {
-    "IID-015": "Miftahudin",
-    "IID-016": "Kastim",
-    "IID-017": "Meiriska",
-    "IID-018": "Rasheed Abiodun O. Gbaiye",
-    "IID-019": "Lugard Jumbo",
-    "IID-020": "Heri Heryanto"
+missing_pioneers = {
+    "IID-012": "MARSELUS HASAN",
+    "IID-013": "KIKI KESTURI",
+    "IID-014": "DIAVATCHE BOGUI EUGÈNE"
 }
 
-def onboard():
-    for iid, name in pioneers.items():
-        print(f"🛡️ Onboarding {iid}: {name}...")
+def patch():
+    for iid, name in missing_pioneers.items():
+        print(f"🛡️ Patching Missing IID {iid}: {name}...")
         data = {
             "name": name,
             "role": "Pioneer",
@@ -25,7 +22,7 @@ def onboard():
         }
         requests.put(f"{DB_BASE_URL}{iid}.json", json=data)
         time.sleep(0.5)
-    print("✅ SEMUA PIONEER TELAH TERDAFTAR DI SSOT.")
+    print("✅ DATA IID-012, 013, 014 BERHASIL DISINKRONKAN.")
 
 if __name__ == "__main__":
-    onboard()
+    patch()

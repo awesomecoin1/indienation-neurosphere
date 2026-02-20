@@ -1,52 +1,17 @@
-[
-  {
-    "iid": "INDIE-0000000001",
-    "alias": "INDIE-Founder",
-    "status": "ACTIVE"
+{
+  "iid": "IID-000000001",
+  "alias": "INDIE-Founder",
+  "status": "ACTIVE",
+  "tm_structure": {
+    "ind_eur_liquid": 6130,
+    "anchor_value": 100000,
+    "luv_reward": 1000000,
+    "enpe_staking": 0
   },
-  {
-    "iid": "INDIE-0000000002",
-    "alias": "Perintis-02",
-    "status": "ACTIVE"
+  "relay_state": {
+    "current_day": 20,
+    "next_payout": 270,
+    "final_bonus_locked": 990
   },
-  {
-    "iid": "INDIE-0000000003",
-    "alias": "Perintis-03",
-    "status": "ACTIVE"
-  },
-  {
-    "iid": "INDIE-0000000004",
-    "alias": "Perintis-04",
-    "status": "ACTIVE"
-  },
-  {
-    "iid": "INDIE-0000000005",
-    "alias": "Perintis-05",
-    "status": "ACTIVE"
-  },
-  {
-    "iid": "INDIE-0000000006",
-    "alias": "Perintis-06",
-    "status": "ACTIVE"
-  },
-  {
-    "iid": "INDIE-0000000007",
-    "alias": "Perintis-07",
-    "status": "ACTIVE"
-  },
-  {
-    "iid": "INDIE-0000000008",
-    "alias": "Perintis-08",
-    "status": "ACTIVE"
-  },
-  {
-    "iid": "INDIE-0000000009",
-    "alias": "Perintis-09",
-    "status": "ACTIVE"
-  },
-  {
-    "iid": "INDIE-0000000010",
-    "alias": "Perintis-10",
-    "status": "ACTIVE"
-  }
-]
+  "last_update": "2026-02-20T01:54:29Z"
+}

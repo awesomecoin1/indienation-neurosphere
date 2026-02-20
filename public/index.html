@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IndieNation NeuroSphere v1.4.5</title>
+    <style>
+        :root { --neon: #00ff00; --bg: #000; --dark-card: #0a0a0a; }
+        body { background: var(--bg); color: var(--neon); font-family: 'Courier New', monospace; margin: 0; overflow-x: hidden; }
+        .screen { height: 100vh; display: none; flex-direction: column; align-items: center; justify-content: center; padding: 20px; box-sizing: border-box; }
+        .active { display: flex; }
+        .card { background: var(--dark-card); border: 2px solid var(--neon); padding: 30px; border-radius: 5px; width: 100%; max-width: 400px; text-align: center; position: relative; }
+        .tm-value { font-size: 2.2em; color: var(--neon); font-weight: bold; text-shadow: 0 0 10px var(--neon); }
+        .btn { background: transparent; color: var(--neon); border: 2px solid var(--neon); padding: 10px; cursor: pointer; width: 100%; margin-top: 15px; font-weight: bold; text-transform: uppercase; }
+        .btn:hover { background: var(--neon); color: black; }
+        input { background: #111; border: 1px solid var(--neon); color: var(--neon); padding: 10px; width: 100%; margin-top: 10px; box-sizing: border-box; text-align: center; }
+        #qr-display img { border: 2px solid var(--neon); margin: 15px 0; width: 180px; box-shadow: 0 0 15px var(--neon); }
+        .status-bar { font-size: 0.8em; margin-top: 25px; font-weight: bold; display: flex; align-items: center; gap: 10px; }
+        .dot { height: 8px; width: 8px; background-color: var(--neon); border-radius: 50%; display: inline-block; animation: blink 1s infinite; }
+        @keyframes blink { 0% { opacity: 0; } 50% { opacity: 1; } 100% { opacity: 0; } }
+    </style>
+</head>
+<body>
+
+    <div id="splash" class="screen active">
+        <h2 style="letter-spacing: 10px;">NEUROSPHERE</h2>
+        <p>[ IID-010 GUARD INITIALIZING ]</p>
+    </div>
+
+    <div id="signup" class="screen">
+        <div class="card">
+            <h3>CLAIM SOVEREIGNTY</h3>
+            <p style="font-size: 0.7em;">Enter your name to anchor your €100,000 identity.</p>
+            <input type="text" id="username" placeholder="Full Name">
+            <button class="btn" onclick="processClaim()">GENERATE IID</button>
+        </div>
+    </div>
+
+    <div id="claim-success" class="screen">
+        <div class="card">
+            <h2 style="color:white; font-size: 1.2em;">IID GENERATED</h2>
+            <div id="qr-display">
+                <img src="" id="user-qr">
+            </div>
+            <p style="font-size: 0.8em; color: #ff0000; font-weight: bold;">⚠️ MANDATORY: SAVE YOUR QR CODE NOW</p>
+            <p style="font-size: 0.7em;">This is your Walking Wallet. Access without this key is impossible.</p>
+            <button class="btn" onclick="showScreen('dashboard')">I HAVE SECURED MY KEY</button>
+        </div>
+    </div>
+
+    <div id="dashboard" class="screen">
+        <div class="card">
+            <p style="color:white; font-size:0.9em;">Welcome, <span id="display-name">Citizen</span></p>
+            <div class="tm-value">€100,000.00</div>
+            <p style="font-size: 0.7em;">TOTAL TECHNOLOGY MONEY (TM)</p>
+            <hr border="0" style="border-top: 1px solid var(--neon); margin: 15px 0;">
+            <div style="display: flex; justify-content: space-between; font-size: 0.8em;">
+                <span>ENPE: 100T</span> <span>LUV: 0 (Pending)</span>
+            </div>
+            <button class="btn" onclick="location.reload()">LOCK & SIGN OUT</button>
+        </div>
+        <div class="status-bar"><span class="dot"></span> 🛡️ IID-010 GUARD ONLINE</div>
+    </div>
+
+    <script>
+        setTimeout(() => { showScreen('signup'); }, 2500);
+
+        function processClaim() {
+            const name = document.getElementById('username').value;
+            if(!name) return alert("System requires a name for Anchor Verification.");
+            document.getElementById('display-name').innerText = name;
+            
+            // Generate QR menggunakan API eksternal sementara untuk demo
+            const iidSim = "IID-021-0000000011"; // Simulasi pendaftar
+            const qrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://indienation-tm.web.app/cert/011&color=00ff00&bgcolor=000000`;
+            document.getElementById('user-qr').src = qrUrl;
+            
+            showScreen('claim-success');
+        }
+
+        function showScreen(id) {
+            document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+            document.getElementById(id).classList.add('active');
+        }
+    </script>
+</body>
+</html>
