@@ -6,11 +6,12 @@
       "**/.*",
       "**/node_modules/**"
     ],
-    "rewrites": [
-      {
-        "source": "**",
-        "destination": "/index.html"
-      }
+    "predeploy": [
+      "rm -rf public && mkdir public",
+      "cp dashboard_v1.4.7.html public/index.html",
+      "cp verify.html public/ 2>/dev/null",
+      "cp founder.pub public/ 2>/dev/null",
+      "mkdir -p public/certificates && cp certificates/*.txt public/certificates/ 2>/dev/null"
     ]
   }
 }
