@@ -1,105 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
-    <title>IndieScan | Real-Time Explorer</title>
+    <title>IndieScan | NeuroSphere Ledger</title>
     <style>
-        body { background: #000; color: #00ff96; font-family: monospace; padding: 20px; }
-        .search-box { border: 1px solid #00ff96; padding: 20px; border-radius: 10px; max-width: 500px; margin: auto; }
-        .result-card { margin-top: 20px; padding: 15px; border: 1px solid #333; display: none; background: #050505; }
-        .error { color: #ff4444; margin-top: 10px; display: none; }
+        body { background: #000; color: #00ff96; font-family: 'Courier New', monospace; padding: 20px; font-size: 0.9em; }
+        .scanner-container { border: 1px solid #333; max-width: 800px; margin: auto; }
+        .header { background: #00ff96; color: #000; padding: 10px; font-weight: bold; display: flex; justify-content: space-between; }
+        table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+        th { border-bottom: 2px solid #00ff96; text-align: left; padding: 10px; color: #888; }
+        td { padding: 10px; border-bottom: 1px solid #111; }
+        .aura-high { color: #ffd700; }
+        .hash-link { color: #555; font-size: 0.7em; text-decoration: none; }
     </style>
 </head>
 <body>
-    <div class="search-box">
-        <h3>🔍 INDIESCAN v2.1 (LIVE DATA)</h3>
-        <input type="text" id="iidInput" placeholder="IID_011" style="width:60%;">
-        <button onclick="realScan()">SCAN LEDGER</button>
-    <div id="leaderboard" style="margin-top:40px; border:1px solid #333; padding:15px; border-radius:10px;"> 
-        <h4 style="color:#ffd700; margin-top:0;">🏆 AURA LEADERBOARD</h4> 
-        <div id="leaderboard-list" style="font-size:0.8em; text-align:left;">Loading rankings...</div> 
-    </div>
-        <div id="error-msg" class="error">Identity Not Found in Ledger</div>
-        
-        <div id="result" class="result-card">
-    <div id="leaderboard" style="margin-top:40px; border:1px solid #333; padding:15px; border-radius:10px;"> 
-        <h4 style="color:#ffd700; margin-top:0;">🏆 AURA LEADERBOARD</h4> 
-        <div id="leaderboard-list" style="font-size:0.8em; text-align:left;">Loading rankings...</div> 
-    </div>
-            <div id="res-iid" style="font-weight:bold; color:#fff;"></div>
-    <div id="leaderboard" style="margin-top:40px; border:1px solid #333; padding:15px; border-radius:10px;"> 
-        <h4 style="color:#ffd700; margin-top:0;">🏆 AURA LEADERBOARD</h4> 
-        <div id="leaderboard-list" style="font-size:0.8em; text-align:left;">Loading rankings...</div> 
-    </div>
-            <div id="res-aura" style="color:#00ff96;"></div>
-    <div id="leaderboard" style="margin-top:40px; border:1px solid #333; padding:15px; border-radius:10px;"> 
-        <h4 style="color:#ffd700; margin-top:0;">🏆 AURA LEADERBOARD</h4> 
-        <div id="leaderboard-list" style="font-size:0.8em; text-align:left;">Loading rankings...</div> 
-    </div>
-            <div id="res-status"></div>
-    <div id="leaderboard" style="margin-top:40px; border:1px solid #333; padding:15px; border-radius:10px;"> 
-        <h4 style="color:#ffd700; margin-top:0;">🏆 AURA LEADERBOARD</h4> 
-        <div id="leaderboard-list" style="font-size:0.8em; text-align:left;">Loading rankings...</div> 
-    </div>
-            <div id="res-update" style="font-size:0.7em; color:#888;"></div>
-            <hr border="0" style="border-top:1px solid #222;">
-            <small id="res-hash" style="word-break:break-all; font-size:0.6em;"></small>
-    <div id="leaderboard" style="margin-top:40px; border:1px solid #333; padding:15px; border-radius:10px;"> 
-        <h4 style="color:#ffd700; margin-top:0;">🏆 AURA LEADERBOARD</h4> 
-        <div id="leaderboard-list" style="font-size:0.8em; text-align:left;">Loading rankings...</div> 
-    </div>
+    <div class="scanner-container">
+        <div class="header">
+            <span>INDIESCAN v2.0 - PUBLIC LEDGER</span>
+            <span>PULSE: ACTIVE</span>
         </div>
-    <div id="leaderboard" style="margin-top:40px; border:1px solid #333; padding:15px; border-radius:10px;"> 
-        <h4 style="color:#ffd700; margin-top:0;">🏆 AURA LEADERBOARD</h4> 
-        <div id="leaderboard-list" style="font-size:0.8em; text-align:left;">Loading rankings...</div> 
+        <table>
+            <thead>
+                <tr>
+                    <th>IID</th>
+                    <th>CITIZEN</th>
+                    <th>AURA</th>
+                    <th>STATUS</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>011</td><td>PURWANTORO</td><td class="aura-high">0.1076</td><td>VERIFIED</td></tr>
+                <tr><td>012</td><td>MARSELUS HASAN</td><td>0.0892</td><td>VERIFIED</td></tr>
+                <tr><td>013</td><td>KIKI KESTURI</td><td>0.0885</td><td>VERIFIED</td></tr>
+                <tr><td>014</td><td>BOGUI EUGÈNE</td><td>0.0870</td><td>VERIFIED</td></tr>
+                <tr><td>015</td><td>MIFTAHUDIN</td><td>0.0865</td><td>VERIFIED</td></tr>
+            </tbody>
+        </table>
+        <div style="padding: 10px; text-align: center; color: #333; font-size: 0.7em;">
+            SHOWING 5 OF 10,000,000 SOVEREIGN IDENTITIES
+        </div>
     </div>
-    </div>
-
-    <script>
-    async function loadLeaderboard() { 
-        const list = document.getElementById("leaderboard-list"); 
-        let ranks = []; 
-        for(let i=11; i<=30; i++) { 
-            const iid = `IID_0${i}`; 
-            try { 
-                const resp = await fetch(`/certificates/CERTIFICATE_${iid}.txt`); 
-                const text = await resp.text(); 
-                const aura = parseFloat(text.match(/AURA-LEVEL: ([\d.]+)/)[1]); 
-                ranks.push({iid, aura}); 
-            } catch(e) {} 
-        } 
-        ranks.sort((a,b) => b.aura - a.aura); 
-        list.innerHTML = ranks.slice(0,5).map((r, idx) => `<div>${idx+1}. ${r.iid} - <span style="color:#00ff96;">${r.aura} Aura</span></div>`).join(""); 
-    } 
-    loadLeaderboard();
-        async function realScan() {
-            const iid = document.getElementById('iidInput').value.toUpperCase();
-            const resDiv = document.getElementById('result');
-            const errDiv = document.getElementById('error-msg');
-            
-            try {
-                const response = await fetch(`/certificates/CERTIFICATE_${iid}.txt`);
-                if (!response.ok) throw new Error();
-                
-                const text = await response.text();
-                errDiv.style.display = 'none';
-                resDiv.style.display = 'block';
-                
-                // Regex Parsing dari File Asli
-                const aura = text.match(/AURA-LEVEL: ([\d.]+)/)[1];
-                const hash = text.match(/WALLET-HASH: (.*)/)[1];
-                const update = text.match(/LAST-UPDATE: (.*)/)?.[1] || "Initial";
-
-                document.getElementById('res-iid').innerText = iid;
-                document.getElementById('res-aura').innerText = `AURA: ${aura}`;
-                document.getElementById('res-update').innerText = `LAST PULSE: ${update}`;
-                document.getElementById('res-hash').innerText = `HASH: ${hash}`;
-                
-            } catch (e) {
-                resDiv.style.display = 'none';
-                errDiv.style.display = 'block';
-            }
-        }
-    </script>
 </body>
 </html>
