@@ -20,6 +20,25 @@
         .btn:hover { background: var(--neon); color: black; }
         .status { font-size: 0.8em; margin-top: 20px; font-weight: bold; animation: pulse 2s infinite; }
         @keyframes pulse { 0% { opacity: 0.5; } 50% { opacity: 1; } 100% { opacity: 0.5; } }
+.status-online { 
+    color: #00ff96; 
+    font-size: 0.7em; 
+    font-weight: bold; 
+    text-shadow: 0 0 5px #00ff96; 
+    animation: pulse-green 2s infinite; 
+} 
+@keyframes pulse-green { 
+    0% { opacity: 1; } 
+    50% { opacity: 0.4; } 
+    100% { opacity: 1; } 
+} 
+.iid-row { 
+    display: flex; 
+    justify-content: space-between; 
+    border-bottom: 1px solid #222; 
+    padding: 5px 0; 
+    font-family: "Courier New", monospace; 
+}
     </style>
 </head>
 <body>
