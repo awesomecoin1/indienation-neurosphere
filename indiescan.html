@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IndieScan | NeuroSphere Explorer</title>
+    <style>
+        body { background: #000; color: #00ff96; font-family: 'Courier New', monospace; padding: 20px; }
+        .search-box { border: 1px solid #00ff96; padding: 20px; border-radius: 10px; background: #050505; max-width: 600px; margin: 0 auto; }
+        input { background: #000; border: 1px solid #333; color: #00ff96; padding: 10px; width: 70%; border-radius: 5px; }
+        button { background: #00ff96; color: #000; border: none; padding: 10px 20px; font-weight: bold; cursor: pointer; border-radius: 5px; }
+        .result-card { margin-top: 30px; border-top: 1px solid #222; padding-top: 20px; display: none; }
+        .label { color: #888; font-size: 0.8em; }
+        .value { color: #fff; font-size: 1.1em; margin-bottom: 10px; }
+    </style>
+</head>
+<body>
+    <div class="search-box">
+        <h2>🔍 INDIESCAN v2.0</h2>
+        <p style="font-size: 0.8em; color: #888;">NeuroSphere Sovereign Identity Explorer</p>
+        <input type="text" id="iidInput" placeholder="Enter IID (e.g. IID_011)">
+        <button onclick="scanIdentity()">SCAN</button>
+
+        <div id="result" class="result-card">
+            <div class="label">IDENTITY TYPE</div>
+            <div id="type" class="value">-</div>
+            <div class="label">CURRENT AURA</div>
+            <div id="aura" class="value" style="color: #00ff96;">-</div>
+            <div class="label">TM ANCHOR STATUS</div>
+            <div id="anchor" class="value" style="color: #ffd700;">€100,000.00 (LOCKED)</div>
+            <hr style="border:0; border-top:1px dashed #333;">
+            <button onclick="viewCertificate()" style="background:transparent; border:1px solid #00ff96; color:#00ff96; font-size:0.7em;">VIEW RAW CERTIFICATE</button>
+        </div>
+    </div>
+
+    <script>
+        function scanIdentity() {
+            const iid = document.getElementById('iidInput').value.toUpperCase();
+            if(!iid) return;
+
+            // Logic Simulation (Karena data statis di hosting)
+            document.getElementById('result').style.display = 'block';
+            document.getElementById('type').innerText = iid.includes('02') ? 'International Masyarakat (inter6)' : 'Pioneer Sovereign';
+            document.getElementById('aura').innerText = '1.01 (Evolving)';
+        }
+
+        function viewCertificate() {
+            const iid = document.getElementById('iidInput').value.toUpperCase();
+            window.location.href = `/certificates/CERTIFICATE_${iid}.txt`;
+        }
+    </script>
+</body>
+</html>

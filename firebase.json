@@ -21,7 +21,7 @@
     "predeploy": [
       "rm -rf public_tmp && mkdir -p public_tmp/certificates",
       "cp dashboard_v1.4.7.html public_tmp/index.html",
-      "cp verify.html public_tmp/ 2>/dev/null || :",
+      "cp verify.html indiescan.html public_tmp/ 2>/dev/null || :",
       "cp founder.pub public_tmp/ 2>/dev/null || :",
       "cp certificates/*.txt public_tmp/certificates/ 2>/dev/null || :",
       "rm -rf public && mv public_tmp public"
