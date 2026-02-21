@@ -6,12 +6,24 @@
       "**/.*",
       "**/node_modules/**"
     ],
+    "headers": [
+      {
+        "source": "**/*.@(txt|html|json)",
+        "headers": [
+          { "key": "Cache-Control", "value": "public, max-age=3600" },
+          { "key": "X-Content-Type-Options", "value": "nosniff" },
+          { "key": "X-Frame-Options", "value": "DENY" },
+          { "key": "Strict-Transport-Security", "value": "max-age=31536000; includeSubDomains" }
+        ]
+      }
+    ],
     "predeploy": [
-      "rm -rf public && mkdir public",
-      "cp dashboard_v1.4.7.html public/index.html",
-      "cp verify.html public/ 2>/dev/null",
-      "cp founder.pub public/ 2>/dev/null",
-      "mkdir -p public/certificates && cp certificates/*.txt public/certificates/ 2>/dev/null"
+      "rm -rf public_tmp && mkdir -p public_tmp/certificates",
+      "cp dashboard_v1.4.7.html public_tmp/index.html",
+      "cp verify.html public_tmp/ 2>/dev/null || :",
+      "cp founder.pub public_tmp/ 2>/dev/null || :",
+      "cp certificates/*.txt public_tmp/certificates/ 2>/dev/null || :",
+      "rm -rf public && mv public_tmp public"
     ]
   }
 }
