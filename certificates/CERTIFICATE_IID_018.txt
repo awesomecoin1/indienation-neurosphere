@@ -42,3 +42,10 @@ ANCHOR-VALUE: EUR 100,000
 STATUS: INITIALIZED 01-02-2026
 VERIFY: https://indienation-tm.web.app/verify.html?id=IID_018&hash=afd468004215
 -------------------------------
+
+--- WALKING WALLET METADATA ---
+TM-IDENTITY-HASH: afd468004215129157993eb32015d80a00bc1741c3a8f9257040ad12fc61d6a2
+ANCHOR-VALUE: EUR 100,000
+STATUS: INITIALIZED 01-02-2026
+VERIFY: https://indienation-tm.web.app/verify.html?id=IID_018&hash=afd468004215
+-------------------------------

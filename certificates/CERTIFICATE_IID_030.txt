@@ -1,0 +1,13 @@
+NEUROSPHERE SOVEREIGN IDENTITY
+------------------------------
+HOLDER: International_030
+IDENTITY-TYPE: International Masyarakat (inter6)
+STATUS: ACTIVE
+
+
+--- WALKING WALLET METADATA ---
+TM-IDENTITY-HASH: 6b41d0de8f2c87c79a4a1e6acacd0121d1727f9d61276a2ff7f80f4d526f565b
+ANCHOR-VALUE: EUR 100,000
+STATUS: INITIALIZED 01-02-2026
+VERIFY: https://indienation-tm.web.app/verify.html?id=IID_030&hash=6b41d0de8f2c
+-------------------------------
