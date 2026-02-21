@@ -11,3 +11,4 @@ ANCHOR-VALUE: EUR 100,000
 STATUS: INITIALIZED 01-02-2026
 VERIFY: https://indienation-tm.web.app/verify.html?id=IID_022&hash=7717caafc5c4
 -------------------------------
+AURA-LEVEL: 1.0
