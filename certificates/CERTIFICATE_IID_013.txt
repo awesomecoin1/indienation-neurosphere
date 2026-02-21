@@ -26,10 +26,11 @@ PROTOKOL        : AURALANG v1.0
 --- CRYPTOGRAPHIC AUTHENTICATION ---
 AUTHORITY ID   : INDIE-FOUNDER-IID-010
 SIGNATURE ALG  : Ed25519 (Asymmetric Standard)
-SIGNATURE      : 
-PUBLIC KEY REF : https://awesomecoin1.github.io/indienation-neurosphere/founder.pub
-GIT COMMIT REF : 172f9eddd36083b94f14b692ad595c931d0af4e7
+SIGNATURE      : 27XvX2grzpKcEhvcrpKamahudlTTSTPQ3MWzwPTARo7591oQ3V6HvE4WQa5P7MZZ9PAhmtuuwel1JzcMAi0HDg==
+PUBLIC KEY REF : https://awesomecoin1.github.io/indienation-neurosphere/public/founder.pub
+GIT COMMIT REF : 6b3f2f02438e9188cf0430f4aff0b76e547ec26a
+SIG VERSION    : NS-ED25519-V1
 LEDGER REF     : firestore://ledger/pioneer_013
 Guard IID
-VERIFICATION   : https://awesomecoin1.github.io/indienation-neurosphere/verify.html
+VERIFICATION   : https://awesomecoin1.github.io/indienation-neurosphere/public/verify.html
 =====================================================
