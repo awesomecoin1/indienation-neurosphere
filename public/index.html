@@ -3,85 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IndieNation NeuroSphere v1.4.5</title>
+    <title>NeuroSphere v1.4.7 - Aura Booster</title>
     <style>
         :root { --neon: #00ff00; --bg: #000; --dark-card: #0a0a0a; }
-        body { background: var(--bg); color: var(--neon); font-family: 'Courier New', monospace; margin: 0; overflow-x: hidden; }
-        .screen { height: 100vh; display: none; flex-direction: column; align-items: center; justify-content: center; padding: 20px; box-sizing: border-box; }
-        .active { display: flex; }
-        .card { background: var(--dark-card); border: 2px solid var(--neon); padding: 30px; border-radius: 5px; width: 100%; max-width: 400px; text-align: center; position: relative; }
-        .tm-value { font-size: 2.2em; color: var(--neon); font-weight: bold; text-shadow: 0 0 10px var(--neon); }
-        .btn { background: transparent; color: var(--neon); border: 2px solid var(--neon); padding: 10px; cursor: pointer; width: 100%; margin-top: 15px; font-weight: bold; text-transform: uppercase; }
+        body { background: var(--bg); color: var(--neon); font-family: 'Courier New', monospace; margin: 0; }
+        .screen { height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 20px; box-sizing: border-box; }
+        .card { background: var(--dark-card); border: 2px solid var(--neon); padding: 25px; border-radius: 5px; width: 100%; max-width: 400px; text-align: center; position: relative; box-shadow: 0 0 20px rgba(0,255,0,0.2); }
+        .tm-value { font-size: 2em; color: var(--neon); font-weight: bold; text-shadow: 0 0 10px var(--neon); margin: 5px 0; }
+        .aura-meter { font-size: 1.2em; color: gold; font-weight: bold; margin: 10px 0; text-transform: uppercase; letter-spacing: 2px; }
+        .scan-line { position: absolute; width: 100%; height: 2px; background: var(--neon); top: 0; left: 0; opacity: 0.5; animation: scan 4s linear infinite; }
+        @keyframes scan { 0% { top: 0%; } 100% { top: 100%; } }
+        #list { margin-top: 15px; text-align: left; font-size: 0.75em; border-top: 1px solid var(--neon); padding-top: 10px; max-height: 180px; overflow-y: auto; }
+        .item { display: flex; justify-content: space-between; margin: 5px 0; border-bottom: 1px solid #111; padding: 3px 0; }
+        .item a { color: #fff; text-decoration: none; font-weight: bold; }
+        .btn { background: transparent; color: var(--neon); border: 2px solid var(--neon); padding: 10px; cursor: pointer; width: 100%; margin-top: 10px; font-weight: bold; text-transform: uppercase; }
         .btn:hover { background: var(--neon); color: black; }
-        input { background: #111; border: 1px solid var(--neon); color: var(--neon); padding: 10px; width: 100%; margin-top: 10px; box-sizing: border-box; text-align: center; }
-        #qr-display img { border: 2px solid var(--neon); margin: 15px 0; width: 180px; box-shadow: 0 0 15px var(--neon); }
-        .status-bar { font-size: 0.8em; margin-top: 25px; font-weight: bold; display: flex; align-items: center; gap: 10px; }
-        .dot { height: 8px; width: 8px; background-color: var(--neon); border-radius: 50%; display: inline-block; animation: blink 1s infinite; }
-        @keyframes blink { 0% { opacity: 0; } 50% { opacity: 1; } 100% { opacity: 0; } }
+        .status { font-size: 0.8em; margin-top: 20px; font-weight: bold; animation: pulse 2s infinite; }
+        @keyframes pulse { 0% { opacity: 0.5; } 50% { opacity: 1; } 100% { opacity: 0.5; } }
     </style>
 </head>
 <body>
-
-    <div id="splash" class="screen active">
-        <h2 style="letter-spacing: 10px;">NEUROSPHERE</h2>
-        <p>[ IID-010 GUARD INITIALIZING ]</p>
-    </div>
-
-    <div id="signup" class="screen">
+    <div class="screen">
         <div class="card">
-            <h3>CLAIM SOVEREIGNTY</h3>
-            <p style="font-size: 0.7em;">Enter your name to anchor your €100,000 identity.</p>
-            <input type="text" id="username" placeholder="Full Name">
-            <button class="btn" onclick="processClaim()">GENERATE IID</button>
-        </div>
-    </div>
-
-    <div id="claim-success" class="screen">
-        <div class="card">
-            <h2 style="color:white; font-size: 1.2em;">IID GENERATED</h2>
-            <div id="qr-display">
-                <img src="" id="user-qr">
-            </div>
-            <p style="font-size: 0.8em; color: #ff0000; font-weight: bold;">⚠️ MANDATORY: SAVE YOUR QR CODE NOW</p>
-            <p style="font-size: 0.7em;">This is your Walking Wallet. Access without this key is impossible.</p>
-            <button class="btn" onclick="showScreen('dashboard')">I HAVE SECURED MY KEY</button>
-        </div>
-    </div>
-
-    <div id="dashboard" class="screen">
-        <div class="card">
-            <p style="color:white; font-size:0.9em;">Welcome, <span id="display-name">Citizen</span></p>
+            <div class="scan-line"></div>
+            <p style="color:white; font-size:0.8em; letter-spacing:2px;">INDIE-FOUNDER AUTHORITY</p>
             <div class="tm-value">€100,000.00</div>
-            <p style="font-size: 0.7em;">TOTAL TECHNOLOGY MONEY (TM)</p>
-            <hr border="0" style="border-top: 1px solid var(--neon); margin: 15px 0;">
-            <div style="display: flex; justify-content: space-between; font-size: 0.8em;">
-                <span>ENPE: 100T</span> <span>LUV: 0 (Pending)</span>
+            <div class="aura-meter">AURA: <span id="aura-score">0.1000</span></div>
+            <p style="font-size: 0.6em; color: #888;">(REPUTATION TOWARDS 1T LUV POOL)</p>
+            <div id="list">
+                <div class="item"><span>011: PURWANTORO</span> <a href="/cert/011">[CERT]</a></div>
+                <div class="item"><span>012: MARSELUS HASAN</span> <a href="/cert/012">[CERT]</a></div>
+                <div class="item"><span>013: KIKI KESTURI</span> <a href="/cert/013">[CERT]</a></div>
+                <div class="item"><span>014: DIAVATCHE BOGUI EUGÈNE</span> <a href="/cert/014">[CERT]</a></div>
+                <div class="item"><span>015: Miftahudin</span> <a href="/cert/015">[CERT]</a></div>
+                <div class="item"><span>016: Kastim</span> <a href="/cert/016">[CERT]</a></div>
+                <div class="item"><span>017: Meiriska</span> <a href="/cert/017">[CERT]</a></div>
+                <div class="item"><span>018: Rasheed Abiodun O. Gbaiye</span> <a href="/cert/018">[CERT]</a></div>
+                <div class="item"><span>019: Lugard Jumbo</span> <a href="/cert/019">[CERT]</a></div>
+                <div class="item"><span>020: Heri Heryanto</span> <a href="/cert/020">[CERT]</a></div>
             </div>
-            <button class="btn" onclick="location.reload()">LOCK & SIGN OUT</button>
+            <button class="btn" onclick="boostAura()">ACTIVATE BOOSTER</button>
         </div>
-        <div class="status-bar"><span class="dot"></span> 🛡️ IID-010 GUARD ONLINE</div>
+        <div class="status">🛡️ IID-010 GUARD: ACTIVE MONITORING</div>
     </div>
-
     <script>
-        setTimeout(() => { showScreen('signup'); }, 2500);
-
-        function processClaim() {
-            const name = document.getElementById('username').value;
-            if(!name) return alert("System requires a name for Anchor Verification.");
-            document.getElementById('display-name').innerText = name;
-            
-            // Generate QR menggunakan API eksternal sementara untuk demo
-            const iidSim = "IID-021-0000000011"; // Simulasi pendaftar
-            const qrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://indienation-tm.web.app/cert/011&color=00ff00&bgcolor=000000`;
-            document.getElementById('user-qr').src = qrUrl;
-            
-            showScreen('claim-success');
+        let currentAura = parseFloat(localStorage.getItem('aura')) || 0.1;
+        document.getElementById('aura-score').innerText = currentAura.toFixed(4);
+        function boostAura() {
+            currentAura += 0.0015;
+            localStorage.setItem('aura', currentAura);
+            document.getElementById('aura-score').innerText = currentAura.toFixed(4);
         }
-
-        function showScreen(id) {
-            document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
-            document.getElementById(id).classList.add('active');
-        }
+        setInterval(() => {
+            currentAura += 0.0001;
+            document.getElementById('aura-score').innerText = currentAura.toFixed(4);
+        }, 10000);
     </script>
+<footer style="font-size:0.65em; color:#666; text-align:center; padding:30px; line-height:1.5; border-top:1px solid #eee; margin-top:50px;"> 
+    <strong>LEGAL NOTICE:</strong> This system constitutes a Sovereign Digital Value Architecture. <br> 
+    Anchor values recorded herein are internal systemic units (Technology Money Dialects) and do not constitute legal tender, securities, investment contracts, or fiat-backed financial instruments under any jurisdiction. <br> 
+    All distributions follow predefined protocol logic embedded within the architecture. 
+</footer>
 </body>
 </html>

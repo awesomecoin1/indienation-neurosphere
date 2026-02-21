@@ -1,0 +1,36 @@
+=====================================================
+          NEUROSPHERE SOVEREIGN CERTIFICATE
+=====================================================
+IDENTITIES ID : IID-020
+CITIZEN NAME  : Heri Heryanto
+STATUS        : FOUNDING PIONEER (ANCHORED)
+=====================================================
+
+DENGAN INI DINYATAKAN BAHWA:
+Pemegang sertifikat ini adalah warga negara berdaulat
+NeuroSphere dengan hak akses penuh terhadap ekosistem
+Technology Money (TM).
+
+HAK & KEDAULATAN:
+1. ANCHOR VALUE    : €100,000 (Guaranteed)
+2. REWARD STATUS   : Eligible for 1M LUV (01-02-2027)
+3. SECURITY        : Protected by AI-Guard IID-010
+
+DIKELUARKAN PADA: 21-02-2026
+OTORITAS        : INDIE-Founder
+PROTOKOL        : AURALANG v1.0
+
+-----------------------------------------------------
+      "KEDAULATAN ANDA ADALAH ENERGI KAMI"
+-----------------------------------------------------
+--- CRYPTOGRAPHIC AUTHENTICATION ---
+AUTHORITY ID   : INDIE-FOUNDER-IID-010
+SIGNATURE ALG  : Ed25519 (Asymmetric Standard)
+SIGNATURE      : Q5c9ewRCP06WJNyCk+IMiCcI6yxnT5SN+i7H7OOIJtRJjWtl/vTxHP1fZgfZKVHzH5bCYhuKnp9SsQR7358sAA==
+PUBLIC KEY REF : https://awesomecoin1.github.io/indienation-neurosphere/public/founder.pub
+GIT COMMIT REF : 6b3f2f02438e9188cf0430f4aff0b76e547ec26a
+SIG VERSION    : NS-ED25519-V1
+LEDGER REF     : firestore://ledger/pioneer_020
+Guard IID
+VERIFICATION   : https://awesomecoin1.github.io/indienation-neurosphere/public/verify.html
+=====================================================
