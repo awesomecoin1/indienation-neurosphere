@@ -34,3 +34,11 @@ LEDGER REF     : firestore://ledger/pioneer_014
 Guard IID
 VERIFICATION   : https://awesomecoin1.github.io/indienation-neurosphere/public/verify.html
 =====================================================
+
+
+--- WALKING WALLET METADATA ---
+TM-IDENTITY-HASH: 17f5df94c5f245a8257d29d776ac119cd4fb7a4d4616faea60ea532c2a18825e
+ANCHOR-VALUE: EUR 100,000
+STATUS: INITIALIZED 01-02-2026
+VERIFY: https://indienation-tm.web.app/verify.html?id=IID_014&hash=17f5df94c5f2
+-------------------------------
