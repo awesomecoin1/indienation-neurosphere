@@ -1,52 +1,9 @@
-=====================================================
-          NEUROSPHERE SOVEREIGN CERTIFICATE
-=====================================================
-IDENTITIES ID : IID-011
-CITIZEN NAME  : PURWANTORO
-STATUS        : FOUNDING PIONEER (ANCHORED)
-=====================================================
-
-DENGAN INI DINYATAKAN BAHWA:
-Pemegang sertifikat ini adalah warga negara berdaulat
-NeuroSphere dengan hak akses penuh terhadap ekosistem
-Technology Money (TM).
-
-HAK & KEDAULATAN:
-1. ANCHOR VALUE    : €100,000 (Guaranteed)
-2. REWARD STATUS   : Eligible for 1M LUV (01-02-2027)
-3. SECURITY        : Protected by AI-Guard IID-010
-
-DIKELUARKAN PADA: 21-02-2026
-OTORITAS        : INDIE-Founder
-PROTOKOL        : AURALANG v1.0
-
------------------------------------------------------
-      "KEDAULATAN ANDA ADALAH ENERGI KAMI"
------------------------------------------------------
---- CRYPTOGRAPHIC AUTHENTICATION ---
-AUTHORITY ID   : INDIE-FOUNDER-IID-010
-SIGNATURE ALG  : Ed25519 (Asymmetric Standard)
-SIGNATURE      : W9AQ37v7xfrlWrmpmEmjg+SR3Su4xdLsdlm3z+ePB9Rzf4yo1qvN/w9K5e11hfruYrfcvezNctdgZnUeccN5AA==
-PUBLIC KEY REF : https://awesomecoin1.github.io/indienation-neurosphere/public/founder.pub
-GIT COMMIT REF : 6b3f2f02438e9188cf0430f4aff0b76e547ec26a
-SIG VERSION    : NS-ED25519-V1
-LEDGER REF     : firestore://ledger/pioneer_011
-Guard IID
-VERIFICATION   : https://awesomecoin1.github.io/indienation-neurosphere/public/verify.html
-=====================================================
-
-
---- WALKING WALLET METADATA ---
-TM-IDENTITY-HASH: cf0857de4d5d4069d77e9ff2f5c4871cf211fb2f6df44fcb8d152156b97c2555
-ANCHOR-VALUE: EUR 100,000
-STATUS: INITIALIZED 01-02-2026
-VERIFY: https://indienation-tm.web.app/verify.html?id=IID_011&hash=cf0857de4d5d
--------------------------------
-
---- WALKING WALLET METADATA ---
-TM-IDENTITY-HASH: cf0857de4d5d4069d77e9ff2f5c4871cf211fb2f6df44fcb8d152156b97c2555
-ANCHOR-VALUE: EUR 100,000
-STATUS: INITIALIZED 01-02-2026
-VERIFY: https://indienation-tm.web.app/verify.html?id=IID_011&hash=cf0857de4d5d
--------------------------------
+NEUROSPHERE SOVEREIGN IDENTITY
+------------------------------
+IID: IID_011
+STATUS: ACTIVE
+TM-ANCHOR: €100,000
+WALLET-HASH: cf0857de4d5d4069d77e9ff2f5c4871cf211fb2f6df44fcb8d152156b97c2555
+DIRECT-LINK: https://indienation-tm.web.app/verify.html?id=IID_011&hash=cf0857de4d5d
+------------------------------
 AURA-LEVEL: 1.0

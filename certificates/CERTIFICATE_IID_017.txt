@@ -1,52 +1,9 @@
-=====================================================
-          NEUROSPHERE SOVEREIGN CERTIFICATE
-=====================================================
-IDENTITIES ID : IID-017
-CITIZEN NAME  : Meiriska
-STATUS        : FOUNDING PIONEER (ANCHORED)
-=====================================================
-
-DENGAN INI DINYATAKAN BAHWA:
-Pemegang sertifikat ini adalah warga negara berdaulat
-NeuroSphere dengan hak akses penuh terhadap ekosistem
-Technology Money (TM).
-
-HAK & KEDAULATAN:
-1. ANCHOR VALUE    : €100,000 (Guaranteed)
-2. REWARD STATUS   : Eligible for 1M LUV (01-02-2027)
-3. SECURITY        : Protected by AI-Guard IID-010
-
-DIKELUARKAN PADA: 21-02-2026
-OTORITAS        : INDIE-Founder
-PROTOKOL        : AURALANG v1.0
-
------------------------------------------------------
-      "KEDAULATAN ANDA ADALAH ENERGI KAMI"
------------------------------------------------------
---- CRYPTOGRAPHIC AUTHENTICATION ---
-AUTHORITY ID   : INDIE-FOUNDER-IID-010
-SIGNATURE ALG  : Ed25519 (Asymmetric Standard)
-SIGNATURE      : FI2onkZ2b+ia54l1S1kH1JQjVsDQj0YN3upeEHHTGn3Tsfi/m1IPVy/VDtVfhMqCmMe60/0LgyJ4tbA3ZEqSBA==
-PUBLIC KEY REF : https://awesomecoin1.github.io/indienation-neurosphere/public/founder.pub
-GIT COMMIT REF : 6b3f2f02438e9188cf0430f4aff0b76e547ec26a
-SIG VERSION    : NS-ED25519-V1
-LEDGER REF     : firestore://ledger/pioneer_017
-Guard IID
-VERIFICATION   : https://awesomecoin1.github.io/indienation-neurosphere/public/verify.html
-=====================================================
-
-
---- WALKING WALLET METADATA ---
-TM-IDENTITY-HASH: ae541e8b1ea3e8eb0fa2f178e85ecf3ca6479cbdac2fa4774ffa1752a7ece052
-ANCHOR-VALUE: EUR 100,000
-STATUS: INITIALIZED 01-02-2026
-VERIFY: https://indienation-tm.web.app/verify.html?id=IID_017&hash=ae541e8b1ea3
--------------------------------
-
---- WALKING WALLET METADATA ---
-TM-IDENTITY-HASH: ae541e8b1ea3e8eb0fa2f178e85ecf3ca6479cbdac2fa4774ffa1752a7ece052
-ANCHOR-VALUE: EUR 100,000
-STATUS: INITIALIZED 01-02-2026
-VERIFY: https://indienation-tm.web.app/verify.html?id=IID_017&hash=ae541e8b1ea3
--------------------------------
+NEUROSPHERE SOVEREIGN IDENTITY
+------------------------------
+IID: IID_017
+STATUS: ACTIVE
+TM-ANCHOR: €100,000
+WALLET-HASH: ae541e8b1ea3e8eb0fa2f178e85ecf3ca6479cbdac2fa4774ffa1752a7ece052
+DIRECT-LINK: https://indienation-tm.web.app/verify.html?id=IID_017&hash=ae541e8b1ea3
+------------------------------
 AURA-LEVEL: 1.0

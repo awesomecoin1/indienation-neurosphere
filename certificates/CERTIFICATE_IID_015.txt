@@ -1,52 +1,9 @@
-=====================================================
-          NEUROSPHERE SOVEREIGN CERTIFICATE
-=====================================================
-IDENTITIES ID : IID-015
-CITIZEN NAME  : Miftahudin
-STATUS        : FOUNDING PIONEER (ANCHORED)
-=====================================================
-
-DENGAN INI DINYATAKAN BAHWA:
-Pemegang sertifikat ini adalah warga negara berdaulat
-NeuroSphere dengan hak akses penuh terhadap ekosistem
-Technology Money (TM).
-
-HAK & KEDAULATAN:
-1. ANCHOR VALUE    : €100,000 (Guaranteed)
-2. REWARD STATUS   : Eligible for 1M LUV (01-02-2027)
-3. SECURITY        : Protected by AI-Guard IID-010
-
-DIKELUARKAN PADA: 21-02-2026
-OTORITAS        : INDIE-Founder
-PROTOKOL        : AURALANG v1.0
-
------------------------------------------------------
-      "KEDAULATAN ANDA ADALAH ENERGI KAMI"
------------------------------------------------------
---- CRYPTOGRAPHIC AUTHENTICATION ---
-AUTHORITY ID   : INDIE-FOUNDER-IID-010
-SIGNATURE ALG  : Ed25519 (Asymmetric Standard)
-SIGNATURE      : 1kIvT+o844shucgXTPyYR2Vk0bEXtyqHJc7raC6MiP84F3cv+DZrzf9zKpskRF2l53IPLLeGl+WR+7hhc9lQAw==
-PUBLIC KEY REF : https://awesomecoin1.github.io/indienation-neurosphere/public/founder.pub
-GIT COMMIT REF : 6b3f2f02438e9188cf0430f4aff0b76e547ec26a
-SIG VERSION    : NS-ED25519-V1
-LEDGER REF     : firestore://ledger/pioneer_015
-Guard IID
-VERIFICATION   : https://awesomecoin1.github.io/indienation-neurosphere/public/verify.html
-=====================================================
-
-
---- WALKING WALLET METADATA ---
-TM-IDENTITY-HASH: 544b4678444d0e3c942aa5d89bbaaeb69698d756ad3aa917680f5ed3666fbbcd
-ANCHOR-VALUE: EUR 100,000
-STATUS: INITIALIZED 01-02-2026
-VERIFY: https://indienation-tm.web.app/verify.html?id=IID_015&hash=544b4678444d
--------------------------------
-
---- WALKING WALLET METADATA ---
-TM-IDENTITY-HASH: 544b4678444d0e3c942aa5d89bbaaeb69698d756ad3aa917680f5ed3666fbbcd
-ANCHOR-VALUE: EUR 100,000
-STATUS: INITIALIZED 01-02-2026
-VERIFY: https://indienation-tm.web.app/verify.html?id=IID_015&hash=544b4678444d
--------------------------------
+NEUROSPHERE SOVEREIGN IDENTITY
+------------------------------
+IID: IID_015
+STATUS: ACTIVE
+TM-ANCHOR: €100,000
+WALLET-HASH: 544b4678444d0e3c942aa5d89bbaaeb69698d756ad3aa917680f5ed3666fbbcd
+DIRECT-LINK: https://indienation-tm.web.app/verify.html?id=IID_015&hash=544b4678444d
+------------------------------
 AURA-LEVEL: 1.0

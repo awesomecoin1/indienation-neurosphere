@@ -1,14 +1,9 @@
 NEUROSPHERE SOVEREIGN IDENTITY
 ------------------------------
-HOLDER: International_021
-IDENTITY-TYPE: International Masyarakat (inter6)
+IID: IID_021
 STATUS: ACTIVE
-
-
---- WALKING WALLET METADATA ---
-TM-IDENTITY-HASH: f51453bd130236ed8b678b0120d0d361f8361f5f415a2bbaf8c81d97e9a028bf
-ANCHOR-VALUE: EUR 100,000
-STATUS: INITIALIZED 01-02-2026
-VERIFY: https://indienation-tm.web.app/verify.html?id=IID_021&hash=f51453bd1302
--------------------------------
+TM-ANCHOR: €100,000
+WALLET-HASH: f51453bd130236ed8b678b0120d0d361f8361f5f415a2bbaf8c81d97e9a028bf
+DIRECT-LINK: https://indienation-tm.web.app/verify.html?id=IID_021&hash=f51453bd1302
+------------------------------
 AURA-LEVEL: 1.0

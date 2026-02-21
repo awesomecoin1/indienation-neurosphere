@@ -1,7 +1,9 @@
 import os
 import re
+from datetime import date
 
 cert_dir = "certificates"
+today = str(date.today())
 
 def pulse_aura():
     for filename in os.listdir(cert_dir):
@@ -10,17 +12,25 @@ def pulse_aura():
             with open(path, "r") as f:
                 content = f.read()
             
-            # Logika: Jika belum ada level Aura, set ke 1.0. Jika ada, naikkan 0.01 (Daily Growth)
-            if "AURA-LEVEL:" not in content:
-                new_content = content + "\nAURA-LEVEL: 1.0\n"
+            # Guard: Cek apakah sudah dipulse hari ini
+            if f"LAST-UPDATE: {today}" in content:
+                continue
+                
+            # Update Aura Level
+            current_level = float(re.search(r"AURA-LEVEL: ([\d.]+)", content).group(1))
+            new_level = round(current_level + 0.01, 2)
+            
+            # Update atau Tambahkan Timestamp
+            if "LAST-UPDATE:" in content:
+                new_content = re.sub(r"LAST-UPDATE: .*", f"LAST-UPDATE: {today}", content)
             else:
-                current_level = float(re.search(r"AURA-LEVEL: ([\d.]+)", content).group(1))
-                new_level = round(current_level + 0.01, 2)
-                new_content = re.sub(r"AURA-LEVEL: [\d.]+", f"AURA-LEVEL: {new_level}", content)
+                new_content = content + f"\nLAST-UPDATE: {today}"
+            
+            new_content = re.sub(r"AURA-LEVEL: [\d.]+", f"AURA-LEVEL: {new_level}", new_content)
             
             with open(path, "w") as f:
                 f.write(new_content)
 
 if __name__ == "__main__":
     pulse_aura()
-    print("Aura Pulse Complete: 20 Identities have evolved.")
+    print(f"Pulse Synced for {today}")
