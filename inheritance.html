@@ -1,52 +1,58 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Inheritance Protocol | NeuroSphere</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inheritance Ledger | NeuroSphere</title>
     <style>
-        body { background: #000; color: #00ff96; font-family: 'Courier New', monospace; padding: 40px; line-height: 1.6; }
-        .protocol-container { border: 1px double #00ff96; padding: 30px; max-width: 700px; margin: auto; background: rgba(0, 255, 150, 0.05); }
-        .header-title { text-align: center; border-bottom: 2px solid #00ff96; margin-bottom: 20px; padding-bottom: 10px; }
-        .label { color: #888; font-size: 0.8em; }
-        .value { color: #fff; font-weight: bold; margin-bottom: 15px; }
-        .qr-placeholder { border: 1px dashed #00ff96; width: 150px; height: 150px; margin: 20px auto; display: flex; align-items: center; text-align: center; font-size: 0.7em; }
-        .footer-note { font-size: 0.7em; text-align: center; margin-top: 30px; color: #555; }
+        body { 
+            background: #000; color: #ffd700; font-family: 'Courier New', monospace; 
+            display: flex; justify-content: center; align-items: center; 
+            min-height: 100vh; margin: 0; padding: 20px;
+        }
+        .ledger-box { 
+            border: 2px solid #ffd700; padding: 30px; border-radius: 20px; 
+            width: 100%; max-width: 400px; text-align: center;
+            background: rgba(255, 215, 0, 0.02);
+        }
+        .lock-icon { font-size: 3em; margin-bottom: 20px; }
+        .input-group { margin: 20px 0; text-align: left; }
+        input { 
+            background: #111; border: 1px solid #444; color: #fff; 
+            padding: 12px; width: 100%; margin-top: 5px; box-sizing: border-box;
+        }
+        .btn-lock { 
+            background: #ffd700; color: #000; border: none; padding: 15px; 
+            width: 100%; font-weight: bold; cursor: pointer; margin-top: 20px;
+        }
+        .disclaimer { font-size: 0.5em; color: #888; margin-top: 20px; line-height: 1.5; }
     </style>
 </head>
 <body>
-    <div class="protocol-container">
-        <div class="header-title">
-            OFFICIAL PROTOCOL<br>
-            <strong>SOVEREIGN INHERITANCE</strong><br>
-            <span style="font-size: 0.8em;">Hak Waris Kedaulatan Digital</span>
+    <div class="ledger-box">
+        <div class="lock-icon">🔒</div>
+        <h2 style="font-size: 1.2em;">INHERITANCE LEDGER</h2>
+        <p style="font-size: 0.7em; color: #00ff96;">INTERNATIONAL SERIES PROTOCOL</p>
+
+        <div class="input-group">
+            <label style="font-size: 0.7em;">BENEFICIARY IID / NAME</label>
+            <input type="text" placeholder="Enter Nominee Details">
         </div>
 
-        <p style="font-size: 0.9em; text-align: justify; color: #ddd;">
-            "Berdasarkan protokol <strong>Neurolang-V1</strong>, seluruh aset yang terikat pada identitas ini bersifat inheritable (dapat diwariskan). Aset TM (Technology Money) termasuk ENPE, LUV, dan IND-EUR akan dialihkan sepenuhnya kepada ahli waris yang terdaftar dalam IID Lineage..."
-        </p>
-
-        <div class="label">PEMBERI WARIS (ORIGIN IID):</div>
-        <div class="value">IID-000000011 (PURWANTORO)</div>
-
-        <div class="label">TOTAL ASET KEDAULATAN:</div>
-        <div class="value">€100.000,00 (IND-EUR)</div>
-
-        <div class="label">STATUS KONTRAK WARIS:</div>
-        <div class="value" style="color: #ffd700;">SECURED BY AI-GUARD</div>
-
-        <div class="label">METODE PENGALIHAN:</div>
-        <div class="value">Fingerprint & DNA Ledger</div>
-
-        <div class="qr-placeholder">SCAN TO VALIDATE ANCESTRY</div>
-
-        <div style="text-align: center; font-size: 0.8em; margin-top: 10px;">
-            HASH: NS-INHERIT-2026-XQ79-PION-011
+        <div class="input-group">
+            <label style="font-size: 0.7em;">TRANSFER RATIO</label>
+            <input type="text" value="100% LIVING VALUE" readonly>
         </div>
 
-        <div class="footer-note">
-            Sovereign Inheritance Ledger - Peradaban Kebaikan Estafet © 2026<br>
-            NeuroSphere Foundation | Verified by INDIE-FOUNDER
+        <button class="btn-lock" onclick="alert('Biometric Key Required to Lock Beneficiary.')">LOCK SUCCESSION</button>
+        
+        <div class="disclaimer">
+            This asset is inheritable. In the event of identity inactivity, 
+            the AI-Guard will trigger the transfer to the verified biometric 
+            successor. Secured by Neurolang-Auralang.
         </div>
+        
+        <a href="wallet.html" style="display:block; margin-top:20px; color:#888; font-size:0.7em; text-decoration:none;">← BACK TO WALLET</a>
     </div>
 </body>
 </html>

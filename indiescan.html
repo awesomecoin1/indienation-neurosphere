@@ -1,45 +1,81 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>IndieScan | NeuroSphere Ledger</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IndieScan | Global Activation Radar</title>
     <style>
-        body { background: #000; color: #00ff96; font-family: 'Courier New', monospace; padding: 20px; font-size: 0.9em; }
-        .scanner-container { border: 1px solid #333; max-width: 800px; margin: auto; }
-        .header { background: #00ff96; color: #000; padding: 10px; font-weight: bold; display: flex; justify-content: space-between; }
-        table { width: 100%; border-collapse: collapse; margin-top: 10px; }
-        th { border-bottom: 2px solid #00ff96; text-align: left; padding: 10px; color: #888; }
-        td { padding: 10px; border-bottom: 1px solid #111; }
-        .aura-high { color: #ffd700; }
-        .hash-link { color: #555; font-size: 0.7em; text-decoration: none; }
+        body { 
+            background: #000; color: #00ff96; font-family: 'Courier New', monospace; 
+            margin: 0; display: flex; flex-direction: column; align-items: center; 
+            min-height: 100vh; overflow-x: hidden;
+        }
+        .map-container {
+            width: 90%; max-width: 900px; height: 400px; border: 1px solid #333;
+            margin-top: 30px; border-radius: 20px; position: relative;
+            background: radial-gradient(circle, #0a0a0a 0%, #000 100%);
+            display: flex; justify-content: center; align-items: center;
+        }
+        .radar-circle {
+            position: absolute; width: 300px; height: 300px;
+            border: 1px solid rgba(0, 255, 150, 0.2); border-radius: 50%;
+            animation: pulse-radar 4s infinite linear;
+        }
+        @keyframes pulse-radar {
+            0% { transform: scale(0.5); opacity: 1; }
+            100% { transform: scale(1.5); opacity: 0; }
+        }
+        .pulse-dot {
+            position: absolute; width: 8px; height: 8px; background: #ffd700;
+            border-radius: 50%; box-shadow: 0 0 10px #ffd700;
+            animation: flicker 1.5s infinite alternate;
+        }
+        @keyframes flicker { from { opacity: 0.3; } to { opacity: 1; } }
+        
+        .stats-panel {
+            width: 90%; max-width: 900px; display: grid; 
+            grid-template-columns: repeat(3, 1fr); gap: 15px; margin-top: 20px;
+        }
+        .stat-card { border: 1px solid #00ff96; padding: 15px; border-radius: 10px; text-align: center; }
+        .stat-val { font-size: 1.2em; font-weight: bold; color: #fff; }
+        .back-btn { margin-top: 30px; color: #888; text-decoration: none; font-size: 0.8em; border: 1px solid #444; padding: 10px 20px; border-radius: 5px; }
     </style>
 </head>
 <body>
-    <div class="scanner-container">
-        <div class="header">
-            <span>INDIESCAN v2.0 - PUBLIC LEDGER</span>
-            <span>PULSE: ACTIVE</span>
+    <h2 style="margin-top: 40px; color: #ffd700;">INDIESCAN GLOBAL RADAR</h2>
+    <p style="font-size: 0.7em;">LIVE IID ACTIVATION | MASYARAKAT INTER6</p>
+
+    <div class="map-container">
+        <div class="radar-circle"></div>
+        <div class="pulse-dot" style="top: 30%; left: 20%;"></div> <div class="pulse-dot" style="top: 45%; left: 50%;"></div> <div class="pulse-dot" style="top: 60%; left: 75%;"></div> <div class="pulse-dot" style="top: 70%; left: 85%;"></div> <div style="color: rgba(0,255,150,0.1); font-size: 5em; font-weight: bold;">NEUROSPHERE</div>
+    </div>
+
+    <div class="stats-panel">
+        <div class="stat-card">
+            <div style="font-size: 0.6em;">TOTAL CITIZENS</div>
+            <div class="stat-val" id="total-iid">21</div>
         </div>
-        <table>
-            <thead>
-                <tr>
-                    <th>IID</th>
-                    <th>CITIZEN</th>
-                    <th>AURA</th>
-                    <th>STATUS</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr><td>011</td><td>PURWANTORO</td><td class="aura-high">0.1076</td><td>VERIFIED</td></tr>
-                <tr><td>012</td><td>MARSELUS HASAN</td><td>0.0892</td><td>VERIFIED</td></tr>
-                <tr><td>013</td><td>KIKI KESTURI</td><td>0.0885</td><td>VERIFIED</td></tr>
-                <tr><td>014</td><td>BOGUI EUGÈNE</td><td>0.0870</td><td>VERIFIED</td></tr>
-                <tr><td>015</td><td>MIFTAHUDIN</td><td>0.0865</td><td>VERIFIED</td></tr>
-            </tbody>
-        </table>
-        <div style="padding: 10px; text-align: center; color: #333; font-size: 0.7em;">
-            SHOWING 5 OF 10,000,000 SOVEREIGN IDENTITIES
+        <div class="stat-card" style="border-color: #ffd700;">
+            <div style="font-size: 0.6em; color: #ffd700;">LIVING VALUE ANCHOR</div>
+            <div class="stat-val">€100K</div>
+        </div>
+        <div class="stat-card">
+            <div style="font-size: 0.6em;">REMAINING IIDs</div>
+            <div class="stat-val">9.9B+</div>
         </div>
     </div>
+
+    <a href="wallet.html" class="back-btn">← RETURN TO WALLET</a>
+
+    <script>
+        // Real-time counter simulation
+        let count = 21;
+        setInterval(() => {
+            if(Math.random() > 0.7) {
+                count++;
+                document.getElementById('total-iid').innerText = count;
+            }
+        }, 3000);
+    </script>
 </body>
 </html>

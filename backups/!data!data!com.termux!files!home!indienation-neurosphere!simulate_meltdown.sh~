@@ -1,0 +1,33 @@
+#!/bin/bash
+# NeuroSphere Digital City - Terminal Meltdown Simulation
+# Dedicated to: INDIE-Founder
+
+# Warna Amber/Jingga (ANSI)
+AMBER='\033[38;5;214m'
+NC='\033[0m' # No Color
+
+# Mengambil variabel dari meltdown_logic.aura secara simulasi
+AURA_FILE="meltdown_logic.aura"
+
+clear
+echo -e "${AMBER}Initializing NeuroSphere Meltdown Protocol...${NC}"
+sleep 1
+
+# Fungsi untuk membuat teks meluncur (Meltdown Effect)
+function melt() {
+    local text="$1"
+    for (( i=0; i<${#text}; i++ )); do
+        # Random offset untuk efek "mencair"
+        spaces=$(printf ' %.0s' $(seq 1 $((RANDOM % 5))))
+        echo -e "${AMBER}${spaces}${text:$i:15}${NC}"
+        sleep 0.05
+    done
+}
+
+# Loop simulasi pembacaan data aura
+while read -r line; do
+    melt "$line"
+done < "$AURA_FILE"
+
+echo -e "\n${AMBER}[SYSTEM] AI Guard: Monitoring Stability...${NC}"
+echo -e "${AMBER}[SYSTEM] Relay €1000 - €270 - €990: ACTIVE${NC}"

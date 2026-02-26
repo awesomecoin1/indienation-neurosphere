@@ -6,19 +6,7 @@
       "**/.*",
       "**/node_modules/**"
     ],
-    "rewrites": [
-      {
-        "source": "/wallet",
-        "destination": "/wallet.html"
-      },
-      {
-        "source": "/inheritance",
-        "destination": "/inheritance.html"
-      },
-      {
-        "source": "**",
-        "destination": "/index.html"
-      }
-    ]
+    "cleanUrls": true,
+    "trailingSlash": false
   }
 }

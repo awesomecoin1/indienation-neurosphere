@@ -3,61 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Walking Wallet | NeuroSphere</title>
+    <title>Sovereign Wallet | TM KINDNESS</title>
     <style>
-        body { background: #000; color: #00ff96; font-family: 'Courier New', monospace; margin: 0; padding: 20px; }
-        .wallet-container { border: 2px solid #00ff96; border-radius: 15px; padding: 20px; max-width: 450px; margin: auto; box-shadow: 0 0 15px rgba(0,255,150,0.3); }
-        .header { text-align: center; border-bottom: 1px solid #333; padding-bottom: 10px; margin-bottom: 20px; }
-        .id-badge { background: #00ff96; color: #000; padding: 2px 10px; font-weight: bold; border-radius: 5px; }
-        .balance-card { background: rgba(255,215,0,0.1); border: 1px solid #ffd700; border-radius: 10px; padding: 15px; text-align: center; margin-bottom: 15px; }
-        .balance-main { font-size: 2em; color: #ffd700; font-weight: bold; }
-        .grid-assets { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-        .asset-box { border: 1px solid #333; padding: 10px; border-radius: 8px; text-align: center; }
-        .btn-group { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 20px; }
-        .btn { padding: 12px; border: none; border-radius: 5px; font-weight: bold; cursor: pointer; text-align: center; text-decoration: none; }
-        .btn-send { background: #8a2be2; color: #fff; }
-        .btn-receive { background: #00ff96; color: #000; }
-        .qr-area { text-align: center; margin-top: 25px; border-top: 1px solid #333; padding-top: 15px; }
-        .hash-text { font-size: 0.6em; color: #555; word-break: break-all; margin-top: 10px; }
+        * { box-sizing: border-box; }
+        body { 
+            background: #000; color: #00e5ff; font-family: 'Arial', sans-serif; 
+            margin: 0; display: flex; justify-content: center; align-items: center; 
+            min-height: 100vh; /* Bikin konten ke tengah vertikal */
+        }
+        .nft-card { 
+            width: 95%; max-width: 400px; border: 2px solid #00e5ff; 
+            border-radius: 25px; padding: 25px; text-align: center; 
+            box-shadow: 0 0 20px rgba(0,229,255,0.2); background: #050505;
+        }
+        .anchor-box { border: 2px solid #ffcc00; border-radius: 15px; padding: 15px; margin: 20px 0; }
+        .anchor-value { color: #ffcc00; font-size: 1.8em; font-weight: bold; }
+        
+        .balance-grid { display: flex; gap: 10px; margin-bottom: 20px; text-align: left; }
+        .main-bal { flex: 2; border: 1px solid #00e5ff; padding: 12px; border-radius: 12px; }
+        .side-bal { flex: 1; display: flex; flex-direction: column; gap: 8px; }
+        .mini-box { border: 1px solid #00ff96; border-radius: 8px; padding: 5px; font-size: 0.7em; text-align: center; }
+
+        .btn-group { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 15px; }
+        .btn { 
+            padding: 12px; border-radius: 10px; font-size: 0.75em; font-weight: bold; 
+            cursor: pointer; border: 1px solid transparent; transition: 0.3s;
+        }
+        .btn-gold { border-color: #ffcc00; color: #ffcc00; background: none; }
+        .btn-cyan { border-color: #00e5ff; color: #00e5ff; background: none; }
+        .btn-exit { grid-column: span 2; background: #ff4444; color: #fff; margin-top: 10px; }
+        
+        .footer-info { font-size: 0.5em; color: #444; margin-top: 20px; line-height: 1.4; }
     </style>
 </head>
 <body>
-    <div class="wallet-container">
-        <div class="header">
-            <span class="id-badge">IID-001</span>
-            <div style="margin-top: 5px; font-size: 0.8em;">INDIE-Founder Authority</div>
+    <div class="nft-card">
+        <div style="font-size: 0.6em; color: #888;">TIMESTAMP: 2026-02-21</div>
+        <div style="font-weight: bold; margin: 10px 0;">TM KINDNESS ESTAFET</div>
+        
+        <div class="anchor-box">
+            <div style="font-size: 0.6em; color: #ccc;">TOTAL LIVING VALUE</div>
+            <div class="anchor-value">€100.000,00</div>
         </div>
 
-        <div class="balance-card">
-            <div style="font-size: 0.8em; color: #888;">TOTAL LIVING VALUE (IND-EUR)</div>
-            <div class="balance-main">€100.000,00</div>
-            <div style="font-size: 0.7em; color: #ffd700;">STABLE ANCHOR VERIFIED</div>
-        </div>
-
-        <div class="grid-assets">
-            <div class="asset-box">
-                <div style="font-size: 0.7em; color: #888;">ENPE (E-COIN)</div>
-                <div style="color: #fff;">100.000.000</div>
+        <div class="balance-grid">
+            <div class="main-bal">
+                <div style="font-size: 0.6em;">IND-EUR STABLE</div>
+                <div style="font-weight: bold; font-size: 1.1em;">€1.000,00</div>
+                <div style="color: #00ff96; font-size: 0.8em;">Rp19.864.880</div>
             </div>
-            <div class="asset-box">
-                <div style="font-size: 0.7em; color: #888;">LUV (LOVELY)</div>
-                <div style="color: #fff;">1.000.000</div>
+            <div class="side-bal">
+                <div class="mini-box">ENPE<br>0</div>
+                <div class="mini-box">LUV<br>0</div>
             </div>
         </div>
 
         <div class="btn-group">
-            <a href="#" class="btn btn-send">SEND ASSET</a>
-            <a href="#" class="btn btn-receive">RECEIVE / SCAN</a>
+            <button class="btn btn-cyan" onclick="location.href='gateways.html'">BANK & OVO</button>
+            <button class="btn btn-cyan" onclick="location.href='indiescan.html'">SEND TM</button>
+            <button class="btn btn-gold" onclick="alert('Menerbitkan Sertifikat IID...')">CERTIFICATE</button>
+            <button class="btn btn-gold" onclick="location.href='inheritance.html'">INHERITANCE</button>
+            <button class="btn btn-exit" onclick="location.href='index.html'">SIGN OUT</button>
         </div>
 
-        <div class="qr-area">
-            <div style="width: 120px; height: 120px; border: 2px solid #00ff96; margin: auto; display: flex; align-items: center; justify-content: center; background: #fff;">
-                <span style="color: #000; font-size: 0.7em;">IDENTITY QR</span>
-            </div>
-            <div class="hash-text">
-                ENC: NEUROLANG-V1 | SSOT: AURALANG<br>
-                AUTH: $(date +%Y%m%d)-NS-WAL-001
-            </div>
+        <div class="footer-info">
+            IID: VERIFIED BIOMETRIC<br>
+            SECURED BY NEUROLANG-AURALANG
         </div>
     </div>
 </body>
